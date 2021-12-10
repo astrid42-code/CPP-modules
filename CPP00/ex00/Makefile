@@ -6,7 +6,7 @@
 #    By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/10 11:02:11 by asgaulti          #+#    #+#              #
-#    Updated: 2021/12/10 11:30:57 by asgaulti         ###   ########.fr        #
+#    Updated: 2021/12/10 14:36:46 by asgaulti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,14 +16,14 @@ CC			=	clang++
 
 CFLAGS		=	-Wall -Wextra -Werror
 
-RM			=	rm
+RM			=	rm -f
 
 OBJS		=	megaphone.cpp
 
 OBJS_FILE	=	$(OBJS:.cpp=.o)
 
 .cpp.o:
-			$(CC) $(CFLAGS) -c $< -o $(<:.cpp=.o)
+			$(CC) $(CFLAGS) -g -c $< -o $(<:.cpp=.o)
 
 $(NAME):	$(OBJS_FILE)
 			$(CC) $(CFLAGS) $(OBJS_FILE) -o $(NAME)
