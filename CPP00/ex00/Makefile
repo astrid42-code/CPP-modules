@@ -6,7 +6,7 @@
 #    By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/10 11:02:11 by asgaulti          #+#    #+#              #
-#    Updated: 2021/12/10 14:36:46 by asgaulti         ###   ########.fr        #
+#    Updated: 2021/12/10 18:51:40 by asgaulti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ NAME		=	megaphone
 
 CC			=	clang++
 
-CFLAGS		=	-Wall -Wextra -Werror
+CFLAGS		=	-Wall -Wextra -Werror --std=c++98
+# --std=c++98 pour verifier qu on n utiise pas c++11
 
 RM			=	rm -f
 
