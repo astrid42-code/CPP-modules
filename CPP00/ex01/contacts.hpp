@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.hpp                                      :+:      :+:    :+:   */
+/*   contacts.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/15 11:48:11 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/01/15 12:08:16 by asgaulti         ###   ########.fr       */
+/*   Created: 2022/01/15 11:48:23 by asgaulti          #+#    #+#             */
+/*   Updated: 2022/01/15 11:55:09 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
+#ifndef CONTACTS_HPP
+#define CONTACTS_HPP
 
 # include <iostream>
 # include <string>
-# include "contacts.hpp"
 
-class Phonebook // ou Contacts et phonebook dans une autre classe?
+class Contacts
 {
 	public:
-	Phonebook();
-
-	// methodes :
-	// creer un tableau de contacts?
-	// 
-
-	private: // attributs non modifiables directement par l'utilisateur
-	Contacts contacts[8];	
+	Contacts();
+	
+	private:
+	int	index;
+	std::string	first_name;
+	std::string	last_name;
+	std::string	nickname;
+	int	phone_number;
+	std::string	darkest_secret;
 };
 
 #endif

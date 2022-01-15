@@ -6,11 +6,11 @@
 #    By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/13 19:02:34 by asgaulti          #+#    #+#              #
-#    Updated: 2021/12/13 19:04:25 by asgaulti         ###   ########.fr        #
+#    Updated: 2022/01/15 12:02:11 by asgaulti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	phonebook
+NAME		=	myphonebook
 
 CC			=	clang++
 
@@ -19,11 +19,11 @@ CFLAGS		=	-Wall -Wextra -Werror --std=c++98
 
 RM			=	rm -f
 
-OBJS		=	phonebook.cpp
+OBJS		=	contacts.cpp phonebook.cpp 
 
 OBJS_FILE	=	$(OBJS:.cpp=.o)
 
-INCL		=	
+INCL		=	contacts.hpp phonebook.hpp 
 
 .cpp.o:
 			$(CC) $(CFLAGS) -g -c $< -o $(<:.cpp=.o)

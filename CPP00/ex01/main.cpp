@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.hpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/15 11:48:11 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/01/15 12:08:16 by asgaulti         ###   ########.fr       */
+/*   Created: 2022/01/15 12:03:27 by asgaulti          #+#    #+#             */
+/*   Updated: 2022/01/15 12:24:22 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
+#include "phonebook.hpp"
 
-# include <iostream>
-# include <string>
-# include "contacts.hpp"
-
-class Phonebook // ou Contacts et phonebook dans une autre classe?
+int	main(int ac, char **av)
 {
-	public:
-	Phonebook();
+	Contacts	contacts;
 
-	// methodes :
-	// creer un tableau de contacts?
-	// 
-
-	private: // attributs non modifiables directement par l'utilisateur
-	Contacts contacts[8];	
-};
-
-#endif
+	if (ac == 1){
+		std::cout << "Welcome in my phonebook" << std::endl;
+		std:: cout << "Please use one of the following instructions : ADD, SEARCH or EXIT" << std::endl;
+		std::cin >> ;
+	}
+		
+}
