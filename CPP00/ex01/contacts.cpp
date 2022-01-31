@@ -6,9 +6,16 @@
 /*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 13:36:02 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/01/31 13:36:12 by asgaulti         ###   ########.fr       */
+/*   Updated: 2022/01/31 17:30:08 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
 
+Contacts::Contacts(){
+	index = 1;
+}
+
+Contacts::~Contacts(){
+	
+}

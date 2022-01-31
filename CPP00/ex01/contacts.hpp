@@ -6,7 +6,7 @@
 /*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 11:48:23 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/01/31 13:37:30 by asgaulti         ###   ########.fr       */
+/*   Updated: 2022/01/31 17:13:18 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,16 @@
 
 # include <iostream>
 # include <string>
-
 class Contacts
 {
 	public:
 	Contacts();
 	~Contacts();
+
+	void	set(void);
 	
 	private:
-	int	index;
+	int	index; // numero du contact (demarrer a 1)
 	std::string	first_name;
 	std::string	last_name;
 	std::string	nickname;
