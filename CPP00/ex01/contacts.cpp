@@ -1,34 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contacts.hpp                                       :+:      :+:    :+:   */
+/*   contacts.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/15 11:48:23 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/01/31 13:37:30 by asgaulti         ###   ########.fr       */
+/*   Created: 2022/01/31 13:36:02 by asgaulti          #+#    #+#             */
+/*   Updated: 2022/01/31 13:36:12 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACTS_HPP
-#define CONTACTS_HPP
+#include "phonebook.hpp"
 
-# include <iostream>
-# include <string>
-
-class Contacts
-{
-	public:
-	Contacts();
-	~Contacts();
-	
-	private:
-	int	index;
-	std::string	first_name;
-	std::string	last_name;
-	std::string	nickname;
-	int	phone_number;
-	std::string	darkest_secret;
-};
-
-#endif
