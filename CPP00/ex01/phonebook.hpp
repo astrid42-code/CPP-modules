@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 11:48:11 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/01/31 17:26:33 by asgaulti         ###   ########.fr       */
+/*   Updated: 2022/02/01 14:31:16 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class Phonebook // ou Contacts et phonebook dans une autre classe?
 	void	search(void);
 
 	private: // attributs non modifiables directement par l'utilisateur
-	Contacts	contacts[8];
+//	Contacts	contacts[8];
 	int			count; // compteur de 0 a 7
 };
 

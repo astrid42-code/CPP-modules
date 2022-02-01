@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   contacts.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 11:48:23 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/01/31 17:13:18 by asgaulti         ###   ########.fr       */
+/*   Updated: 2022/02/01 14:24:15 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Contacts
 	Contacts();
 	~Contacts();
 
-	void	set(void);
+	void	set_contact(void);
 	
 	private:
 	int	index; // numero du contact (demarrer a 1)
