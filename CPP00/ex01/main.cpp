@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 12:03:27 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/01 15:17:06 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/02 17:28:04 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	main(int ac, char **av)
 			if (!in.compare("ADD"))
 				my_phonebook.add();
 			else if (!in.compare("SEARCH"))
-				std::cout << "ole" << std::endl;
+				my_phonebook.search();
 			else if (!in.compare("EXIT"))
 				return (1);
 		}

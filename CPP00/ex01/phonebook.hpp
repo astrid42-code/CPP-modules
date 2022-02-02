@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 11:48:11 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/02 12:44:01 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/02 17:18:24 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,11 @@ class Phonebook // ou Contacts et phonebook dans une autre classe?
 	// creer un tableau de contacts?
 	void	add(void);
 	void	search(void);
+	void	print_info(void);
 
 	private: // attributs non modifiables directement par l'utilisateur
-	Contacts	contacts[8];
-	int			count; // compteur de 0 a 7
+	Contacts	contacts[9];
+	int			count; // compteur de 1 a 8
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 19:04:48 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/02 16:42:22 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/02 17:35:39 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,26 @@ void	Phonebook::add(void)
 	}
 }
 
-/*
-	if (count < 8){
-        this->contacts[this->count].set_contact(this->count);
-	    this->count++;
-    }
-	else if (count == 8){
-        count = 7;
-        this->contacts[this->count].set_contact(this->count);
-    }
-    contacts[this->count].get_contact();
-    std::cout << count << std::endl;*/
+void	Phonebook::search(void)
+{
+	// fct qui va afficher les contacts rentrés avec seulement 4 infos
+	print_info();
+	// demander à l utilisateur de rentrer le n° d un contact
+	// afficher toutes les infos du contact demandé (presentation libre)
+	// attention, à la fin de cette fonction le programme doit recommencer à demander add, exit, search
+}
+
+void	Phonebook::print_info(void){
+	int	i;
+
+	i = 0;
+	std::cout << " __________ __________ __________ __________ " << std::endl;
+	std::cout << "| index     first name last name   nickname |" << std::endl;
+	std::cout << " __________ __________ __________ __________ " << std::endl;
+	while (i < this->count - 1){
+		std::cout << "|          |          |          |          |" << std::endl;
+		i++;
+	}
+	// pb : saute une ligne en trop à la fin
+	std::cout << " __________ __________ __________ __________ " << std::endl;
+}
