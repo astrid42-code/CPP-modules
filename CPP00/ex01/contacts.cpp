@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 13:36:02 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/02 16:54:52 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/02 18:46:15 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,19 @@ void	Contacts::set_contact(int count){
 
 void	Contacts::get_contact(void) const{
 	std::cout << _index << _first_name << _last_name << _nickname << _phone_number << _darkest_secret << std::endl;
+}
+
+void	Contacts::print_contacts(void) const{
+	std::cout << "         " << _index << "|";
+	for (int i = 0; i + _first_name.size() < 10; i++)
+		std::cout << " ";
+	std::cout << _first_name << "|";
+	for (int i = 0; i + _last_name.size() < 10; i++)
+		std::cout << " ";
+	std::cout << _last_name << "|";
+	for (int i = 0; i + _nickname.size() < 10; i++)
+		std::cout << " ";
+	std::cout << _nickname << "|";
+	// à régler : une entrée ne peut dépasser 10 char, sinon couper au 9eme et remplacer le 10eme par un .
+	// utiliser une fonction qui coupe au print uniquement mais laquelle?
 }

@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 19:04:48 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/02 17:35:39 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/02 18:42:11 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,15 +45,13 @@ void	Phonebook::search(void)
 }
 
 void	Phonebook::print_info(void){
-	int	i;
-
-	i = 0;
 	std::cout << " __________ __________ __________ __________ " << std::endl;
 	std::cout << "| index     first name last name   nickname |" << std::endl;
 	std::cout << " __________ __________ __________ __________ " << std::endl;
-	while (i < this->count - 1){
-		std::cout << "|          |          |          |          |" << std::endl;
-		i++;
+	for (int i = 0; i < this->count - 1; i++){ // this pas obligatoire car on est dans la classe phonebook (?)
+			std::cout << "|";
+			this->contacts[i + 1].print_contacts(); // this obligatoire car pas dans la classe contacts(?)
+			std::cout << std::endl;
 	}
 	// pb : saute une ligne en trop à la fin
 	std::cout << " __________ __________ __________ __________ " << std::endl;
