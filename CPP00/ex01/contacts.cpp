@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 13:36:02 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/02 15:20:42 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/02 16:41:01 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,7 @@ Contacts::~Contacts(){
 }
 
 void	Contacts::set_contact(int count){
-//	char	*fn;
-//	char	*ln;
-//	char	*nn;
-//	char	*pn;
-//	char	*ds;
 	this->_index = count;
-std::cout << "index= " << _index << std::endl;
 	std::cout << "first name : ";
 	std::cin >> _first_name;
 	std::cout << "last name : ";
