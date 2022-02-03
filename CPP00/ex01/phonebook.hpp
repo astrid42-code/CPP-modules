@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 11:48:11 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/02 17:18:24 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/03 13:47:45 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ class Phonebook // ou Contacts et phonebook dans une autre classe?
 	// creer un tableau de contacts?
 	void	add(void);
 	void	search(void);
-	void	print_info(void);
+	void	print_phonebook(void);
+//	void	print_info(int index);
 
 	private: // attributs non modifiables directement par l'utilisateur
 	Contacts	contacts[9];

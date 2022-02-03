@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 19:04:48 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/03 10:10:19 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/03 14:40:23 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,25 +29,32 @@ void	Phonebook::add(void)
 		this->count++;
 	}
 	else {
-		puts("che");
 		this->count = 7;
 		this->contacts[this->count].set_contact(this->count);
 		contacts[this->count].get_contact();
 		this->count++;
 	}
-	std::cout << this->count << std::endl;
 }
 
 void	Phonebook::search(void)
 {
+	int	index;
+	
 	// fct qui va afficher les contacts rentrés avec seulement 4 infos
-	print_info();
+	print_phonebook();
 	// demander à l utilisateur de rentrer le n° d un contact
+	std::cout << "Please enter index id" << std::endl;
+	std::cin >> index;
+	while (index <= 0 || index > this->count){
+		std::cout << "This index is out of range, please do it again" << std::endl;
+		std::cin >> index;
+	}
 	// afficher toutes les infos du contact demandé (presentation libre)
-	// attention, à la fin de cette fonction le programme doit recommencer à demander add, exit, search
+	index--;
+	this->contacts[index].print_index();
 }
 
-void	Phonebook::print_info(void){
+void	Phonebook::print_phonebook(void){
 	std::cout << " __________ __________ __________ __________ " << std::endl;
 	std::cout << "| index     first name last name   nickname |" << std::endl;
 	std::cout << " __________ __________ __________ __________ " << std::endl;

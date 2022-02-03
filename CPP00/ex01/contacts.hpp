@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 11:48:23 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/02 18:22:14 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/03 13:42:54 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class Contacts
 	void	set_contact(int count);
 	void	get_contact(void) const;
 	void	print_contacts(void) const;
+	void	print_index(void) const;
 	
 	private:
 	int	_index; // numero du contact (demarrer a 1)

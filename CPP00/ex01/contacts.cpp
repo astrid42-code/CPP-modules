@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 13:36:02 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/03 10:00:12 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/03 14:45:20 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ void	Contacts::set_contact(int count){
 	std::cin >> _nickname;
 	std::cout << "phone number : ";
 	std::cin >> _phone_number;
-	while (_phone_number.size() > 10){
-		std::cout << "error : please use less than 10 characters" << std::endl;
+	while (_phone_number.size() > 10 || _phone_number.isdigit() != 0){
+		std::cout << "error : please use less than 10 characters and only digit" << std::endl;
 		std::cout << "phone number : ";
 		std::cin >> _phone_number;
 	}
@@ -60,5 +60,13 @@ void	Contacts::print_contacts(void) const{
 		std::cout << " ";
 	std::cout << _nickname << "|";
 	// à régler : une entrée ne peut dépasser 10 char, sinon couper au 9eme et remplacer le 10eme par un .
-	// utiliser une fonction qui coupe au print uniquement mais laquelle?
+	// utiliser une fonction qui coupe au print uniquement mais laquelle? > retourner une copy qui fait cutstring
+}
+
+void	Contacts::print_index(void) const{
+	std::cout << "first name : " << _first_name << std::endl;
+	std::cout << "last name : " << _last_name << std::endl;
+	std::cout << "nickname : " << _nickname << std::endl;
+	std::cout << "phone number : " << _phone_number << std::endl;
+	std::cout << "darkest secret : " << _darkest_secret << std::endl;
 }
