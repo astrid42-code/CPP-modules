@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 13:36:02 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/03 14:45:20 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/03 21:31:27 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,23 +24,30 @@ Contacts::~Contacts(){
 
 // penser à vérifier que les chaines ne sont pas nulles et que ce sont des lettres et/ou chiffres en fct des variables
 void	Contacts::set_contact(int count){
+	unsigned long	i;
+
+	i = 0;
+	std::locale loc;
 	this->_index = count;
 	std::cout << "first name : ";
-	std::cin >> _first_name;
+	std::getline(std::cin, _first_name);
 	std::cout << "last name : ";
-	std::cin >> _last_name;
+	std::getline(std::cin, _last_name);
 	std::cout << " nickname : ";
-	std::cin >> _nickname;
+	std::getline(std::cin, _nickname);
 	std::cout << "phone number : ";
-	std::cin >> _phone_number;
-	while (_phone_number.size() > 10 || _phone_number.isdigit() != 0){
-		std::cout << "error : please use less than 10 characters and only digit" << std::endl;
-		std::cout << "phone number : ";
-		std::cin >> _phone_number;
+	std::getline(std::cin, _phone_number);
+	while (i < _phone_number.size()){
+		while (isdigit(_phone_number[i], loc) != 1 || _phone_number.size() > 10){
+			std::cout << "error : please use only digit and less than 10 characters" << std::endl;
+			std::cout << "phone number : ";
+			std::getline(std::cin, _phone_number);
+		}
+		i++;
 	}
 	// if phone_number != 0 à 9  et si plus de 10 chiffres> erreur, réécrire?
 	std::cout << "darkest secret : ";
-	std::cin >> _darkest_secret;
+	std::getline(std::cin, _darkest_secret);
 	//std::cout << this->_index << this->_first_name << _last_name << _nickname << _phone_number << _darkest_secret << std::endl;
 }
 

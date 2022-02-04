@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 11:48:11 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/03 13:47:45 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/04 13:46:09 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <iostream>
 # include <string>
+# include <stdio.h>
+# include <stdlib.h>
 # include "contacts.hpp"
 
 class Phonebook // ou Contacts et phonebook dans une autre classe?
@@ -28,6 +30,7 @@ class Phonebook // ou Contacts et phonebook dans une autre classe?
 	void	add(void);
 	void	search(void);
 	void	print_phonebook(void);
+	int		ft_digit(std::string str);
 //	void	print_info(int index);
 
 	private: // attributs non modifiables directement par l'utilisateur

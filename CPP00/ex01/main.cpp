@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 12:03:27 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/02 17:28:04 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/04 13:49:05 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,24 @@ int	main(int ac, char **av)
 		std::cout << "Welcome in my phonebook" << std::endl;
 		while (1)
 		{
+			if (std::cin.eof())
+        	{
+            	std::cout << "Goodbye !" << std::endl;
+            	exit(0);
+       		}
 			std::cout << "Please use one of the following instructions : ADD, SEARCH or EXIT" << std::endl;
-			std::cin >> in;
-			if (!in.compare("ADD"))
+			std::getline(std::cin, in);
+			if (in == "ADD")
 				my_phonebook.add();
-			else if (!in.compare("SEARCH"))
+			else if (in == "SEARCH")
 				my_phonebook.search();
-			else if (!in.compare("EXIT"))
-				return (1);
+			else if (in == "EXIT")
+				break ;
 		}
 	}
 	return (0);
 }
+/*
+pbs :
+- please use one... du départ s'écrit 2 fois après un search 
+*/

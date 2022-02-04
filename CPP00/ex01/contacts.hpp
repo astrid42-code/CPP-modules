@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 11:48:23 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/03 13:42:54 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/03 16:25:57 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 
 # include <iostream>
 # include <string>
+# include <locale> 
+# include <stdio.h>
+# include <stdlib.h>
+
 class Contacts
 {
 	public:
