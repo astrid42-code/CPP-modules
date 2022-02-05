@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 12:03:27 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/04 13:49:05 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/04 14:10:21 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,9 @@ int	main(int ac, char **av)
 /*
 pbs :
 - please use one... du départ s'écrit 2 fois après un search 
+- régler pb des 10 char à afficher
+- index à 1 quand + de 8 contacts
+- décalage dans l'affichage de search (quand char speciaux )
+- si plus de 8 contacts > remplacer le + ancient (0 puis 1 puis 2...)
+donc relancer la boucle sans effacer les autres (ce que ça fait actuellement)
 */

@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 19:04:48 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/04 13:46:39 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/04 18:56:20 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	Phonebook::add(void)
 		this->count++;
 	}
 	else {
-		this->count = 7;
+		this->count = 0;
 		this->contacts[this->count].set_contact(this->count);
 		contacts[this->count].get_contact();
 		this->count++;
@@ -55,18 +55,15 @@ void	Phonebook::search(void)
 	while (ft_digit(str) != 0 || str.empty()){
 		std::cout << "Please enter index id" << std::endl;
 		std::getline(std::cin, str);
-		//std::cout << str << std::endl;
 		if (str.empty() || ft_digit(str) != 0)
 			std::cout << "Please enter a number" << std::endl;
 		if (ft_digit(str) == 0)
 			index = atoi(str.c_str());
-		std::cout << index << std::endl;
-		
-	}
 		if (index <= 0 || index > this->count){
 			std::cout << "This index is out of range, please do it again" << std::endl;
 			std::cin >> index;
 		}
+	}
 	// afficher toutes les infos du contact demandé (presentation libre)
 	index--;
 	this->contacts[index].print_index();

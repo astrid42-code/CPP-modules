@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 13:36:02 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/03 21:31:27 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/04 18:54:44 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	Contacts::set_contact(int count){
 	std::getline(std::cin, _first_name);
 	std::cout << "last name : ";
 	std::getline(std::cin, _last_name);
-	std::cout << " nickname : ";
+	std::cout << "nickname : ";
 	std::getline(std::cin, _nickname);
 	std::cout << "phone number : ";
 	std::getline(std::cin, _phone_number);
@@ -56,18 +56,41 @@ void	Contacts::get_contact(void) const{
 }
 
 void	Contacts::print_contacts(void) const{
+	std::string	cpy1;
+	std::string	cpy2;
+	std::string	cpy3;
+
 	std::cout << "         " << _index + 1 << "|";
-	for (int i = 0; i + _first_name.size() < 10; i++)
-		std::cout << " ";
-	std::cout << _first_name << "|";
-	for (int i = 0; i + _last_name.size() < 10; i++)
-		std::cout << " ";
-	std::cout << _last_name << "|";
-	for (int i = 0; i + _nickname.size() < 10; i++)
-		std::cout << " ";
-	std::cout << _nickname << "|";
-	// à régler : une entrée ne peut dépasser 10 char, sinon couper au 9eme et remplacer le 10eme par un .
-	// utiliser une fonction qui coupe au print uniquement mais laquelle? > retourner une copy qui fait cutstring
+	if (_first_name.length() > 10){
+		cpy1 = _first_name.substr(0, 9);
+		std::cout << cpy1 << ".";
+	}
+	else{
+		for (int i = 0; i + _first_name.length() < 10; i++)
+			std::cout << " ";
+		std::cout << _first_name;
+	}
+	std::cout << "|";
+	if (_last_name.length() > 10){
+		cpy2 = _last_name.substr(0, 9);
+		std::cout << cpy2 << ".";
+	}
+	else{
+		for (int i = 0; i + _last_name.length() < 10; i++)
+			std::cout << " ";
+		std::cout << _last_name;
+	}
+	std::cout << "|";
+	if (_nickname.length() > 10){
+		cpy3 = _nickname.substr(0, 9);
+		std::cout << cpy3 << ".";
+	}
+	else{
+		for (int i = 0; i + _nickname.length() < 10; i++)
+			std::cout << " ";
+		std::cout << _nickname;
+	}
+	std::cout << "|";
 }
 
 void	Contacts::print_index(void) const{
