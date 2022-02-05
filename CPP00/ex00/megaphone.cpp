@@ -6,7 +6,7 @@
 /*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 11:02:26 by asgaulti          #+#    #+#             */
-/*   Updated: 2021/12/10 16:19:49 by asgaulti         ###   ########.fr       */
+/*   Updated: 2022/01/31 13:34:00 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,3 @@ int	main(int ac, char **av)
 	std::cout << std::endl;
 	return (0);
 }
-
-// a verifier : toupper de C autorise (ou celui de c++)???
