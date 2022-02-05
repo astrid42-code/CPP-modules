@@ -6,11 +6,11 @@
 /*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 10:13:52 by astridgault       #+#    #+#             */
-/*   Updated: 2022/02/05 17:22:37 by asgaulti         ###   ########.fr       */
+/*   Updated: 2022/02/05 17:24:51 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "account.h"
+#include "account.hpp"
 
 // données globales, utilisées pour différentes fcts
 int Account::_nbAccounts = 0;
