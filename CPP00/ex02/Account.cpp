@@ -3,14 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Account.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 10:13:52 by astridgault       #+#    #+#             */
-/*   Updated: 2022/02/05 17:24:51 by asgaulti         ###   ########.fr       */
+/*   Updated: 2022/02/06 13:15:50 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "account.hpp"
+#include <iomanip> //setfill et setw
+#include <iostream> //standard lib
+
 
 // données globales, utilisées pour différentes fcts
 int Account::_nbAccounts = 0;
@@ -65,8 +68,24 @@ static int	Account::getNbDeposits(void){
 static int	Account::getNbWithdrawals(void){
 	return (Account::_totalNbWithdrawals);
 }
-/*
+
+//setfill pour donner les char à mettre (pk setfill('0')?)
+//setw pour dire combien
+// time pour récuperer le current time
 static void	_displayTimestamp(void){
-	std::cout << "[" << 
+    time_t  time_ptr;
+    tm  *tm_local;
+    
+    time(&time_ptr);
+    tm_local = localtime(&time_ptr);
+	std::cout << "[";
+    std::cout << std::setfill('0') << std::setw (4) << tm_local->tm->year;
+    std::cout << std::setfill('0') << std::setw (2) << tm_local->tm_month;
+    std::cout << std::setfill('0') << std::setw (2) << tm_local->tm_day;
+    std::cout << "_";
+    std::cout << std::setfill('0') << std::setw (2) << tm_local->tm_hour;
+    std::cout << std::setfill('0') << std::setw (2) << tm_local->tm_min;
+    std::cout << std::setfill('0') << std::setw (2) << tm_local->tm_sec;
+    std::cout << "] ";
 }
-*/
+
