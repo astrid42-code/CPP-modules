@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 10:13:52 by astridgault       #+#    #+#             */
-/*   Updated: 2022/02/06 19:25:01 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/06 20:54:34 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,9 @@ Account::Account(int initial_deposit) : _accountIndex(0), _amount(0),
 //  un seul destructeur a faire
 // ne peut etre surcharge
 // peut etre vide (ici necessite de detruire les objets crees)
+// pb de log inversé sur macos (à checker avec linux)
 Account::~Account(void){
+	
 	Account::_displayTimestamp();
 	std::cout << "index:" << this->_accountIndex;
 	std::cout << ";amount:" << this->_amount;
