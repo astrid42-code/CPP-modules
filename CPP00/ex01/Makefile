@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+         #
+#    By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/13 19:02:34 by asgaulti          #+#    #+#              #
-#    Updated: 2022/01/31 13:56:28 by asgaulti         ###   ########.fr        #
+#    Updated: 2022/02/08 10:29:09 by astridgault      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	myphonebook
 
-CC			=	clang++
+CC			=	c++
 
 CFLAGS		=	-Wall -Wextra -Werror --std=c++98
 # --std=c++98 pour verifier qu on n utilise pas c++11

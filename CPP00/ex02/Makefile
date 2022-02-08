@@ -6,13 +6,13 @@
 #    By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/05 10:09:07 by astridgault       #+#    #+#              #
-#    Updated: 2022/02/05 10:10:37 by astridgault      ###   ########.fr        #
+#    Updated: 2022/02/08 10:49:16 by astridgault      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	mydreamjob
 
-CC			=	clang++
+CC			=	c++
 
 CFLAGS		=	-Wall -Wextra -Werror --std=c++98
 # --std=c++98 pour verifier qu on n utilise pas c++11
