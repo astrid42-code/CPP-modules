@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 11:16:56 by astridgault       #+#    #+#             */
-/*   Updated: 2022/02/08 14:34:29 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/08 16:19:36 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,18 @@
 // meme chose avec ofstream pour écrire dans fichier ofs("test.out")
 
 int	main(int ac, char **av){
-	std::string	zombie_name;
-	Zombie		zombie(zombie_name);
 
-//	zombie_name = NULL;
-	zombie = Zombie("Foo");
+	Zombie		stack_zombie("Foo");
+	Zombie	*heap_zombie = newZombie("Bar"); // HeapZombie
+
 	if (ac != 1){
 		std::cout << "Error in arguments" << std::endl;
 		return (1);
 	}
-	zombie.announce();	
+	stack_zombie.announce();
+	heap_zombie->announce(); // flèche car pointeur
+	randomChump("Bob");
+	delete heap_zombie;
+	
 	return (0);
 }
