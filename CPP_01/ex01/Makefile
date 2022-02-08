@@ -6,7 +6,7 @@
 #    By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/08 10:58:07 by astridgault       #+#    #+#              #
-#    Updated: 2022/02/08 10:58:44 by astridgault      ###   ########.fr        #
+#    Updated: 2022/02/08 16:33:45 by astridgault      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,11 +19,11 @@ CPPFLAGS		=	-Wall -Wextra -Werror --std=c++98
 
 RM			=	rm -f
 
-SRCS		=	
+SRCS		=	Zombie.cpp ZombieHorde.cpp main.cpp
 
 OBJS_FILE	=	$(SRCS:.cpp=.o)
 
-INCL		=	 
+INCL		=	Zombie.hpp
 
 .c.o:
 			$(CXX) $(CPPFLAGS) -g -c $< -o $(<:.cpp=.o)
