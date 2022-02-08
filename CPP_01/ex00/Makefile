@@ -6,7 +6,7 @@
 #    By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/08 10:56:01 by astridgault       #+#    #+#              #
-#    Updated: 2022/02/08 11:13:26 by astridgault      ###   ########.fr        #
+#    Updated: 2022/02/08 11:41:49 by astridgault      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,11 +19,11 @@ CFLAGS		=	-Wall -Wextra -Werror --std=c++98
 
 RM			=	rm -f
 
-SRCS		=	
+SRCS		=	Zombie.cpp newZombie.cpp randomChump.cpp main.cpp
 
 OBJS_FILE	=	$(SRCS:.cpp=.o)
 
-INCL		=	 
+INCL		=	  Zombie.hpp
 
 .c.o:
 			$(CC) $(CFLAGS) -g -c $< -o $(<:.cpp=.o)
