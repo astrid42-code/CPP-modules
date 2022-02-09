@@ -6,11 +6,11 @@
 #    By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/08 10:58:07 by astridgault       #+#    #+#              #
-#    Updated: 2022/02/08 16:33:45 by astridgault      ###   ########.fr        #
+#    Updated: 2022/02/09 08:44:43 by astridgault      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	
+NAME		=	ZombieHorde
 
 CXX			=	c++
 
