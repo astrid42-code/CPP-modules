@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 11:16:56 by astridgault       #+#    #+#             */
-/*   Updated: 2022/02/08 16:19:36 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/10 11:32:34 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@
 
 int	main(int ac, char **av){
 
-	Zombie		stack_zombie("Foo");
-	Zombie	*heap_zombie = newZombie("Bar"); // HeapZombie
+	Zombie	stack_zombie("Foo");
+	Zombie	*heap_zombie = newZombie("Bar");
 
 	if (ac != 1){
 		std::cout << "Error in arguments" << std::endl;

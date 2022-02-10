@@ -6,11 +6,14 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 11:19:55 by astridgault       #+#    #+#             */
-/*   Updated: 2022/02/08 16:21:02 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/10 11:30:50 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
+
+Zombie::Zombie(){
+}
 
 Zombie::Zombie(std::string zombie_name) : name(zombie_name){
 	this->name = zombie_name;
