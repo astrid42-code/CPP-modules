@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/08 16:30:22 by astridgault       #+#    #+#             */
-/*   Updated: 2022/02/09 15:07:37 by asgaulti         ###   ########.fr       */
+/*   Created: 2022/02/09 15:16:01 by asgaulti          #+#    #+#             */
+/*   Updated: 2022/02/10 09:40:34 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef WEAPON_HPP
+#define WEAPON_HPP
 
-// N = nbr total de zonbies
+#include <iostream>
+#include <string>
 
-// comment verifier si name est null??
+class Weapon
+{
 
-Zombie* zombieHorde( int N, std::string name ){
-	if (N < 0)
-		return (NULL);
-	Zombie	*zombie_horde = new Zombie[N];
-	for (int i = 0; i < N; i++)
-		zombie_horde[i].set_name(name);
-	return (zombie_horde);
-}
+	public:
+		Weapon();
+		~Weapon();
+		
+		std::string &getType() const;
+		void		setType(std::string new_weapon);
+
+	private:
+		std::string	_weapon;
+};
+
+#endif

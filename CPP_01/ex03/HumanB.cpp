@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/08 16:30:22 by astridgault       #+#    #+#             */
-/*   Updated: 2022/02/09 15:07:37 by asgaulti         ###   ########.fr       */
+/*   Created: 2022/02/09 15:16:48 by asgaulti          #+#    #+#             */
+/*   Updated: 2022/02/10 11:02:11 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "HumanA.hpp"
 
-// N = nbr total de zonbies
+HumanB::HumanB()
+{
+}
 
-// comment verifier si name est null??
+HumanB::HumanB(std::string name) : name()
+{
+}
 
-Zombie* zombieHorde( int N, std::string name ){
-	if (N < 0)
-		return (NULL);
-	Zombie	*zombie_horde = new Zombie[N];
-	for (int i = 0; i < N; i++)
-		zombie_horde[i].set_name(name);
-	return (zombie_horde);
+HumanB::~HumanB()
+{
 }

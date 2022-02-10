@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/08 16:30:22 by astridgault       #+#    #+#             */
-/*   Updated: 2022/02/09 15:07:37 by asgaulti         ###   ########.fr       */
+/*   Created: 2022/02/10 10:56:27 by asgaulti          #+#    #+#             */
+/*   Updated: 2022/02/10 10:57:19 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
-// N = nbr total de zonbies
-
-// comment verifier si name est null??
-
-Zombie* zombieHorde( int N, std::string name ){
-	if (N < 0)
-		return (NULL);
-	Zombie	*zombie_horde = new Zombie[N];
-	for (int i = 0; i < N; i++)
-		zombie_horde[i].set_name(name);
-	return (zombie_horde);
+int main()
+{
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanA bob("Bob", club);
+		bob.attack();
+		club.setType("some other type of club");
+		bob.attack();
+	}
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanB jim("Jim");
+		jim.setWeapon(club);
+		jim.attack();
+		club.setType("some other type of club");
+		jim.attack();
+	}
+	return 0;
 }
