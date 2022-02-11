@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 15:16:39 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/10 11:00:04 by asgaulti         ###   ########.fr       */
+/*   Updated: 2022/02/10 17:28:37 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,16 @@
 class HumanA
 {
 	public:
-		HumanA();
-		HumanA(std::string name, std::string weapon);
-		~HumanA();
+		HumanA(void);
+		HumanA(std::string name, std::string weapon); // ou Weapon weapon (car on veut récupérer l'objet weapon ou la réf??? et dans ce cas &weapon)
+		~HumanA(void);
 
-		void	attack() const;
+		void	attack(void) const;
+		Weapon	&get_weapon(void) const; // méthode pour récupérer l'objet weapon en réf
 
 	private:
-		std::string	_weaponA;
-		std::string	_nameA;
+		std::string	_name;
+		Weapon		_weaponA;
 };
 
 

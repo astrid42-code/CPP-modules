@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 15:17:09 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/10 10:59:37 by asgaulti         ###   ########.fr       */
+/*   Updated: 2022/02/10 15:39:48 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ class HumanB
 		void	attack() const;
 
 	private:
-		std::string	_weaponA;
-		std::string	_nameA;
+		std::string	_weaponB;
+		std::string	_name;
 };
 
 #endif
