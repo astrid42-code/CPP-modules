@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/02/10 17:36:15 by astridgault       #+#    #+#              #
-#    Updated: 2022/02/11 16:04:50 by astridgault      ###   ########.fr        #
+#    Created: 2022/02/11 16:03:47 by astridgault       #+#    #+#              #
+#    Updated: 2022/02/11 16:04:40 by astridgault      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	Sed
+NAME		=	Karen_2.0
 
 CC			=	c++
 
@@ -18,11 +18,11 @@ CFLAGS		=	-Wall -Wextra -Werror --std=c++98
 
 RM			=	rm -f
 
-SRCS		=	main.cpp Sed.cpp
+SRCS		=	main.cpp Karen.cpp
 
 OBJS_FILE	=	$(SRCS:.cpp=.o)
 
-INCL		=	Sed.hpp
+INCL		=	Karen.hpp
 
 .c.o:
 			$(CC) $(CFLAGS) -g -c $< -o $(<:.cpp=.o)

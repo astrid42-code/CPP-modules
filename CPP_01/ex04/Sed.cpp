@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 11:52:03 by astridgault       #+#    #+#             */
-/*   Updated: 2022/02/11 16:01:19 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/11 16:03:02 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,3 +50,5 @@ int	ft_replace(std::string file_name, std::string s1, std::string s2){
 	output_file.close();
 	return (0);				
 }
+
+// remplace correctement si pas de \n sinon s'arrete après le \n
