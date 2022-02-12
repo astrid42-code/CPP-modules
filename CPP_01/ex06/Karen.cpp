@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/11 16:05:21 by astridgault       #+#    #+#             */
-/*   Updated: 2022/02/12 19:55:37 by astridgault      ###   ########.fr       */
+/*   Created: 2022/02/12 12:39:56 by astridgault       #+#    #+#             */
+/*   Updated: 2022/02/12 18:28:50 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,27 +21,28 @@ Karen::~Karen(void){
 }
 
 void	Karen::complain(std::string level){
-	//http://sdz.tdct.org/sdz/c-les-pointeurs-sur-fonctions.html
-	// *complaint[] = ptr sur une liste de fcts
-	// sur le modèle int (A::*ptr)(int) = &A::fonction; 
-	// = nom de la classe::*pointeur (le type de fct de plainte sur lequel on va aller pointer) = adresse de la fct à appeler 
 	void	(Karen::*ptr_complain[])(void) = {
 		&Karen::debug, &Karen::info, &Karen::warning, &Karen::error
 	};
 	std::string	complaint_level[] = {"debug", "info", "warning", "error"};
-	// initialiser le level de complainte
-	// comme il y en a plsrs nécessité d'une liste avec ptr_complaint[]
-	// et donc d'une boucle qui va checker le type de level en fct de la string
 	for (int i = 0; i < 4; i++)
-	{
-		// si level = complaint_level, je fais pointer sur la fct associée
-		//*ptr_complain = complaint_level[i];
-		if (level == complaint_level[i]){
-			(this->*ptr_complain[i])();
-			return ;
-		}
-	}
-	std::cout << "No complaint, what is happening to Karen?" << std::endl;	
+		(level = complaint_level[i]);
+		switch (i){
+			case 0 : while (i < 4){
+					(this->*ptr_complain[i++])();
+					//i++;
+				};
+			case 1 : while (i < 4){
+					(this->*ptr_complain[i++])();
+					//i++;
+				};
+			case 2 : while (i < 4){
+					(this->*ptr_complain[i++])();
+					//i++;
+				};
+			case 3 : (this->*ptr_complain[i])();
+			default : std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+		}	
 }
 
 void Karen::debug( void ){

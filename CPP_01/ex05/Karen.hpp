@@ -17,6 +17,5 @@ class Karen{
         void warning( void );
         void error( void );
 };
-typedef void (Karen::*Karen_ptr) (void);
 
 #endif

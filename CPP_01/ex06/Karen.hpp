@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
+/*   Karen.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/08 16:30:22 by astridgault       #+#    #+#             */
-/*   Updated: 2022/02/12 19:56:14 by astridgault      ###   ########.fr       */
+/*   Created: 2022/02/12 12:38:44 by astridgault       #+#    #+#             */
+/*   Updated: 2022/02/12 12:42:11 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef KAREN_HPP
+#define KAREN_HPP
 
-// N = nbr total de zonbies
+#include <iostream>
+#include <string>
 
-// comment verifier si name est null??
+class Karen{
+    public :
+        Karen(void);
+        ~Karen(void);
 
-Zombie* zombieHorde( int N, std::string name ){
-	if (N < 0 || name == "")
-		return (NULL);
-	Zombie	*zombie_horde = new Zombie[N];
-	for (int i = 0; i < N; i++)
-		zombie_horde[i].set_name(name);
-	return (zombie_horde);
-}
+        void complain( std::string level );
+
+    private :
+        void debug( void );
+        void info( void );
+        void warning( void );
+        void error( void );
+};
+//typedef void (Karen::*Karen_ptr) (void);
+
+#endif
