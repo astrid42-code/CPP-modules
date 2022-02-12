@@ -6,14 +6,14 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 17:37:45 by astridgault       #+#    #+#             */
-/*   Updated: 2022/02/11 14:48:19 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/11 17:10:39 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Sed.hpp"
 
-//programme va recevoir 3 args 
-//1 nom du fd, 2 s1, 3 s2
+// le fichier.txt peut-il etre dans l'exo ou doit-il etre dans un sous-dossier?
+// 2eme cas : attention au path
 
 int	main (int ac, char **av){
 	std::string		file_name;
