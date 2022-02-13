@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 18:55:41 by astridgault       #+#    #+#             */
-/*   Updated: 2022/02/13 20:31:40 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/13 21:49:05 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,14 @@
 
 // forme canonique
 
+#include "Fixed.hpp"
 
 int main( void ) {
-	Fixed a;
-	Fixed b( a );
-	Fixed c;
+	Fixed a; // pour le constructeur par défaut
+	Fixed b( a ); // pour le constructeur par copie (copie a dans b)
+	Fixed c; // pour l'opérateur?
 
-	c = b;
+	c = b; 
 
 //	std::cout << a.getRawBits() << std::endl;
 //	std::cout << b.getRawBits() << std::endl;
