@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
+/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 15:16:39 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/13 12:35:58 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/13 13:52:53 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,7 @@ class HumanA
 	private:
 		std::string	_name;
 };
+// club et WeaponA sont le meme objet (car weaponA est une ref de club)
+// donc quand je modifie club ca modifie directement weaponA
 
 #endif
