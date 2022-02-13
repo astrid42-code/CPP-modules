@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+         #
+#    By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/09 15:13:37 by asgaulti          #+#    #+#              #
-#    Updated: 2022/02/09 15:15:11 by asgaulti         ###   ########.fr        #
+#    Updated: 2022/02/13 12:25:00 by astridgault      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CFLAGS		=	-Wall -Wextra -Werror --std=c++98
 
 RM			=	rm -f
 
-SRCS		=	Weapon.cpp HumanA.cpp HumanB.cpp main.cpp
+SRCS		=	Weapon.cpp HumanA.cpp main.cpp HumanB.cpp
 
 OBJS_FILE	=	$(SRCS:.cpp=.o)
 

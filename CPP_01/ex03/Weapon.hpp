@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 15:16:01 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/10 17:29:30 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/12 23:01:24 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ class Weapon
 		~Weapon(void);
 		
 		// set et get la réf de la weapon
-		// réf car va être utilisée dans différentes classes?
-		const std::string	&getType() const;
-		void				setType(const std::string &new_weapon);
+		// réf (&new_weapon) si on veut l'utiliser dans différentes classes?
+		std::string	getType() const;
+		void		setType(std::string new_weapon);
 
 	private:
 		std::string	_weapon;
