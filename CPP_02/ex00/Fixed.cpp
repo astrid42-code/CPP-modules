@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/09 15:17:09 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/13 18:21:33 by astridgault      ###   ########.fr       */
+/*   Created: 2022/02/13 20:16:08 by astridgault       #+#    #+#             */
+/*   Updated: 2022/02/13 20:39:16 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANB_HPP
-#define HUMANB_HPP
+#include "Fixed.hpp"
 
-# include "Weapon.hpp"
+Fixed::Fixed(){
+	std::cout << "Default constructor called" << std::endl;
+}
 
-class HumanB
-{
-	public:
-		HumanB();
-		HumanB(std::string name);
-		~HumanB();
+Fixed::Fixed(const Fixed& copy){
+	std::cout << "Copy constructor called" << std::endl;
+}
 
-		void	setWeapon(Weapon &tmp);
-		void	attack() const;
+Fixed &Fixed::operator=(const Fixed& op){
+	std::cout << "Copy assignment operator called" << std::endl;
+}
 
-	private:
-		Weapon		*_weaponB; // pointeur car objet different de l'objet envoyé par le main
-		// je dois créer un objet pour cette classe, il n'est pas envoyé par le main
-		std::string	_name;
-};
-
-#endif
+Fixed::~Fixed(){
+	std::cout << "Destructor called" << std::endl;
+}

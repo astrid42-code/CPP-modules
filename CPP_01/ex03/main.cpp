@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 10:56:27 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/13 12:27:41 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/13 18:26:36 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int main()
 		Weapon ham = Weapon("ham and cheese sandwich");
 		HumanA hoodie("Hoodie", ham);
 		hoodie.attack();
-		ham.setType("a burger bacon");
+		ham.setType("burger bacon");
 		hoodie.attack();
 	}
 	{
@@ -35,6 +35,13 @@ int main()
 		jim.attack();
 		club.setType("some other type of club");
 		jim.attack();
+
+		Weapon banana = Weapon("banana");
+		HumanB simon("Simon");
+		simon.setWeapon(banana);
+		simon.attack();
+		banana.setType("yassa");
+		simon.attack();
 	}
 	return (0);
 }

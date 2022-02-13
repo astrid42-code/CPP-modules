@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/02/08 10:56:01 by astridgault       #+#    #+#              #
-#    Updated: 2022/02/13 20:26:14 by astridgault      ###   ########.fr        #
+#    Created: 2022/02/13 20:24:24 by astridgault       #+#    #+#              #
+#    Updated: 2022/02/13 20:26:36 by astridgault      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	brainz
+NAME		=	Fixed
 
 CXX			=	c++
 
@@ -18,11 +18,11 @@ CPPFLAGS		=	-Wall -Wextra -Werror --std=c++98
 
 RM			=	rm -f
 
-SRCS		=	Zombie.cpp newZombie.cpp randomChump.cpp main.cpp
+SRCS		=	Fixed.cpp main.cpp
 
 OBJS_FILE	=	$(SRCS:.cpp=.o)
 
-INCL		=	  Zombie.hpp
+INCL		=	  Fixed.hpp
 
 .c.o:
 			$(CXX) $(CPPFLAGS) -g -c $< -o $(<:.cpp=.o)

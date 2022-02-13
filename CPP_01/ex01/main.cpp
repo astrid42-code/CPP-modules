@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 16:29:31 by astridgault       #+#    #+#             */
-/*   Updated: 2022/02/12 19:56:28 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/12 19:58:32 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	main(int ac, char **av){
 	int N = 12;
-	Zombie	*zombie_horde = zombieHorde(N, "");
+	Zombie	*zombie_horde = zombieHorde(N, "Hoodie");
 	
 	if (zombie_horde == NULL){
 		std::cout << "Error" << std::endl;
