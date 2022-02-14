@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 18:55:41 by astridgault       #+#    #+#             */
-/*   Updated: 2022/02/13 21:49:05 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/14 12:24:32 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,13 @@
 //
 
 // surcharge d'opérateur
+// met à jour la valeur de l'entier qui est dans l'instance courante à la valeur de l'entier qui est passé en paramètre
+// ce qui modifie l'instance courante
 
+// si opérateur est un calcul (ex +) :
+//on aura besoin de renvoyer une copie de l'instance (et non plus une référence)
+// avec addition de this_value+la valeur envoyée en param
+// ex : return Fixed(this->_value + fixed_op.getRawBits())
 
 // forme canonique
 
@@ -37,13 +43,13 @@
 int main( void ) {
 	Fixed a; // pour le constructeur par défaut
 	Fixed b( a ); // pour le constructeur par copie (copie a dans b)
-	Fixed c; // pour l'opérateur?
+	Fixed c; // pour l'opérateur
 
-	c = b; 
+	c = b; // appel à la surcharge de l'opérateur d'assignation
 
-//	std::cout << a.getRawBits() << std::endl;
-//	std::cout << b.getRawBits() << std::endl;
-//	std::cout << c.getRawBits() << std::endl;
+	std::cout << a.getRawBits() << std::endl;
+	std::cout << b.getRawBits() << std::endl;
+	std::cout << c.getRawBits() << std::endl;
 
 	return (0);
 }
