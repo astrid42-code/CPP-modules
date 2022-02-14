@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Sed.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
+/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 11:52:03 by astridgault       #+#    #+#             */
-/*   Updated: 2022/02/11 16:44:11 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/14 18:06:33 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ int	ft_replace(std::string file_name, std::string s1, std::string s2){
 	std::ofstream	output_file; // le fichier .replace à créer pour faire les remplacements
 	std::string		line; // sert de buffer en recopiant l'input du fd
 	
-	input_file.open(file_name);
+	input_file.open(file_name.c_str());
 	// verifier que l'ouverture est réussie:
 	if (!input_file.is_open()){
 		std::cout << "Error opening input file" << std::endl;
 		return (1);
 	}
-	output_file.open(file_name + ".replace");
+	output_file.open((file_name + ".replace").c_str());
 	// verifier que l'ouverture est réussie:
 	if (!output_file.is_open()){
 		std::cout << "Error opening output file" << std::endl;
