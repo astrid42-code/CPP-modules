@@ -6,7 +6,7 @@
 #    By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/14 11:35:52 by astridgault       #+#    #+#              #
-#    Updated: 2022/02/14 11:36:37 by astridgault      ###   ########.fr        #
+#    Updated: 2022/02/15 10:46:00 by astridgault      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME		=	Fixed
 
 CXX			=	c++
 
-CPPFLAGS		=	-Wall -Wextra -Werror --std=c++98
+CPPFLAGS	=	-Wall -Wextra -Werror --std=c++98
 
 RM			=	rm -f
 

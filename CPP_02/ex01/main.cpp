@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 12:35:41 by astridgault       #+#    #+#             */
-/*   Updated: 2022/02/14 12:37:33 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/15 12:05:43 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ int main( void ) {
 	Fixed const d( b ); // copie
 	
 	a = Fixed( 1234.4321f ); // opérateur par surcharge
-	
+//	a = Fixed(12);
+
 	std::cout << "a is " << a << std::endl;
 	std::cout << "b is " << b << std::endl;
 	std::cout << "c is " << c << std::endl;
