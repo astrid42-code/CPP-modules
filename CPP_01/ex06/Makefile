@@ -3,18 +3,18 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+         #
+#    By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/12 12:36:57 by astridgault       #+#    #+#              #
-#    Updated: 2022/02/12 12:37:31 by astridgault      ###   ########.fr        #
+#    Updated: 2022/02/15 14:40:40 by asgaulti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	karenFilter
 
-CC			=	c++
+CXX			=	c++
 
-CFLAGS		=	-Wall -Wextra -Werror --std=c++98
+CPPFLAGS		=	-Wall -Wextra -Werror --std=c++98
 
 RM			=	rm -f
 
@@ -25,7 +25,7 @@ OBJS_FILE	=	$(SRCS:.cpp=.o)
 INCL		=	Karen.hpp
 
 .c.o:
-			$(CC) $(CFLAGS) -g -c $< -o $(<:.cpp=.o)
+			$(CXX) $(CPPFLAGS) -g -c $< -o $(<:.cpp=.o)
 
 $(NAME):	$(OBJS_FILE)
 			$(CXX) $(CPPFLAGS) $(OBJS_FILE) -o $(NAME)
