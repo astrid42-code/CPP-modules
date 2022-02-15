@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 12:38:44 by astridgault       #+#    #+#             */
-/*   Updated: 2022/02/12 12:42:11 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/15 17:41:08 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ class Karen{
         Karen(void);
         ~Karen(void);
 
-        void complain( std::string level );
-
+        //void complain( std::string level );
+        void	complain(std::string level);
     private :
         void debug( void );
         void info( void );
