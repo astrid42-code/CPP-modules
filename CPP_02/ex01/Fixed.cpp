@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 11:37:20 by astridgault       #+#    #+#             */
-/*   Updated: 2022/02/15 12:04:02 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/15 13:06:53 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ Fixed::Fixed(){
 Fixed::Fixed(const int n) : _value(n){
     std::cout << "Int constructor called" << std::endl;
     // convertit l'int en int à virgule fixe
-	this->_value = n;
     this->_value = n << this->_bits; // bitshift pour décaler la virgule fixe (*2^8 chaque bit)
     //std::cout << "_value = " << _value << std::endl;
 }
@@ -28,6 +27,8 @@ Fixed::Fixed(const int n) : _value(n){
 Fixed::Fixed(const float f) : _value(f){
     std::cout << "Float constructor called" << std::endl;
     // convertit le float en virgule fixe
+	this->_value = (int)roundf(f) * 2^8;
+	
 }
 
 Fixed::Fixed(const Fixed& fixed_copy){
