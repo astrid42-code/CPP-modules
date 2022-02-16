@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <string>
-#include <math.h> // pour roundf ()
+#include <cmath> // pour roundf ()
 
 class Fixed{
 	public:

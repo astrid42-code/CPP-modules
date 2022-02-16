@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/14 11:37:20 by astridgault       #+#    #+#             */
-/*   Updated: 2022/02/16 14:17:05 by asgaulti         ###   ########.fr       */
+/*   Created: 2022/02/16 16:30:06 by asgaulti          #+#    #+#             */
+/*   Updated: 2022/02/16 16:39:27 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,16 @@ Fixed::Fixed(){
 }
 
 Fixed::Fixed(const int n) : _value(n){
-    std::cout << "Int constructor called" << std::endl;
-    // convertit l'int en int à virgule fixe
-    this->_value = n << this->_bits; // bitshift pour décaler la virgule fixe (*2^8 chaque bit)
-    //std::cout << "_value = " << _value << std::endl;
+	std::cout << "Int constructor called" << std::endl;
+	// convertit l'int en int à virgule fixe
+	this->_value = n << this->_bits;
+	//std::cout << "_value = " << _value << std::endl;
 }
 
 Fixed::Fixed(const float f) : _value(f){
-    std::cout << "Float constructor called" << std::endl;
-    // convertit le float en virgule fixe
-	this->_value = roundf(f * (1 << _bits)); // * (1 << _bits)) equivalent de * 2 puissance 8
-	// bitshift de 8 pour 1 (00000001 > le 1 prend la position 9)
-	// et devient le chiffre le plus a droite de la partie entiere 
+	std::cout << "Float constructor called" << std::endl;
+	// convertit le float en virgule fixe
+	this->_value = roundf(f * (1 << _bits));
 	
 }
 
@@ -66,13 +64,12 @@ void    Fixed::setRawBits( int const raw ){
 float   Fixed::toFloat( void ) const{
 	float	f = this->_value / (float)(1 << _bits);
 	// calcul inverse du constructeur
-
 	return (f);
 }
 
 int Fixed::toInt( void ) const{
-    int n;
+	int n;
 
-    n = this->_value;
-    return (n >> this->_bits);
+	n = this->_value;
+	return (n >> this->_bits);
 }
