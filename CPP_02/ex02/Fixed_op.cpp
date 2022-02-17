@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed_op.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 12:20:30 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/17 12:22:26 by asgaulti         ###   ########.fr       */
+/*   Updated: 2022/02/17 14:28:36 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,26 +56,32 @@ Fixed &Fixed::operator!=(const Fixed& fixed_op){
 
 Fixed &Fixed::operator+(const Fixed& fixed_op){
 	std::cout << "Copy assignment operator + called" << std::endl;
-	this->_value += fixed_op.getRawBits();
+	Fixed	fixed(this->toFloat() - fixed_op.toFloat());
+	*this = fixed;
 	return (*this);
 }
 
 Fixed &Fixed::operator-(const Fixed& fixed_op){
 	std::cout << "Copy assignment operator - called" << std::endl;
-	this->_value -= fixed_op.getRawBits();
+	Fixed	fixed(this->toFloat() - fixed_op.toFloat());
+	*this = fixed;
 	return (*this);
 }
 
 // pb dans le result du *
 Fixed &Fixed::operator*(const Fixed& fixed_op){
 	std::cout << "Copy assignment operator * called" << std::endl;
-	this->_value *= fixed_op.getRawBits();
+	// créer une instance de classe temporaire pour multiplier les valeurs en float
+	// (et non avec le fixed qui est en bitshift après le constructeur) 
+	Fixed	fixed(this->toFloat() * fixed_op.toFloat());
+	*this = fixed;
 	return (*this);
 }
 
 Fixed &Fixed::operator/(const Fixed& fixed_op){
 	std::cout << "Copy assignment operator / called" << std::endl;
-	this->_value /= fixed_op.getRawBits();
+	Fixed	fixed(this->toFloat() / fixed_op.toFloat());
+	*this = fixed;
 	return (*this);
 }
 

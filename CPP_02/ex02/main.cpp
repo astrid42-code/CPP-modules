@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 16:27:57 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/17 12:23:28 by asgaulti         ###   ########.fr       */
+/*   Updated: 2022/02/17 14:28:55 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int main( void ) {
 	Fixed a; //(constructeur par défaut, a = 0)
-//	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-	Fixed const b(Fixed(5));
+	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+//	Fixed const b(Fixed(5.05f));
 //	Fixed const c(a);
 	
 	std::cout << a << std::endl;
