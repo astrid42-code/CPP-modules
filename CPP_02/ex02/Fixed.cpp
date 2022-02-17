@@ -6,7 +6,7 @@
 /*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 16:30:06 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/17 09:44:20 by asgaulti         ###   ########.fr       */
+/*   Updated: 2022/02/17 12:21:44 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,80 +45,8 @@ Fixed &Fixed::operator=(const Fixed& fixed_op){
 	this->_value = fixed_op.getRawBits();
 	return (*this);
 }
-/*
-// operateurs de comparaison
-
-Fixed &Fixed::operator>(const Fixed& fixed_op){
-	std::cout << "Copy assignment operator > called" << std::endl;
-	this->_value = fixed_op.getRawBits();
-	return (*this);
-}
-
-Fixed &Fixed::operator>=(const Fixed& fixed_op){
-	std::cout << "Copy assignment operator >= called" << std::endl;
-	this->_value = fixed_op.getRawBits();
-	return (*this);
-}
-
-Fixed &Fixed::operator<(const Fixed& fixed_op){
-	std::cout << "Copy assignment operator < called" << std::endl;
-	this->_value = fixed_op.getRawBits();
-	return (*this);
-}
-
-Fixed &Fixed::operator<=(const Fixed& fixed_op){
-	std::cout << "Copy assignment operator <= called" << std::endl;
-	this->_value = fixed_op.getRawBits();
-	return (*this);
-}
-
-Fixed &Fixed::operator==(const Fixed& fixed_op){
-	std::cout << "Copy assignment operator == called" << std::endl;
-	this->_value = fixed_op.getRawBits();
-	return (*this);
-}
-
-Fixed &Fixed::operator!=(const Fixed& fixed_op){
-	std::cout << "Copy assignment operator != called" << std::endl;
-	this->_value = fixed_op.getRawBits();
-	return (*this);
-}
-*/
-
-// Operateura arithmetiques
-
-Fixed &Fixed::operator+=(const Fixed& fixed_op){
-	std::cout << "Copy assignment operator += called" << std::endl;
-	this->_value += fixed_op.getRawBits();
-	return (*this);
-}
-
-Fixed &Fixed::operator-=(const Fixed& fixed_op){
-	std::cout << "Copy assignment operator -= called" << std::endl;
-	this->_value -= fixed_op.getRawBits();
-	return (*this);
-}
-
-// pb dans le result du *
-Fixed &Fixed::operator*=(const Fixed& fixed_op){
-	std::cout << "Copy assignment operator *= called" << std::endl;
-	this->_value *= fixed_op.getRawBits();
-	return (*this);
-}
-
-Fixed &Fixed::operator/=(const Fixed& fixed_op){
-	std::cout << "Copy assignment operator /= called" << std::endl;
-	this->_value /= fixed_op.getRawBits();
-	return (*this);
-}
-
-std::ostream & operator<<(std::ostream & o, Fixed const & fixed_op){
-	o << fixed_op.toFloat(); // bitshift pour mettre en float
-	return (o);
-}
 
 int Fixed::getRawBits( void ) const{
-	//std::cout << "getRawBits member function called" << std::endl;
 	return (this->_value);
 }
 

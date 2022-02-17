@@ -6,7 +6,7 @@
 /*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 16:27:57 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/17 09:41:32 by asgaulti         ###   ########.fr       */
+/*   Updated: 2022/02/17 12:23:28 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int main( void ) {
 	Fixed a; //(constructeur par défaut, a = 0)
 //	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-	Fixed const b(Fixed(5.05f));
+	Fixed const b(Fixed(5));
 //	Fixed const c(a);
 	
 	std::cout << a << std::endl;
@@ -30,22 +30,22 @@ int main( void ) {
 	std::cout << a << std::endl;
 	std::cout << b << std::endl;
 
-	a += b;
+	a + b;
 	std::cout << a << std::endl;
 	std::cout << b << std::endl;
 //	std::cout << c << std::endl;
 	
-	a -= b;
+	a - b;
 	std::cout << a << std::endl;
 	std::cout << b << std::endl;
 //	std::cout << c << std::endl;
 	
-	a *= b;
+	a * b;
 	std::cout << a << std::endl;
 	std::cout << b << std::endl;
 //	std::cout << c << std::endl;
 	
-	a /= b;
+	a / b;
 	std::cout << a << std::endl;
 	std::cout << b << std::endl;
 //	std::cout << c << std::endl;

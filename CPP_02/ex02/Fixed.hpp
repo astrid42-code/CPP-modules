@@ -22,10 +22,10 @@ class Fixed{
 		Fixed & operator==(Fixed const & fixed_op);
 		Fixed & operator!=(Fixed const & fixed_op);
 */
-		Fixed & operator+=(Fixed const & fixed_op); // fixedop - fixed ; et valeur stockée dans fixed
-		Fixed & operator-=(Fixed const & fixed_op);
-		Fixed & operator*=(Fixed const & fixed_op);
-		Fixed & operator/=(Fixed const & fixed_op);
+		Fixed & operator+(Fixed const & fixed_op); // fixedop - fixed ; et valeur stockée dans fixed
+		Fixed & operator-(Fixed const & fixed_op);
+		Fixed & operator*(Fixed const & fixed_op);
+		Fixed & operator/(Fixed const & fixed_op);
 
 /*		Fixed & operator++(Fixed const & fixed_op);
 		// Fixed & operator(Fixed const & fixed_op); //++i
