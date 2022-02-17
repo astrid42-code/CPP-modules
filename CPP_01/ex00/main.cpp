@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
+/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 11:16:56 by astridgault       #+#    #+#             */
-/*   Updated: 2022/02/10 11:32:34 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/15 18:33:41 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ int	main(int ac, char **av){
 	Zombie	stack_zombie("Foo");
 	Zombie	*heap_zombie = newZombie("Bar");
 
+	(void)av;
 	if (ac != 1){
 		std::cout << "Error in arguments" << std::endl;
 		return (1);

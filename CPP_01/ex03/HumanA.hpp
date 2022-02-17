@@ -6,7 +6,7 @@
 /*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 15:16:39 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/13 13:52:53 by asgaulti         ###   ########.fr       */
+/*   Updated: 2022/02/15 18:40:09 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ class HumanA
 		~HumanA(void);
 
 		void	attack(void) const;
-		Weapon	&weaponA; // attribut qui récupère la réf &weapon dans le constructeur surchargé
-		//(récupère réf de l'objet weaponA dont les méthodes et attributs sont affectés dans la classe Weapon)
 
 	private:
 		std::string	_name;
+		Weapon	&weaponA; // attribut qui récupère la réf &weapon dans le constructeur surchargé
+		//(récupère réf de l'objet weaponA dont les méthodes et attributs sont affectés dans la classe Weapon)
 };
 // club et WeaponA sont le meme objet (car weaponA est une ref de club)
 // donc quand je modifie club ca modifie directement weaponA

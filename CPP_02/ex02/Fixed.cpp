@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
+/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 16:30:06 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/16 21:56:10 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/17 09:44:20 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ Fixed::Fixed(const float f) : _value(f){
 	std::cout << "Float constructor called" << std::endl;
 	// convertit le float en virgule fixe
 	this->_value = roundf(f * (1 << _bits));
-	
 }
 
 Fixed::Fixed(const Fixed& fixed_copy){
@@ -47,6 +46,8 @@ Fixed &Fixed::operator=(const Fixed& fixed_op){
 	return (*this);
 }
 /*
+// operateurs de comparaison
+
 Fixed &Fixed::operator>(const Fixed& fixed_op){
 	std::cout << "Copy assignment operator > called" << std::endl;
 	this->_value = fixed_op.getRawBits();
@@ -83,6 +84,8 @@ Fixed &Fixed::operator!=(const Fixed& fixed_op){
 	return (*this);
 }
 */
+
+// Operateura arithmetiques
 
 Fixed &Fixed::operator+=(const Fixed& fixed_op){
 	std::cout << "Copy assignment operator += called" << std::endl;

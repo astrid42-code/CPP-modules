@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
+/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 16:27:57 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/16 21:56:53 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/17 09:41:32 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ int main( void ) {
 //	Fixed const c(a);
 	
 	std::cout << a << std::endl;
-/*	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-*/	std::cout << b << std::endl;
+	// std::cout << ++a << std::endl;
+	// std::cout << a << std::endl;
+	// std::cout << a++ << std::endl;
+	// std::cout << a << std::endl;
+	std::cout << b << std::endl;
 //	std::cout << c << std::endl;
 
 	a = b;
@@ -50,11 +50,12 @@ int main( void ) {
 	std::cout << b << std::endl;
 //	std::cout << c << std::endl;
 	
-/*	std::cout << Fixed::min( a, b ) << std::endl;
-	std::cout << Fixed::max( a, b ) << std::endl;
-*/	
+	// std::cout << Fixed::min( a, b ) << std::endl;
+	// std::cout << Fixed::max( a, b ) << std::endl;
+
+	
 	return (0);
 }
 
-// pb1: pour chaque copy assignment operator il n'y a pas de destructor called
+// pb1: pour chaque copy assignment operator il n'y a pas de destructor called > normal car ne detruit pas b
 // pb2: résultat * chelou

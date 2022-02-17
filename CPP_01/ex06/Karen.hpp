@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Karen.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
+/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 12:38:44 by astridgault       #+#    #+#             */
-/*   Updated: 2022/02/15 17:41:08 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/15 18:28:58 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ class Karen{
         Karen(void);
         ~Karen(void);
 
-        //void complain( std::string level );
         void	complain(std::string level);
     private :
         void debug( void );

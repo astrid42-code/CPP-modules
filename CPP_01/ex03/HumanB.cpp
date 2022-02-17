@@ -6,7 +6,7 @@
 /*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 15:16:48 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/13 13:59:10 by asgaulti         ###   ########.fr       */
+/*   Updated: 2022/02/17 12:06:13 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ HumanB::HumanB()
 
 HumanB::HumanB(std::string name) : _name(name)
 {
+	this->_weaponB = NULL; // protection pour le cas ou on n'envoie pas de weapon
 }
 
 HumanB::~HumanB()
@@ -25,6 +26,8 @@ HumanB::~HumanB()
 }
 
 void	HumanB::attack() const{
+	if (this->_weaponB == NULL)
+		return;
     std::cout << this->_name << " attacks with their ";
     std::cout << this->_weaponB->getType() << std::endl; // -> car _weaponB est un ptr
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
+/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 12:35:41 by astridgault       #+#    #+#             */
-/*   Updated: 2022/02/15 12:05:43 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/17 09:41:12 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int main( void ) {
 	Fixed const d( b ); // copie
 	
 	a = Fixed( 1234.4321f ); // opérateur par surcharge
+	// fixed est detruit ensuite car il n'est pas rappele
 //	a = Fixed(12);
 
 	std::cout << "a is " << a << std::endl;

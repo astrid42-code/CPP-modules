@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
+/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 15:16:01 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/12 23:01:24 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/17 12:07:25 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Weapon
 		
 		// set et get la réf de la weapon
 		// réf (&new_weapon) si on veut l'utiliser dans différentes classes?
-		std::string	getType() const;
+		const std::string	&getType() const;
 		void		setType(std::string new_weapon);
 
 	private:
