@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 16:30:06 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/18 11:57:54 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/18 14:05:30 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,20 +61,19 @@ int Fixed::toInt( void ) const{
 	return (n >> this->_bits);
 }
 
-Fixed	&	Fixed::min(Fixed &a, Fixed &b){
+Fixed	&	min(Fixed &a, Fixed &b){
 	if (a < b)
 		return (a);
 	return (b);
 }
 
 Fixed const	&Fixed::min(Fixed const &a, Fixed const &b){
-	//return (Fixed::min (a, b));
 	if (a < b)
 		return (a);
 	return (b);
 }
 
-Fixed	&	Fixed::max(Fixed &a, Fixed &b){
+Fixed	&	max(Fixed &a, Fixed &b){
 	if (a < b)
 		return (b);
 	return (a);

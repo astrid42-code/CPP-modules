@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 16:27:57 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/18 13:44:34 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/18 13:54:23 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,8 @@ int main( void ) {
 	std::cout << "MIN/MAX\n" << std::endl;
 	std::cout << "min : " << a.min( a, b ) << std::endl;
 	std::cout << "max : " << a.max( a, b ) << std::endl;
-//	std::cout << "const min : " << Fixed::min( a, b ) << std::endl;
-//	std::cout << "const max : " << Fixed::max( a, b ) << std::endl;
+	std::cout << "const min : " << Fixed::min( a, b ) << std::endl;
+	std::cout << "const max : " << Fixed::max( a, b ) << std::endl;
 	
 	std::cout << std::endl;
 
