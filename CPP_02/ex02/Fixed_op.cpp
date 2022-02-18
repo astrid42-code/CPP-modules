@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 12:20:30 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/18 10:54:48 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/18 13:46:29 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,32 @@ Fixed & Fixed::operator/(const Fixed & fixed_op){
 }
 
 // Opérateurs incrémentation/décrémentation
+
+// ++i
+Fixed  Fixed::operator++(void){
+	this->_value++;
+	return (*this);
+}
+
+// i++
+Fixed  Fixed::operator++(int){
+	Fixed tmp(*this); // copie de mon instance
+	this->_value++; // incrementer i
+	return (tmp); // renvoyer la copie non incrémentée
+}
+
+// --i
+Fixed  Fixed::operator--(void){
+	this->_value--; // incrémente la valeur et la renvoie
+	return (*this);
+}
+
+// i--
+Fixed  Fixed::operator--(int){
+	Fixed tmp(*this); // copie de mon instance 
+	this->_value--;
+	return (tmp);
+}
 
 // ostream opérateur
 

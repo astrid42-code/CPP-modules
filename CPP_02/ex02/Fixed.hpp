@@ -27,19 +27,20 @@ class Fixed{
 		Fixed & operator*(Fixed const & fixed_op);
 		Fixed & operator/(Fixed const & fixed_op);
 
-/*		Fixed & operator++(Fixed const & fixed_op);
-		// Fixed & operator++(Fixed const & fixed_op); //++i
-		Fixed & operator--(Fixed const & fixed_op);
-		// Fixed & operator--(Fixed const & fixed_op); //--i
-*/
-		int				getRawBits( void ) const; // retourne la valeur de l'int
-		void			setRawBits( int const raw ); // initialise la valeur de l'int 
-        float   		toFloat( void ) const; // convertit valeur en virgule fixe en nbr à virgule flottante
-        int     		toInt( void ) const; // convertit valeur en virgule fixe en nbr entier
-		static int		min(int &a, int &b); // retourne le plus petit
-		static float	min(const float &a, const float &b); // idem
-		static float	max(float &x, float &y); // // retourne le plus grand
-		static float	max(const float &x, const float &y); // idem
+		Fixed 		operator++(void); // ++i
+		Fixed 	 	operator++(int); // i++
+		Fixed 		operator--(void); // --i
+		Fixed 	 	operator--(int); // i--
+
+		int			getRawBits( void ) const; // retourne la valeur de l'int
+		void		setRawBits( int const raw ); // initialise la valeur de l'int 
+        float   	toFloat( void ) const; // convertit valeur en virgule fixe en nbr à virgule flottante
+        int     	toInt( void ) const; // convertit valeur en virgule fixe en nbr entier
+		Fixed	&	min(Fixed &a, Fixed &b); // retourne le plus petit
+		Fixed const &min(Fixed const &a, Fixed const &b); // idem
+		Fixed	&	max(Fixed &a, Fixed &b); // // retourne le plus grand
+		Fixed const &max(Fixed const &a, Fixed const &b); // idem
+
 
 	private:
 		int					_value; // stocke la valeur du nbr en virgule fixe
