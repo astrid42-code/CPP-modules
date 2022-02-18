@@ -15,22 +15,22 @@ class Fixed{
 
 		Fixed & operator=(Fixed const & fixed_op);
 
-/*		Fixed & operator>(Fixed const & fixed_op);
-		Fixed & operator>=(Fixed const & fixed_op);
-		Fixed & operator<(Fixed const & fixed_op);
-		Fixed & operator<=(Fixed const & fixed_op);
-		Fixed & operator==(Fixed const & fixed_op);
-		Fixed & operator!=(Fixed const & fixed_op);
-*/
+		bool	operator>(Fixed const & fixed_op) const;
+		bool	operator>=(Fixed const & fixed_op) const;
+		bool	operator<(Fixed const & fixed_op) const;
+		bool	operator<=(Fixed const & fixed_op) const;
+		bool	operator==(Fixed const & fixed_op) const;
+		bool	operator!=(Fixed const & fixed_op) const;
+
 		Fixed & operator+(Fixed const & fixed_op); // fixedop - fixed ; et valeur stockée dans fixed
 		Fixed & operator-(Fixed const & fixed_op);
 		Fixed & operator*(Fixed const & fixed_op);
 		Fixed & operator/(Fixed const & fixed_op);
 
 /*		Fixed & operator++(Fixed const & fixed_op);
-		// Fixed & operator(Fixed const & fixed_op); //++i
+		// Fixed & operator++(Fixed const & fixed_op); //++i
 		Fixed & operator--(Fixed const & fixed_op);
-		// Fixed & operator=(Fixed const & fixed_op); //--i
+		// Fixed & operator--(Fixed const & fixed_op); //--i
 */
 		int				getRawBits( void ) const; // retourne la valeur de l'int
 		void			setRawBits( int const raw ); // initialise la valeur de l'int 

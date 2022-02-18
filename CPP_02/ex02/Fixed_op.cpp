@@ -6,84 +6,96 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 12:20:30 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/17 14:28:36 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/18 10:54:48 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-/*
+
+// peut servir à récupérer la valeur fixed_op 
+//(ex : en faisant fixed_op.getRawBits() on récupère _value de l'instance courante)
+// puis je peux mettre à jour la _value de mon instance courante 
+// en faisant this->_value = fixed_op.getRawBits();
+// puis comme je renvoie une référence sur une classe Fixed
+// je déréférence mon pointeur this pour récupérer ma référence
+Fixed &Fixed::operator=(const Fixed& fixed_op){
+	std::cout << "Copy assignment operator called" << std::endl;
+	this->_value = fixed_op.getRawBits();
+	return (*this);
+}
+
 // operateurs de comparaison
 
-Fixed &Fixed::operator>(const Fixed& fixed_op){
-	std::cout << "Copy assignment operator > called" << std::endl;
-	this->_value = fixed_op.getRawBits();
-	return (*this);
+// vérifie que variable est strictement supérieure à une valeur
+// ex : x > 3 : retourne 1 si x supérieur à 3, sinon 0
+bool Fixed::operator>(const Fixed& fixed_op) const{
+	//std::cout << "Copy assignment operator > called" << std::endl;
+	return (this->_value > fixed_op.getRawBits()); // retourne le résultat de la comparaison (1 ou 0)
 }
 
-Fixed &Fixed::operator>=(const Fixed& fixed_op){
-	std::cout << "Copy assignment operator >= called" << std::endl;
-	this->_value = fixed_op.getRawBits();
-	return (*this);
+bool Fixed::operator>=(const Fixed& fixed_op) const{
+	//std::cout << "Copy assignment operator >= called" << std::endl;
+	return (this->_value >= fixed_op.getRawBits());
 }
 
-Fixed &Fixed::operator<(const Fixed& fixed_op){
-	std::cout << "Copy assignment operator < called" << std::endl;
-	this->_value = fixed_op.getRawBits();
-	return (*this);
+bool Fixed::operator<(const Fixed& fixed_op) const{
+	//std::cout << "Copy assignment operator < called" << std::endl;
+	return (this->_value < fixed_op.getRawBits());
 }
 
-Fixed &Fixed::operator<=(const Fixed& fixed_op){
-	std::cout << "Copy assignment operator <= called" << std::endl;
-	this->_value = fixed_op.getRawBits();
-	return (*this);
+bool Fixed::operator<=(const Fixed& fixed_op) const{
+	//std::cout << "Copy assignment operator <= called" << std::endl;
+	return (this->_value <= fixed_op.getRawBits());
 }
 
-Fixed &Fixed::operator==(const Fixed& fixed_op){
-	std::cout << "Copy assignment operator == called" << std::endl;
-	this->_value = fixed_op.getRawBits();
-	return (*this);
+// compare 2 valeurs et vérifie leur égalité
+bool Fixed::operator==(const Fixed& fixed_op) const{
+	//std::cout << "Copy assignment operator == called" << std::endl;
+	return (this->_value == fixed_op.getRawBits());
 }
 
-Fixed &Fixed::operator!=(const Fixed& fixed_op){
-	std::cout << "Copy assignment operator != called" << std::endl;
-	this->_value = fixed_op.getRawBits();
-	return (*this);
+// vérifie qu'une variable est != d'une valeur
+bool Fixed::operator!=(const Fixed & fixed_op) const{
+	//std::cout << "Copy assignment operator != called" << std::endl;
+	return (this->_value != fixed_op.getRawBits());
 }
-*/
 
-// Operateur arithmetiques
+// Operateurs de calcul
 
-Fixed &Fixed::operator+(const Fixed& fixed_op){
-	std::cout << "Copy assignment operator + called" << std::endl;
-	Fixed	fixed(this->toFloat() - fixed_op.toFloat());
+Fixed & Fixed::operator+(const Fixed & fixed_op){
+//	std::cout << "Copy assignment operator + called" << std::endl;
+	Fixed	fixed(this->toFloat() + fixed_op.toFloat());
 	*this = fixed;
 	return (*this);
 }
 
-Fixed &Fixed::operator-(const Fixed& fixed_op){
-	std::cout << "Copy assignment operator - called" << std::endl;
+Fixed & Fixed::operator-(const Fixed & fixed_op){
+//	std::cout << "Copy assignment operator - called" << std::endl;
 	Fixed	fixed(this->toFloat() - fixed_op.toFloat());
-	*this = fixed;
-	return (*this);
+	*this = fixed; 
+	return (*this); 
 }
 
-// pb dans le result du *
-Fixed &Fixed::operator*(const Fixed& fixed_op){
-	std::cout << "Copy assignment operator * called" << std::endl;
+Fixed & Fixed::operator*(const Fixed & fixed_op){
+//	std::cout << "Copy assignment operator * called" << std::endl;
 	// créer une instance de classe temporaire pour multiplier les valeurs en float
 	// (et non avec le fixed qui est en bitshift après le constructeur) 
 	Fixed	fixed(this->toFloat() * fixed_op.toFloat());
 	*this = fixed;
-	return (*this);
+	return (*this); // renvoie l'objet (this est déréférencé)
 }
 
-Fixed &Fixed::operator/(const Fixed& fixed_op){
-	std::cout << "Copy assignment operator / called" << std::endl;
+Fixed & Fixed::operator/(const Fixed & fixed_op){
+//	std::cout << "Copy assignment operator / called" << std::endl;
 	Fixed	fixed(this->toFloat() / fixed_op.toFloat());
 	*this = fixed;
 	return (*this);
 }
+
+// Opérateurs incrémentation/décrémentation
+
+// ostream opérateur
 
 std::ostream & operator<<(std::ostream & o, Fixed const & fixed_op){
 	o << fixed_op.toFloat(); // bitshift pour mettre en float
