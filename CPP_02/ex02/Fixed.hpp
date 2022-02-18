@@ -36,10 +36,10 @@ class Fixed{
 		void		setRawBits( int const raw ); // initialise la valeur de l'int 
         float   	toFloat( void ) const; // convertit valeur en virgule fixe en nbr à virgule flottante
         int     	toInt( void ) const; // convertit valeur en virgule fixe en nbr entier
-		Fixed const &min(Fixed const &a, Fixed const &b); // idem
-		Fixed	&	min(Fixed &a, Fixed &b); // retourne le plus petit (static)
-		Fixed const &max(Fixed const &a, Fixed const &b); // idem
-		Fixed	&	max(Fixed &a, Fixed &b); // // retourne le plus grand (static)
+		static Fixed const &min(Fixed const &a, Fixed const &b); // idem
+		static Fixed	&	min(Fixed &a, Fixed &b); // retourne le plus petit (static)
+		static Fixed const &max(Fixed const &a, Fixed const &b); // idem
+		static Fixed	&	max(Fixed &a, Fixed &b); // // retourne le plus grand (static)
 
 
 	private:
