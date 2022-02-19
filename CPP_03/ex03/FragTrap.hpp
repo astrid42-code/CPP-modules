@@ -8,7 +8,6 @@
 class	FragTrap : public ClapTrap 
 {
 	
-	friend std::ostream & operator<<(std::ostream & o, FragTrap const & fragtrap_op);
 
 	public:
 		FragTrap(void);
@@ -24,8 +23,9 @@ class	FragTrap : public ClapTrap
 		void highFivesGuys(void);
 	
 	private:
-		std::string	_name;
 
 };
+
+std::ostream & operator<<(std::ostream & o, FragTrap const & claptrap_op);
 
 #endif

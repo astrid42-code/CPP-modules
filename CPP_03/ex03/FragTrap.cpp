@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 16:49:53 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/19 16:58:41 by asgaulti         ###   ########.fr       */
+/*   Updated: 2022/02/19 20:39:30 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,16 @@ FragTrap & FragTrap::operator=(FragTrap const & fragtrap_op){
 	return (*this);
 }
 
+std::ostream & operator<<(std::ostream & o, FragTrap const & claptrap_op){
+	o
+	<< "ScavTrap:" << std::endl
+    << "name: " << claptrap_op.get_name() << std::endl
+	<< "hit points: " << claptrap_op.get_hit() << std::endl
+	<< "energy points: " << claptrap_op.get_energy() << std::endl
+	<< "damage: " << claptrap_op.get_damage() << std::endl;
+	return (o);
+}
+
 void FragTrap::attack(const std::string& target){
 	if (this->_energy_points <= 0 || this->_hit_points <= 0){
 		std::cout << this->_name << " stops attack" << std::endl;
@@ -76,4 +86,20 @@ void FragTrap::beRepaired(unsigned int amount){
 
 void FragTrap::highFivesGuys(){
 	std::cout << "Hey, my name is " << this->_name << ", let's highfive!" << std::endl;
+}
+
+std::string	FragTrap::get_name(void) const{
+	return (this->_name);
+}
+
+int	FragTrap::get_hit(void) const{
+	return (this->_hit_points);
+}
+
+int	FragTrap::get_energy(void) const{
+	return (this->_energy_points);
+}
+
+int	FragTrap::get_damage(void) const{
+	return (this->_attack_damage);
 }

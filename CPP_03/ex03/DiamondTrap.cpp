@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 17:01:16 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/19 17:03:24 by asgaulti         ###   ########.fr       */
+/*   Updated: 2022/02/19 20:40:13 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,16 @@ DiamondTrap & DiamondTrap::operator=(DiamondTrap const & diamond_op){
 	this->_attack_damage = diamond_op._attack_damage;
 	return (*this);
 }
-
+// checker qui on appelle (claptrap ou autre)
+std::ostream & operator<<(std::ostream & o, DiamondTrap const & claptrap_op){
+	o
+	<< "ScavTrap:" << std::endl
+    << "name: " << claptrap_op.get_name() << std::endl
+	<< "hit points: " << claptrap_op.get_hit() << std::endl
+	<< "energy points: " << claptrap_op.get_energy() << std::endl
+	<< "damage: " << claptrap_op.get_damage() << std::endl;
+	return (o);
+}
 void DiamondTrap::attack(const std::string& target){
 	if (this->_energy_points <= 0 || this->_hit_points <= 0){
 		std::cout << this->_name << " can't attack anymore" << std::endl;

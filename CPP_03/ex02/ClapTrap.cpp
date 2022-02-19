@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 16:14:16 by astridgault       #+#    #+#             */
-/*   Updated: 2022/02/19 16:35:38 by asgaulti         ###   ########.fr       */
+/*   Updated: 2022/02/19 20:38:04 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,16 @@ ClapTrap & ClapTrap::operator=(ClapTrap const & claptrap_op){
 	return (*this);
 }
 
+std::ostream & operator<<(std::ostream & o, ClapTrap const & claptrap_op){
+	o
+	<< "ClapTrap:" << std::endl
+    << "name: " << claptrap_op.get_name() << std::endl
+	<< "hit points: " << claptrap_op.get_hit() << std::endl
+	<< "energy points: " << claptrap_op.get_energy() << std::endl
+	<< "damage: " << claptrap_op.get_damage() << std::endl;
+	return (o);
+}
+
 void ClapTrap::attack(const std::string& target){
 	if (this->_energy_points <= 0 || this->_hit_points <= 0){
 		std::cout << this->_name << " can't attack anymore" << std::endl;
@@ -72,4 +82,20 @@ void ClapTrap::beRepaired(unsigned int amount){
 	std::cout << this->_name << " has been repaired and gets ";
 	std::cout << this->_hit_points << " hit points." << std::endl;
 	this->_energy_points--;
+}
+
+std::string	ClapTrap::get_name(void) const{
+	return (this->_name);
+}
+
+int	ClapTrap::get_hit(void) const{
+	return (this->_hit_points);
+}
+
+int	ClapTrap::get_energy(void) const{
+	return (this->_energy_points);
+}
+
+int	ClapTrap::get_damage(void) const{
+	return (this->_attack_damage);
 }

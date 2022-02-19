@@ -6,7 +6,6 @@
 
 class	ClapTrap{
 	
-	friend std::ostream & operator<<(std::ostream & o, ClapTrap const & claptrap_op);
 
 	public:
 		ClapTrap(void);
@@ -22,13 +21,15 @@ class	ClapTrap{
 	
 	private:
 
-		std::string	_name;
 		
 	protected: // private donnant acces aux objets des classes enfants
 
+		std::string	_name;
 		int			_hit_points;
 		int			_energy_points;
 		int			_attack_damage;
 };
+
+std::ostream & operator<<(std::ostream & o, ClapTrap const & claptrap_op);
 
 #endif

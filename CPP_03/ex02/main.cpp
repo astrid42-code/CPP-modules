@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 16:13:09 by astridgault       #+#    #+#             */
-/*   Updated: 2022/02/19 16:59:39 by asgaulti         ###   ########.fr       */
+/*   Updated: 2022/02/19 20:27:09 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,22 @@ int	main( void ){
 	ClapTrap	lulu("Lucie");
 	FragTrap	max("Maxime");
 	
-	// for (int i = 0; i < 5; i++){
-		lulu.attack("Johan");
-		lulu.takeDamage(3);
-		lulu.beRepaired(2);	
-	// }
+	std::cout << std::endl;
+	std::cout << lulu << std::endl;
+	std::cout << max << std::endl;
+	
+	lulu.attack("Johan");
+	lulu.takeDamage(3);
+	lulu.beRepaired(2);	
 
-	// for (int i = 0; i < 5; i++){
-		max.attack("Julien");
-		max.takeDamage(10);
-		max.beRepaired(5);
-		max.highFivesGuys();	
-	// }
+	max.attack("Julien");
+	max.takeDamage(10);
+	max.beRepaired(5);
+	max.highFivesGuys();	
+
+	std::cout << std::endl;
+	std::cout << max << std::endl;
+	std::cout << lulu << std::endl;
 	
 	return (0);
 }

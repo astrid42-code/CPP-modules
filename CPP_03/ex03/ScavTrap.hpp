@@ -16,8 +16,6 @@
 
 class	ScavTrap : public ClapTrap // = le scavtrap herite du claptrap
 {
-	
-	friend std::ostream & operator<<(std::ostream & o, ScavTrap const & scavtrap_op);
 
 	public:
 		ScavTrap(void);
@@ -37,5 +35,7 @@ class	ScavTrap : public ClapTrap // = le scavtrap herite du claptrap
 		std::string	_name;
 
 };
+
+std::ostream & operator<<(std::ostream & o, ScavTrap const & claptrap_op);
 
 #endif

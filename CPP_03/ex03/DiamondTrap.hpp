@@ -9,7 +9,6 @@
 class	DiamondTrap : public FragTrap, public ScavTrap // virtual?
 {
 	
-	friend std::ostream & operator<<(std::ostream & o, DiamondTrap const & diamondtrap_op);
 
 	public:
 		DiamondTrap(void);
@@ -25,8 +24,10 @@ class	DiamondTrap : public FragTrap, public ScavTrap // virtual?
 		void highFivesGuys(void);
 	
 	private:
-		std::string	_name;
+	//	std::string	_name;
 
 };
+// verifier qui on appelle (claptrap ou autre)
+std::ostream & operator<<(std::ostream & o, DiamondTrap const & claptrap_op);
 
 #endif
