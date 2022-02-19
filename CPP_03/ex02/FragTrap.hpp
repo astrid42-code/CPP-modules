@@ -19,14 +19,8 @@ class	FragTrap : public ClapTrap
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
 		void highFivesGuys(void);
-
-		std::string	get_name(void) const;
-		int			get_energy(void) const;
-		int			get_hit(void) const;
-		int			get_damage(void) const;
 	
 	private:
-		//std::string	_name;
 
 };
 

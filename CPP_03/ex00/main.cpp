@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 16:13:09 by astridgault       #+#    #+#             */
-/*   Updated: 2022/02/19 20:14:21 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/19 21:19:27 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int	main( void ){
 	ClapTrap	lulu("Lucie");
+	ClapTrap	lu(lulu);
 	
 	std::cout << lulu << std::endl;
 	std::cout << std::endl;

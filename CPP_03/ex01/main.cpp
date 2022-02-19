@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 16:13:09 by astridgault       #+#    #+#             */
-/*   Updated: 2022/02/19 20:11:25 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/19 21:28:03 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ int	main( void ){
 	ClapTrap	lulu("Lucie");
 	ScavTrap	lison("Elise");
 	
+	std::cout << std::endl;
 	std::cout << lulu << std::endl;
 	std::cout << lison << std::endl;
-	std::cout << std::endl;
 	
 	lulu.attack("Johan");
 	lulu.takeDamage(3);
@@ -36,6 +36,8 @@ int	main( void ){
 	
 	return (0);
 }
+
+// question : claptrap par défault renvoie un msg claptrap avec le name de scavtrap (est-ce bien ok?)
 
 /* heritage
 

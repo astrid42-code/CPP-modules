@@ -22,7 +22,7 @@ class	ClapTrap{
 	private:
 
 		
-	protected: // private donnant acces aux objets des classes enfants
+	protected:
 
 		std::string	_name;
 		int			_hit_points;

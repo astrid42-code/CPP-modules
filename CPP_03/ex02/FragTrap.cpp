@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 16:49:53 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/19 20:42:31 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/19 21:33:04 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ FragTrap::~FragTrap(void){
 
 FragTrap & FragTrap::operator=(FragTrap const & fragtrap_op){
 	std::cout << "FragTrap copy assignment operator called" << std::endl;
-	// initialiser les attributs 
 	this->_name = fragtrap_op._name;
 	this->_hit_points = fragtrap_op._hit_points;
 	this->_energy_points = fragtrap_op._energy_points;
@@ -50,7 +49,7 @@ FragTrap & FragTrap::operator=(FragTrap const & fragtrap_op){
 
 std::ostream & operator<<(std::ostream & o, FragTrap const & claptrap_op){
 	o
-	<< "ScavTrap:" << std::endl
+	<< "FragTrap:" << std::endl
     << "name: " << claptrap_op.get_name() << std::endl
 	<< "hit points: " << claptrap_op.get_hit() << std::endl
 	<< "energy points: " << claptrap_op.get_energy() << std::endl
@@ -87,20 +86,4 @@ void FragTrap::beRepaired(unsigned int amount){
 
 void FragTrap::highFivesGuys(){
 	std::cout << "Hey, my name is " << this->_name << ", let's highfive!" << std::endl;
-}
-
-std::string	FragTrap::get_name(void) const{
-	return (this->_name);
-}
-
-int	FragTrap::get_hit(void) const{
-	return (this->_hit_points);
-}
-
-int	FragTrap::get_energy(void) const{
-	return (this->_energy_points);
-}
-
-int	FragTrap::get_damage(void) const{
-	return (this->_attack_damage);
 }

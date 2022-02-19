@@ -30,16 +30,13 @@ class	ScavTrap : public ClapTrap // = le scavtrap herite du claptrap
 		void beRepaired(unsigned int amount);
 		void guardGate(void);
 
-		std::string	get_name(void) const;
-		int			get_energy(void) const;
-		int			get_hit(void) const;
-		int			get_damage(void) const;
-	
 	private:
-		//std::string	_name;
 
 };
 
-std::ostream & operator<<(std::ostream & o, ScavTrap const & scavtrap_op);
+// c bien claptrap à envoyer pas scavtrap?
+std::ostream & operator<<(std::ostream & o, ScavTrap const & claptrap_op);
 
 #endif
+
+// retirer attack, damage et repaired dans les classes enfants?

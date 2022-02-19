@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 16:13:09 by astridgault       #+#    #+#             */
-/*   Updated: 2022/02/19 20:27:09 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/19 21:34:56 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ int	main( void ){
 	lulu.beRepaired(2);	
 
 	max.attack("Julien");
-	max.takeDamage(10);
-	max.beRepaired(5);
+	max.takeDamage(20);
+	max.beRepaired(10);
 	max.highFivesGuys();	
 
 	std::cout << std::endl;
@@ -36,13 +36,3 @@ int	main( void ){
 	
 	return (0);
 }
-
-/* heritage
-
-factoriser des cptmts d'une serie de classes differentes aux comportements assez similaires
- et les rassembler dans une meme classe
- ensuite les objets derives pourront utiliser ces cptmts
-
-*/
-
-// question : pk cree t il un claptrap par defaut? : car scavtrap herite de claptrap?

@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 15:39:54 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/19 20:38:56 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/19 21:29:02 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,20 +87,4 @@ void ScavTrap::beRepaired(unsigned int amount){
 
 void ScavTrap::guardGate(){
 	std::cout << this->_name << " is in GateKeeper mode." << std::endl;
-}
-
-std::string	ScavTrap::get_name(void) const{
-	return (this->_name);
-}
-
-int	ScavTrap::get_hit(void) const{
-	return (this->_hit_points);
-}
-
-int	ScavTrap::get_energy(void) const{
-	return (this->_energy_points);
-}
-
-int	ScavTrap::get_damage(void) const{
-	return (this->_attack_damage);
 }
