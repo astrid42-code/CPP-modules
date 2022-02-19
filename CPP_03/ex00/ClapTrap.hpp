@@ -8,7 +8,7 @@ class	ClapTrap{
 
 	public:
 		ClapTrap(void);
-		ClapTrap(std::string name, int hp, int ep, int ad);
+		ClapTrap(std::string name);
 		ClapTrap(ClapTrap const & claptrap_copy);
 		~ClapTrap(void);
 
@@ -22,5 +22,6 @@ class	ClapTrap{
 		int			_energy_points;
 		int			_attack_damage;
 };
+std::ostream & operator<<(std::ostream & o, ClapTrap const & claptrap_op);
 
 #endif
