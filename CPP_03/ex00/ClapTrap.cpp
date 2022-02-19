@@ -6,7 +6,7 @@
 /*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 16:14:16 by astridgault       #+#    #+#             */
-/*   Updated: 2022/02/19 10:07:05 by asgaulti         ###   ########.fr       */
+/*   Updated: 2022/02/19 10:51:39 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,18 +48,28 @@ ClapTrap & ClapTrap::operator=(ClapTrap const & claptrap_op){
 }
 
 void ClapTrap::attack(const std::string& target){
+	if (this->_energy_points <= 0 || this->_hit_points <= 0){
+		std::cout << this->_name << " can't attack anymore" << std::endl;
+		return ;
+	}
 	std::cout << "Claptrap " << this->_name << " attacks " << target;
 	std::cout << ", causing " << this->_attack_damage << " points of damage!" << std::endl;
 	this->_energy_points--;
-	this->_hit_points--;
 }
 
 void ClapTrap::takeDamage(unsigned int amount){
-	this->_attack_damage = amount;
+	if (this->_energy_points <= 0 || this->_hit_points <= 0)
+		return ;
+	this->_hit_points -= amount;
+	std::cout << this->_name << " has taken ";
+	std::cout << amount << " damage points." << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount){
-	this->_energy_points = amount;
+	if (this->_energy_points <= 0 || this->_hit_points <= 0)
+		return ;
+	this->_hit_points += amount;
+	std::cout << this->_name << " has been repaired and gets ";
+	std::cout << this->_hit_points << " hit points." << std::endl;
 	this->_energy_points--;
-	this->_hit_points--;
 }
