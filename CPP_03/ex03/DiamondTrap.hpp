@@ -6,9 +6,8 @@
 # include "FragTrap.hpp"
 # include "ScavTrap.hpp"
 
-class	DiamondTrap : public FragTrap, public ScavTrap // virtual?
+class	DiamondTrap : virtual public FragTrap, virtual public ScavTrap // virtual?
 {
-	
 
 	public:
 		DiamondTrap(void);
@@ -21,13 +20,13 @@ class	DiamondTrap : public FragTrap, public ScavTrap // virtual?
 		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
-		void highFivesGuys(void);
+		void whoAmI();
 	
 	private:
-	//	std::string	_name;
+		std::string	_name;
 
 };
-// verifier qui on appelle (claptrap ou autre)
-std::ostream & operator<<(std::ostream & o, DiamondTrap const & claptrap_op);
+
+std::ostream & operator<<(std::ostream & o, DiamondTrap const & diamondtrap_op);
 
 #endif

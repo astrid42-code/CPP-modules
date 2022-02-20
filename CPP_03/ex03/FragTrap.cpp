@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
+/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 16:49:53 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/19 21:37:10 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/20 12:04:32 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ FragTrap::FragTrap(void){
 	std::cout << "FragTrap : " << this->_name << " awakes." << std::endl;
 }
 
-FragTrap::FragTrap(std::string name) : _name(name){
+FragTrap::FragTrap(std::string name){
+	this->_name = name;
 	this->_hit_points = 100;
 	this->_energy_points = 100;
 	this->_attack_damage = 30;

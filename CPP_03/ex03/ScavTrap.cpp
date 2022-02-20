@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
+/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 15:39:54 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/19 21:36:41 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/20 12:03:59 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ ScavTrap::ScavTrap(void){
 	std::cout << "ScavTrap : " << this->_name << " is here." << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name) : _name(name){
-//	this->_name;
+ScavTrap::ScavTrap(std::string name){
+	this->_name = name;
 	this->_hit_points = 100;
 	this->_energy_points = 50;
 	this->_attack_damage = 20;
