@@ -24,6 +24,6 @@ class	FragTrap : public ClapTrap
 
 };
 
-std::ostream & operator<<(std::ostream & o, FragTrap const & claptrap_op);
+std::ostream & operator<<(std::ostream & o, FragTrap const & fragtrap_op);
 
 #endif

@@ -5,7 +5,10 @@
 # include <string>
 # include "ClapTrap.hpp"
 
-class	FragTrap : public ClapTrap // ou virtual public?
+// virtual : frag herite de clap et le modifie puis scav herite du meme clap et le modifie
+// > ils partagent le meme claptrap
+
+class	FragTrap : public virtual ClapTrap 
 {
 	public:
 		FragTrap(void);
@@ -24,11 +27,10 @@ class	FragTrap : public ClapTrap // ou virtual public?
 
 	protected:
 		int			_frag_hp;
-	//	int			_frag_ep;
 		int			_frag_ad;
 
 };
 
-std::ostream & operator<<(std::ostream & o, FragTrap const & claptrap_op);
+std::ostream & operator<<(std::ostream & o, FragTrap const & fragtrap_op);
 
 #endif

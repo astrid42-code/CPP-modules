@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
+/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 16:13:09 by astridgault       #+#    #+#             */
-/*   Updated: 2022/02/19 21:19:27 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/21 13:49:20 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ int	main( void ){
 	ClapTrap	lulu("Lucie");
 	ClapTrap	lu(lulu);
 	
-	std::cout << lulu << std::endl;
 	std::cout << std::endl;
+	std::cout << lulu << std::endl;
 	
 	for (int i = 0; i < 10; i++){
 		lulu.attack("Johan");

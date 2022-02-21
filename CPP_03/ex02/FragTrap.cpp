@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
+/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 16:49:53 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/19 21:33:04 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/21 15:57:00 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(void){
+FragTrap::FragTrap(void) : ClapTrap()
+{
 	this->_name = "Unknown";
 	this->_hit_points = 100;
 	this->_energy_points = 100;
@@ -20,7 +21,8 @@ FragTrap::FragTrap(void){
 	std::cout << "FragTrap : " << this->_name << " awakes." << std::endl;
 }
 
-FragTrap::FragTrap(std::string name){
+FragTrap::FragTrap(std::string name) : ClapTrap(name)
+{
 	this->_name = name;
 	this->_hit_points = 100;
 	this->_energy_points = 100;
@@ -28,7 +30,8 @@ FragTrap::FragTrap(std::string name){
 	std::cout << "FragTrap : " << this->_name << " awakes." << std::endl;
 }
 	
-FragTrap::FragTrap(FragTrap const & fragtrap_copy){
+FragTrap::FragTrap(FragTrap const & fragtrap_copy) : ClapTrap(fragtrap_copy)
+{
 	*this = fragtrap_copy;
 	std::cout << "FragTrap : " << this->_name << " copy is awake." << std::endl;
 }
@@ -47,13 +50,13 @@ FragTrap & FragTrap::operator=(FragTrap const & fragtrap_op){
 	return (*this);
 }
 
-std::ostream & operator<<(std::ostream & o, FragTrap const & claptrap_op){
+std::ostream & operator<<(std::ostream & o, FragTrap const & fragtrap_op){
 	o
 	<< "FragTrap:" << std::endl
-    << "name: " << claptrap_op.get_name() << std::endl
-	<< "hit points: " << claptrap_op.get_hit() << std::endl
-	<< "energy points: " << claptrap_op.get_energy() << std::endl
-	<< "damage: " << claptrap_op.get_damage() << std::endl;
+    << "name: " << fragtrap_op.get_name() << std::endl
+	<< "hit points: " << fragtrap_op.get_hit() << std::endl
+	<< "energy points: " << fragtrap_op.get_energy() << std::endl
+	<< "damage: " << fragtrap_op.get_damage() << std::endl;
 	return (o);
 }
 

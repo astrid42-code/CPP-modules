@@ -3,24 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
+/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 15:39:54 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/19 21:29:02 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/21 15:15:42 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(void){
+ScavTrap::ScavTrap(void) : ClapTrap()
+{
 	this->_name = "Unknown ScavTrap";
 	this->_hit_points = 100;
 	this->_energy_points = 50;
 	this->_attack_damage = 20;
+	
 	std::cout << "ScavTrap : " << this->_name << " is here." << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name){
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
+{
 	this->_name = name;
 	this->_hit_points = 100;
 	this->_energy_points = 50;
@@ -28,19 +31,19 @@ ScavTrap::ScavTrap(std::string name){
 	std::cout << "ScavTrap : " << this->_name << " is here." << std::endl;
 }
 	
-ScavTrap::ScavTrap(ScavTrap const & scavtrap_copy){
+ScavTrap::ScavTrap(ScavTrap const & scavtrap_copy) : ClapTrap(scavtrap_copy)
+{
 	*this = scavtrap_copy;
 	std::cout << "ScavTrap : " << this->_name << " copy is here." << std::endl;
 }
-		
-		
+
 ScavTrap::~ScavTrap(void){
 	std::cout << "ScavTrap : " << this->_name << " is down" << std::endl;
 }
 
 ScavTrap & ScavTrap::operator=(ScavTrap const & scavtrap_op){
 	std::cout << "ScavTrap copy assignment operator called" << std::endl;
-	// initialiser les attributs 
+
 	this->_name = scavtrap_op._name;
 	this->_hit_points = scavtrap_op._hit_points;
 	this->_energy_points = scavtrap_op._energy_points;
@@ -48,13 +51,13 @@ ScavTrap & ScavTrap::operator=(ScavTrap const & scavtrap_op){
 	return (*this);
 }
 
-std::ostream & operator<<(std::ostream & o, ScavTrap const & claptrap_op){
+std::ostream & operator<<(std::ostream & o, ScavTrap const & scavtrap_op){
 	o
 	<< "ScavTrap:" << std::endl
-    << "name: " << claptrap_op.get_name() << std::endl
-	<< "hit points: " << claptrap_op.get_hit() << std::endl
-	<< "energy points: " << claptrap_op.get_energy() << std::endl
-	<< "damage: " << claptrap_op.get_damage() << std::endl;
+    << "name: " << scavtrap_op.get_name() << std::endl
+	<< "hit points: " << scavtrap_op.get_hit() << std::endl
+	<< "energy points: " << scavtrap_op.get_energy() << std::endl
+	<< "damage: " << scavtrap_op.get_damage() << std::endl;
 	return (o);
 }
 

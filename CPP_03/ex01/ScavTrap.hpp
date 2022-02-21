@@ -5,16 +5,7 @@
 # include <string>
 # include "ClapTrap.hpp"
 
-// herite des comportements de ClapTrap ET a en plus ses propres comportements
-// (ici le guardGate)
-// si je veux que l'attack soit differente de celle de Claprap je dois la reecrire
-// sinon inutile
-
-// l'heritage peut etre public, protected ou private (voir la notion de virtual?)
-// il peut aussi y avoir des heritages multiples
-// (mais attention aux conflits > voir notion d'heritage en diamant)
-
-class	ScavTrap : public ClapTrap // = le scavtrap herite du claptrap
+class	ScavTrap : public ClapTrap
 {
 
 	public:
@@ -34,9 +25,6 @@ class	ScavTrap : public ClapTrap // = le scavtrap herite du claptrap
 
 };
 
-// c bien claptrap à envoyer pas scavtrap?
-std::ostream & operator<<(std::ostream & o, ScavTrap const & claptrap_op);
+std::ostream & operator<<(std::ostream & o, ScavTrap const & scavtrap_op);
 
 #endif
-
-// retirer attack, damage et repaired dans les classes enfants?

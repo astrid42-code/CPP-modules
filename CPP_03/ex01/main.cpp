@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
+/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 16:13:09 by astridgault       #+#    #+#             */
-/*   Updated: 2022/02/19 21:28:03 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/21 15:21:52 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,3 @@ int	main( void ){
 	
 	return (0);
 }
-
-// question : claptrap par défault renvoie un msg claptrap avec le name de scavtrap (est-ce bien ok?)
-
-/* heritage
-
-factoriser des cptmts d'une serie de classes differentes aux comportements assez similaires
- et les rassembler dans une meme classe
- ensuite les objets derives pourront utiliser ces cptmts
-
-*/
-
-// question : pk cree t il un claptrap par defaut? : car scavtrap herite de claptrap?

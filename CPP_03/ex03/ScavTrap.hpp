@@ -14,7 +14,7 @@
 // il peut aussi y avoir des heritages multiples
 // (mais attention aux conflits > voir notion d'heritage en diamant)
 
-class	ScavTrap : public ClapTrap // ou virtual public?
+class	ScavTrap : public virtual ClapTrap // virtual 
 {
 
 	public:

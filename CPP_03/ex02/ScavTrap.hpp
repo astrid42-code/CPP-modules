@@ -25,6 +25,6 @@ class	ScavTrap : public ClapTrap
 
 };
 
-std::ostream & operator<<(std::ostream & o, ScavTrap const & claptrap_op);
+std::ostream & operator<<(std::ostream & o, ScavTrap const & scavtrap_op);
 
 #endif

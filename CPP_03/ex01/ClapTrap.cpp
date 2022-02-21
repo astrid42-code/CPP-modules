@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
+/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 16:14:16 by astridgault       #+#    #+#             */
-/*   Updated: 2022/02/19 21:24:04 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/21 13:50:15 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ ClapTrap::~ClapTrap(void){
 
 ClapTrap & ClapTrap::operator=(ClapTrap const & claptrap_op){
 	std::cout << "ClapTrap copy assignment operator called" << std::endl;
-	// initialiser les attributs 
+	
 	this->_name = claptrap_op._name;
 	this->_hit_points = claptrap_op._hit_points;
 	this->_energy_points = claptrap_op._energy_points;

@@ -6,11 +6,11 @@
 #    By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/19 16:48:09 by asgaulti          #+#    #+#              #
-#    Updated: 2022/02/19 16:49:12 by asgaulti         ###   ########.fr        #
+#    Updated: 2022/02/21 16:18:50 by asgaulti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	LineWork
+NAME		=	Diamond
 
 CXX			=	c++
 
@@ -18,11 +18,12 @@ CPPFLAGS	=	-Wall -Wextra -Werror --std=c++98
 
 RM			=	rm -f
 
-SRCS		=	ClapTrap.cpp ScavTrap.cpp FragTrap.cpp main.cpp
+SRCS		=	ClapTrap.cpp ScavTrap.cpp FragTrap.cpp main.cpp \
+				DiamondTrap.cpp
 
 OBJS_FILE	=	$(SRCS:.cpp=.o)
 
-INCL		=	ClapTrap.hpp ScavTrap.hpp FragTrap.hpp
+INCL		=	ClapTrap.hpp ScavTrap.hpp FragTrap.hpp DiamondTrap.hpp
 
 .c.o:
 			$(CXX) $(CPPFLAGS) -g -c $< -o $(<:.cpp=.o)
