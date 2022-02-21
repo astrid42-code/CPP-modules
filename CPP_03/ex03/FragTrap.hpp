@@ -5,10 +5,8 @@
 # include <string>
 # include "ClapTrap.hpp"
 
-class	FragTrap : public ClapTrap 
+class	FragTrap : public ClapTrap // ou virtual public?
 {
-	
-
 	public:
 		FragTrap(void);
 		FragTrap(std::string name);
@@ -23,6 +21,11 @@ class	FragTrap : public ClapTrap
 		void highFivesGuys(void);
 	
 	private:
+
+	protected:
+		int			_frag_hp;
+	//	int			_frag_ep;
+		int			_frag_ad;
 
 };
 

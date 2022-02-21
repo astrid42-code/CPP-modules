@@ -14,7 +14,7 @@
 // il peut aussi y avoir des heritages multiples
 // (mais attention aux conflits > voir notion d'heritage en diamant)
 
-class	ScavTrap : public ClapTrap
+class	ScavTrap : public ClapTrap // ou virtual public?
 {
 
 	public:
@@ -32,7 +32,11 @@ class	ScavTrap : public ClapTrap
 
 	
 	private:
-		std::string	_name;
+
+	protected:
+	//	int			_scav_hp;
+		int			_scav_ep;
+	//	int			_scav_ad;
 
 };
 

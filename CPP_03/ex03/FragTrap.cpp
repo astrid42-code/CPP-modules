@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 16:49:53 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/20 12:04:32 by asgaulti         ###   ########.fr       */
+/*   Updated: 2022/02/20 19:11:43 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@ FragTrap::FragTrap(void){
 	this->_hit_points = 100;
 	this->_energy_points = 100;
 	this->_attack_damage = 30;
+
+	this->_frag_hp = 100;
+//	this->_frag_ep = 100;
+	this->_frag_ad = 100;
+	
 	std::cout << "FragTrap : " << this->_name << " awakes." << std::endl;
 }
 
@@ -25,15 +30,24 @@ FragTrap::FragTrap(std::string name){
 	this->_hit_points = 100;
 	this->_energy_points = 100;
 	this->_attack_damage = 30;
+
+	this->_frag_hp = 100;
+//	this->_frag_ep = 100;
+	this->_frag_ad = 100;
+	
 	std::cout << "FragTrap : " << this->_name << " awakes." << std::endl;
 }
 	
 FragTrap::FragTrap(FragTrap const & fragtrap_copy){
 	*this = fragtrap_copy;
+
+	this->_frag_hp = fragtrap_copy._frag_hp;
+//	this->_frag_ep = fragtrap_copy._frag_ep;
+	this->_frag_ad = fragtrap_copy._frag_ad;
+	
 	std::cout << "FragTrap : " << this->_name << " copy is awake." << std::endl;
 }
-		
-		
+
 FragTrap::~FragTrap(void){
 	std::cout << "FragTrap : " << this->_name << " is back in bed" << std::endl;
 }
@@ -45,6 +59,11 @@ FragTrap & FragTrap::operator=(FragTrap const & fragtrap_op){
 	this->_hit_points = fragtrap_op._hit_points;
 	this->_energy_points = fragtrap_op._energy_points;
 	this->_attack_damage = fragtrap_op._attack_damage;
+
+	this->_frag_hp = fragtrap_op._frag_hp;
+//	this->_frag_ep = fragtrap_op._frag_ep;
+	this->_frag_ad = fragtrap_op._frag_ad;
+	
 	return (*this);
 }
 

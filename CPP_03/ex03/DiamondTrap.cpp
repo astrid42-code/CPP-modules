@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 17:01:16 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/20 12:10:27 by asgaulti         ###   ########.fr       */
+/*   Updated: 2022/02/20 19:10:38 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 DiamondTrap::DiamondTrap(void){
 	this->_name = "Unknown";
-	this->_hit_points = 100;
-	this->_energy_points = 50;
-	this->_attack_damage = 30;
+	this->_hit_points = 100; // ou = FragTrap::_frag_hp; pour donner les pts du parent
+	this->_energy_points = 50; // ou = ScavTrap::_scav_ep;
+	this->_attack_damage = 30; // ou = FragTrap::_frag_ad;
 	std::cout << "DiamondTrap : " << this->_name << " is born." << std::endl;
 }
 
@@ -29,6 +29,9 @@ DiamondTrap::DiamondTrap(std::string name) : _name(name){
 	
 DiamondTrap::DiamondTrap(DiamondTrap const & diamondtrap_copy){
 	*this = diamondtrap_copy;
+	this->_hit_points = diamondtrap_copy._frag_hp;
+	this->_energy_points = diamondtrap_copy._scav_ep;
+	this->_attack_damage = diamondtrap_copy._frag_ad;
 	std::cout << "DiamondTrap : " << this->_name << " copy is born." << std::endl;
 }
 
