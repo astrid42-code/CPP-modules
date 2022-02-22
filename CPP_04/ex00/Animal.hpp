@@ -10,7 +10,7 @@ class Animal{
 	
 		Animal();
 		//const Animal(std::string const &type = std::string("default type")); // initialise le type avec une valeur donnee ou un default
-		Animal(Animal const & animal_copy);
+		Animal(Animal const & animal_copy) const;
 		~Animal();
 
 		Animal & operator=(Animal const & animal_op);
@@ -22,7 +22,7 @@ class Animal{
 	private:
 
 	protected:
-		std::string type;
+		std::string _type;
 
 };
 
