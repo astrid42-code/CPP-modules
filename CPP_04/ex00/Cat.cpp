@@ -6,7 +6,7 @@
 /*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 12:19:42 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/23 12:19:55 by asgaulti         ###   ########.fr       */
+/*   Updated: 2022/02/23 14:16:48 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,12 @@ Cat & Cat::operator=(Cat const & cat_op){
 	return (*this);
 }
 
-void	Cat::setType(std::string sound){
-    _sound = sound;
+void	Cat::setType(std::string type){
+    _type = type;
 }
 
 std::string	Cat::getType() const{
-    return (_sound);
+    return (_type);
 }
 
 void	Cat::makeSound() const{

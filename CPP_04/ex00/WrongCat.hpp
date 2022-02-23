@@ -9,17 +9,19 @@ class WrongCat : public WrongAnimal
 {
 
 	public:
-		WrongCat(std::string const &type = std::string("default wrong cat"));
+		WrongCat();
+		WrongCat(WrongCat & wrongcat);
 		WrongCat(WrongCat const & wrongcat_copy);
 		~WrongCat();
 
 		WrongCat & operator=(WrongCat const & wrongcat_op);
 
-		void		setType();
-		std::string	getType();
-		void		makeSound();
+		void		setType(std::string type);
+		std::string	getType() const;
+		void		makeSound() const;
 
 	private:
+	std::string	_sound;
 
 	protected:
 
