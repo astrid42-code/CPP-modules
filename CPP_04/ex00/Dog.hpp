@@ -14,23 +14,14 @@
 
 class Dog : public Animal
 {
-
 	public:
 		Dog();
-		Dog(std::string const &type);
 		Dog(Dog const & dog_copy);
 		~Dog();
 
 		Dog & operator=(Dog const & dog_op);
 
-		void			setType(std::string sound);
-		std::string		getType() const;
-		virtual void	makeSound() const; // pour la methode qu on veut specifier comme celle a utiliser 
-
-	private:
-	std::string	_sound;
-
-	protected:
+		virtual void	makeSound() const; // virtual : pour la methode qu on veut specifier comme celle a utiliser 
 
 };
 

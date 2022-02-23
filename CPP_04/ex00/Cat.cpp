@@ -3,26 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 12:19:42 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/23 14:16:48 by asgaulti         ###   ########.fr       */
+/*   Updated: 2022/02/23 17:59:56 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
+#include "Animal.hpp"
 
-Cat::Cat() : Animal(){
-	_type = "Default cat"; //initialiser au cas ou il ne serait pas utilise
+Cat::Cat() : Animal("Cat") {
+    _type = "Default cat";
     std::cout << _type << " constructor called" << std::endl;
 }
 
-Cat::Cat(std::string const &type){
-	_type = type;
-    std::cout << "Cat constructor called" << std::endl;
-}
-
-Cat::Cat(Cat const & cat_copy) {
+Cat::Cat(Cat const & cat_copy) : Animal(cat_copy._type){
 	*this = cat_copy;
     std::cout << "Cat copy called" << std::endl;
 }
@@ -36,14 +32,6 @@ Cat & Cat::operator=(Cat const & cat_op){
 
 	_type = cat_op._type;
 	return (*this);
-}
-
-void	Cat::setType(std::string type){
-    _type = type;
-}
-
-std::string	Cat::getType() const{
-    return (_type);
 }
 
 void	Cat::makeSound() const{

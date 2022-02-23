@@ -3,17 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 11:44:59 by astridgault       #+#    #+#             */
-/*   Updated: 2022/02/23 12:24:12 by asgaulti         ###   ########.fr       */
+/*   Updated: 2022/02/23 18:06:42 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongAnimal.hpp"
 
 WrongAnimal::WrongAnimal(){
-	_type = "Default wronganimal"; //initialiser au cas ou il ne serait pas utilise
+    _type = "Default wronganimal";
+    std::cout << _type << " constructor called" << std::endl;
+}
+
+WrongAnimal::WrongAnimal(std::string type) : _type(type){
     std::cout << _type << " constructor called" << std::endl;
 }
 
@@ -31,10 +35,6 @@ WrongAnimal & WrongAnimal::operator=(WrongAnimal const & wronganimal_copy){
 
 	_type = wronganimal_copy._type;
 	return (*this);
-}
-
-void	WrongAnimal::setType(std::string type){
-    _type = type;
 }
 
 std::string	WrongAnimal::getType() const{
