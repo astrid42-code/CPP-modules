@@ -46,6 +46,7 @@ class Fixed{
 		int					_value; // stocke la valeur du nbr en virgule fixe
 		const static int	_bits = 8; // stocke le nbr de bits de la partie fractionnaire (valeur de 8 ???)
 };
+
 std::ostream & operator<<(std::ostream & o, Fixed const & fixed_op);
 
 #endif

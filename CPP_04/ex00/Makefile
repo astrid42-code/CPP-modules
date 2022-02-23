@@ -6,7 +6,7 @@
 #    By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/20 12:16:36 by asgaulti          #+#    #+#              #
-#    Updated: 2022/02/20 13:31:25 by asgaulti         ###   ########.fr        #
+#    Updated: 2022/02/23 09:37:34 by asgaulti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,9 @@ NAME		=	Polymorphism
 
 CXX			=	c++
 
-CPPFLAGS	=	-Wall -Wextra -Werror --std=c++98
+CXXFLAGS	=	-Wall -Wextra -Werror --std=c++98
+# CXXFLAGS pour compil cpp uniquement
+# CPPFLAGS pour compil cpp et c
 
 RM			=	rm -f
 
@@ -26,10 +28,10 @@ OBJS_FILE	=	$(SRCS:.cpp=.o)
 INCL		=	Animal.hpp Cat.hpp Dog.hpp WrongAnimal.hpp WrongCat.hpp
 
 .c.o:
-			$(CXX) $(CPPFLAGS) -g -c $< -o $(<:.cpp=.o)
+			$(CXX) $(CXXFLAGS) -g -c $< -o $(<:.cpp=.o)
 
 $(NAME):	$(OBJS_FILE)
-			$(CXX) $(CPPFLAGS) $(OBJS_FILE) -o $(NAME)
+			$(CXX) $(CXXFLAGS) $(OBJS_FILE) -o $(NAME)
 
 all:		$(NAME)
 

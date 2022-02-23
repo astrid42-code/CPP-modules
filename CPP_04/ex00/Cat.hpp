@@ -9,18 +9,19 @@ class Cat : public Animal
 {
 
 	public:
-		// Cat();
-		Cat(std::string const &type = std::string("default cat"));
+		Cat();
+		Cat(std::string const &type);
 		Cat(Cat const & cat_copy);
-		~Cat();
+		virtual ~Cat();
 
 		Cat & operator=(Cat const & cat_op);
 
-		void		setType();
-		std::string	getType();
-		void		makeSound();
+		void			setType(std::string sound);
+		std::string		getType() const;
+		virtual void	makeSound() const;
 
 	private:
+		std::string	_sound;
 
 	protected:
 

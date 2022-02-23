@@ -26,3 +26,7 @@ Zombie	*newZombie( std::string name );
 void		randomChump( std::string name );
 
 #endif
+
+// Zombie(std::string const &name = std::string("defaultName"));
+// = constructeur par defaut avec parametre mais si pas de string name envoye
+// il prendra comme nom default name

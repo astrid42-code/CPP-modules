@@ -10,14 +10,14 @@ class Animal{
 	
 		Animal();
 		//const Animal(std::string const &type = std::string("default type")); // initialise le type avec une valeur donnee ou un default
-		Animal(Animal const & animal_copy) const;
-		~Animal();
+		Animal(Animal const & animal_copy);
+		virtual ~Animal();  // virtual pour detruire correctement sans leaks
 
 		Animal & operator=(Animal const & animal_op);
 
-		void		setType();
-		std::string	getType();
-		void		makeSound();
+		void			setType(std::string type);
+		std::string		getType() const;
+		virtual void	makeSound() const; // pour que le bruit soit propre a l animal (et pas celui du chat ou du chien)
 
 	private:
 

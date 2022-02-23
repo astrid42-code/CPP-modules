@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+         #
+#    By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/13 20:24:24 by astridgault       #+#    #+#              #
-#    Updated: 2022/02/13 20:26:36 by astridgault      ###   ########.fr        #
+#    Updated: 2022/02/21 10:00:56 by asgaulti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME		=	Fixed
 
 CXX			=	c++
 
-CPPFLAGS		=	-Wall -Wextra -Werror --std=c++98
+CPPFLAGS	=	-Wall -Wextra -Werror --std=c++98
 
 RM			=	rm -f
 

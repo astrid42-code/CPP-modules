@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
+/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 11:37:20 by astridgault       #+#    #+#             */
-/*   Updated: 2022/02/18 10:57:04 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/21 10:04:56 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,4 +75,9 @@ Fixed &Fixed::operator=(const Fixed& fixed_op){
 	std::cout << "Copy assignment operator called" << std::endl;
 	this->_value = fixed_op.getRawBits();
 	return (*this);
+}
+
+std::ostream & operator<<(std::ostream & o, Fixed const & fixed_op){
+	o << fixed_op.toFloat();
+	return (o);
 }

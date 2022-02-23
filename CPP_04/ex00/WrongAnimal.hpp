@@ -8,21 +8,21 @@ class WrongAnimal{
 
 	public:
 	
-	//WrongAnimal();
-		WrongAnimal(std::string const &type = std::string("default wrong animal"));
+		WrongAnimal();
+		WrongAnimal(std::string const &type);
 		WrongAnimal(WrongAnimal const & wronganimal_copy);
 		~WrongAnimal();
 
 		WrongAnimal & operator=(WrongAnimal const & wronganimal_op);
 
-		void		setType();
-		std::string	getType();
-		void		makeSound();
+		void		setType(std::string type);
+		std::string	getType() const;
+		void		makeSound() const;
 
 	private:
 
 	protected:
-		std::string type;
+		std::string _type;
 
 };
 
