@@ -6,15 +6,15 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 12:20:10 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/23 18:11:52 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/24 18:23:36 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
 Animal::Animal(){
-	_type = "Default animal"; //initialiser au cas ou il ne serait pas utilise
-    std::cout << _type << " constructor called" << std::endl;
+    _type = "no type"; //initialiser au cas ou il ne serait pas utilise
+    std::cout << "Default animal constructor called" << std::endl;
 }
 
 Animal::Animal(std::string type) : _type(type){
@@ -38,7 +38,7 @@ Animal & Animal::operator=(Animal const & animal_op){
 }
 
 std::string	Animal::getType() const{
-    return (_type);
+    return (this->_type);
 }
 
 void	Animal::makeSound() const{

@@ -4,6 +4,8 @@
 # include <iostream>
 # include <string>
 
+#include "Brain.hpp"
+
 class Animal{
 
 	public:
@@ -13,11 +15,12 @@ class Animal{
 		Animal(Animal const & animal_copy);
 		virtual ~Animal();  // virtual pour detruire correctement sans leaks
 
-		Animal & operator=(Animal const & animal_op);
+		virtual Animal & operator=(Animal const & animal_op); // pour vérifier quel type d'animal
 
 		std::string		getType() const;
 		virtual void	makeSound() const; // pour que le bruit soit propre a l animal (et pas celui du chat ou du chien)
-
+		// a l'exec il va choisir le type en fct de ce qu'on envoie
+	
 	protected:
 		std::string _type;
 

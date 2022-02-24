@@ -20,9 +20,14 @@ class Dog : public Animal
 		~Dog();
 
 		Dog & operator=(Dog const & dog_op);
+		virtual Animal & operator=(Animal const & animal_op);
+
+
 
 		virtual void	makeSound() const; // virtual : pour la methode qu on veut specifier comme celle a utiliser 
 
+	private:
+//		Brain	*_brain_dog;
 };
 
 #endif
