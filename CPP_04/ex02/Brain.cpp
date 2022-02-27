@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 21:48:56 by astridgault       #+#    #+#             */
-/*   Updated: 2022/02/24 17:32:00 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/26 13:06:39 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,12 @@ Brain & Brain::operator=(Brain const & brain_op){
 		this->_ideas[i] = brain_op._ideas[i];
 
 	return (*this);
+}
+
+void		Brain::set_Ideas(std::string idea){
+	
+}
+
+std::string	Brain::get_Ideas(int i) const{
+	return (_ideas[i]);
 }

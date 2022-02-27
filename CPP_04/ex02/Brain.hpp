@@ -12,8 +12,8 @@ class Brain{
 
 		Brain & operator=(Brain const & brain_op);
 
-//		void		set_Ideas(std::string idea);
-//		std::string	get_Ideas(void) const;
+		void		set_Ideas(std::string idea);
+		std::string	get_Ideas(int i) const;
 
 
 	private:

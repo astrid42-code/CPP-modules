@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 21:48:02 by astridgault       #+#    #+#             */
-/*   Updated: 2022/02/24 18:29:52 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/26 13:01:23 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,11 @@
 #include "Dog.hpp"
 //#include "WrongAnimal.hpp"
 //#include "WrongCat.hpp"
+
+
+//shallow copy : par réf, avec la même adresse dans la heap
+
+// deep copy : copie profonde avec une nouvelle allocation mémoire
 
 int main()
 {
@@ -25,9 +30,10 @@ int main()
 	while (i < N)
 	{
 		if (i < N / 2)
-			animal[i] = new Cat();
+			animal[i] = new Dog(); // le type animal va être renvoyé mais sous-typé dog
+			// grace a virtual c'est la méthode (fct membre virtuelle) makeSound de Dog qui sera choisi à la compilation
 		else
-			animal[i] = new Dog();
+			animal[i] = new Cat();
 		std::cout << animal[i]->getType() << " fd " << i << std::endl;
 		i++;
 	}
