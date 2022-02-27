@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
+/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 21:48:02 by astridgault       #+#    #+#             */
-/*   Updated: 2022/02/26 11:28:45 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/27 15:37:38 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AAnimal.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
+#include "Animal.hpp"
+# include "Cat.hpp"
+# include "Dog.hpp"
+
 //#include "WrongAnimal.hpp"
 //#include "WrongCat.hpp"
 
@@ -23,8 +24,8 @@
 
 int main()
 {
-	AAnimal*	a = new Cat();
-	AAnimal* b = new Dog();
+	Animal*	a = new Cat();
+	Animal*	b = new Dog();
 	
 	a->makeSound();
 	b->makeSound();

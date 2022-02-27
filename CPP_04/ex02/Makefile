@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+         #
+#    By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/26 11:09:38 by astridgault       #+#    #+#              #
-#    Updated: 2022/02/26 12:27:33 by astridgault      ###   ########.fr        #
+#    Updated: 2022/02/27 15:38:18 by asgaulti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,11 +19,11 @@ CXXFLAGS	=	-Wall -Wextra -Werror --std=c++98
 
 RM			=	rm -f
 
-SRCS		=	main.cpp  Cat.cpp Dog.cpp AAnimal.cpp
+SRCS		=	main.cpp  Cat.cpp Dog.cpp Animal.cpp
 
 OBJS_FILE	=	$(SRCS:.cpp=.o)
 
-INCL		=	AAnimal.hpp Cat.hpp Dog.hpp
+INCL		=	Animal.hpp Cat.hpp Dog.hpp
 
 .c.o:
 			$(CXX) $(CXXFLAGS) -g -c $< -o $(<:.cpp=.o)

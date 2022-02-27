@@ -4,9 +4,10 @@
 # include <iostream>
 # include <string>
 
-# include "AAnimal.hpp"
+# include "Animal.hpp"
+# include "Brain.hpp"
 
-class Cat : public AAnimal
+class Cat : public Animal
 {
 	public:
 		Cat(void);
@@ -14,14 +15,14 @@ class Cat : public AAnimal
 		~Cat();
 
 		Cat & operator=(Cat const & cat_op);
-		virtual AAnimal & operator=(AAnimal const & animal_op);
+		// Animal & operator=(Animal const & animal_op);
 
-		virtual void	makeSound() const;
+		void	makeSound() const;
 //		Brain	*get_Ideas() const; // récupérer les idées instanciées dans la classe Brain
 		// * car tableau d'idées avec pointeur
 
 	private:
-	
+		// Brain	*_brain_cat;
 };
 
 #endif

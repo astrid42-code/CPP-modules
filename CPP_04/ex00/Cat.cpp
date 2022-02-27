@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
+/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 12:19:42 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/23 17:59:56 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/27 15:27:47 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
-#include "Animal.hpp"
 
 Cat::Cat() : Animal("Cat") {
     _type = "Default cat";
