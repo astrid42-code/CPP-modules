@@ -23,7 +23,7 @@ class Dog : public Animal
 		virtual Animal & operator=(Animal const & animal_op);
 
 		virtual void	makeSound() const; // virtual : pour la methode qu on veut specifier comme celle a utiliser 
-		Brain			*getIdeas() const;
+		std::string		getIdeas(int i) const;
 
 
 	private:

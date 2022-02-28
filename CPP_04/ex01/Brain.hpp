@@ -15,9 +15,9 @@ class Brain{
 		void		set_Ideas(int i, std::string idea);
 		std::string	get_Ideas(int i) const;
 
-		std::string	_ideas[100];
 
 	private:
+		std::string	_ideas[100];
 		//static int	_nbideas;
 };
 

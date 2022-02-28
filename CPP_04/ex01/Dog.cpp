@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
+/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 12:20:30 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/27 19:34:51 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/28 11:38:53 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 Dog::Dog() {
     this->_type  = "Dog";
+	_brain_dog = new Brain;
     std::cout << _type << " constructor called" << std::endl;
 }
 
@@ -23,7 +24,7 @@ Dog::Dog(Dog const & dog_copy) : Animal(dog_copy._type) {
 }
 
 Dog::~Dog(){
-    //delete [] _brain_dog;
+    delete _brain_dog;
     std::cout << "Dog destructor called" << std::endl;   
 }
 
@@ -44,6 +45,6 @@ void	Dog::makeSound() const{
     std::cout << _type << " : waf waf" << std::endl;
 }
 
-Brain	*Dog::getIdeas() const{
-	return (_brain_dog);
+std::string	Dog::getIdeas(int i) const{
+	return (_brain_dog->get_Ideas(i));
 }

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+         #
+#    By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/23 21:46:40 by astridgault       #+#    #+#              #
-#    Updated: 2022/02/24 17:30:23 by astridgault      ###   ########.fr        #
+#    Updated: 2022/02/28 11:36:13 by asgaulti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME		=	Polymorphism_Brain
 
 CXX			=	c++
 
-CXXFLAGS	=	-Wall -Wextra -Werror --std=c++98
+CXXFLAGS	=	-Wall -Wextra -Werror -g --std=c++98
 
 RM			=	rm -f
 

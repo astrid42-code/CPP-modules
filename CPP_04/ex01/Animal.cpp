@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
+/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 12:20:10 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/27 19:32:21 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/28 11:31:19 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ Animal & Animal::operator=(Animal const & animal_op){
     std::cout << "Animal copy assignment operator called" << std::endl;
 
 	_type = animal_op._type;
+
 	return (*this);
 }
 
@@ -43,4 +44,9 @@ std::string	Animal::getType() const{
 
 void	Animal::makeSound() const{
     std::cout << _type << " : bla bla" << std::endl;
+}
+
+std::string		Animal::getIdeas(int i) const{
+	(void)i;
+	return ("No idea");
 }
