@@ -24,6 +24,7 @@ class Dog : public Animal
 
 		virtual void	makeSound() const; // virtual : pour la methode qu on veut specifier comme celle a utiliser 
 		std::string		getIdeas(int i) const;
+		void			setIdeas(int i, std::string idea);
 
 
 	private:

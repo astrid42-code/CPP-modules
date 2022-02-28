@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 21:48:02 by astridgault       #+#    #+#             */
-/*   Updated: 2022/02/28 13:21:09 by asgaulti         ###   ########.fr       */
+/*   Updated: 2022/02/28 15:45:03 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ int main()
 {
     int	N = 4;
 	Animal	*animal[N];
-	Animal	*cpy(Animal);
 	
 	int i = 0;
 	while (i < N)
@@ -45,12 +44,14 @@ int main()
 	std::cout << std::endl; 
 	std::cout << "Deep copy :" << std::endl;
 	std::cout << std::endl; 
-	std::cout << animal[0]->getType() << " 0 thinks : " << animal[0]->getIdeas(0) << std::endl;
-	std::cout << animal[1]->getType() << " 1 thinks : " << animal[1]->getIdeas(1) << std::endl;
-		
-	*cpy[1] = *cpy[0];
-	std::cout << cpy[0]->getType() << " 0 thinks : " << cpy[0]->getIdeas(0) << std::endl;
-	std::cout << cpy[1]->getType() << " 1 thinks : " << cpy[1]->getIdeas(1) << std::endl;
+	std::cout << animal[2]->getType() << " 2 thinks : " << animal[2]->getIdeas(0) << std::endl;
+	std::cout << animal[3]->getType() << " 3 thinks : " << animal[3]->getIdeas(0) << std::endl;
+	
+	animal[2]->setIdeas(0, "blabla");
+	*(animal[3]) = *(animal[2]);
+	
+	std::cout << animal[2]->getType() << " 2 thinks : " << animal[2]->getIdeas(0) << std::endl;
+	std::cout << animal[3]->getType() << " 3 thinks : " << animal[3]->getIdeas(0) << std::endl;
 	std::cout << std::endl; 
 	for (int i = 0; i < N; i++)
 	{

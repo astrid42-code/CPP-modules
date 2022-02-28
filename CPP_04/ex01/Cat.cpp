@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 12:19:42 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/28 13:18:13 by asgaulti         ###   ########.fr       */
+/*   Updated: 2022/02/28 15:44:20 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,14 @@ Cat::Cat(void) {
 
 Cat::Cat(Cat const & cat_copy) : Animal(cat_copy._type){
 	*this = cat_copy;
+	delete _brain_cat;
 	_brain_cat = new Brain(*cat_copy._brain_cat);
+	for (int i = 0; i < 100; i += 4){
+		_brain_cat->get_Ideas(0) = "Let's eat, dude";
+		_brain_cat->get_Ideas(1) = "I could eat a human";
+		_brain_cat->get_Ideas(2) = "What do we have for diner tonigth ?";
+		_brain_cat->get_Ideas(3) = "I'm so clever";
+	}
     std::cout << "Cat copy called" << std::endl;
 }
 
@@ -35,14 +42,19 @@ Cat & Cat::operator=(Cat const & cat_op){
     std::cout << "Cat copy assignment operator called" << std::endl;
 	this->_type = cat_op.getType();
 	
-	// delete _brain_cat;
+	delete _brain_cat;
 	_brain_cat = new Brain(*cat_op._brain_cat);
+	for (int i = 0; i < 100; i++)
+		setIdeas(i, cat_op.getIdeas(i));
 	return (*this);
 }
 
 Animal & Cat::operator=(Animal const & animal_op){
     std::cout << "Animal copy assignment operator for cat called" << std::endl;
 	this->_type = animal_op.getType();
+	for (int i = 0; i < 100; i++)
+		setIdeas(i, animal_op.getIdeas(i));
+	
 	return (*this);
 }
 
@@ -60,4 +72,8 @@ void	Cat::makeSound() const{
 
 std::string	Cat::getIdeas(int i) const{
 	return (_brain_cat->get_Ideas(i));
+}
+
+void	Cat::setIdeas(int i, std::string idea){
+	this->_brain_cat->set_Ideas(i, idea);
 }

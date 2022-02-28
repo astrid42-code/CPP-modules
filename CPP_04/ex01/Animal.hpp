@@ -21,6 +21,7 @@ class Animal{
 		virtual void	makeSound() const; // pour que le bruit soit propre a l animal (et pas celui du chat ou du chien)
 		// a l'exec il va choisir le type en fct de ce qu'on envoie
 		virtual std::string		getIdeas(int i) const;
+		virtual void			setIdeas(int i, std::string idea);
 
 	protected:
 		std::string _type;

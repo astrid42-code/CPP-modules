@@ -20,6 +20,7 @@ class Cat : public Animal
 		void		makeSound() const;
 		std::string	getIdeas(int i) const; // récupérer les idées instanciées dans la classe Brain
 		// * car tableau d'idées avec pointeur
+		void	setIdeas(int i, std::string idea);
 
 	private:
 		Brain	*_brain_cat;

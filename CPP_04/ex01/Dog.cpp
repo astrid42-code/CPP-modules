@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 12:20:30 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/28 11:38:53 by asgaulti         ###   ########.fr       */
+/*   Updated: 2022/02/28 14:51:16 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,8 @@ void	Dog::makeSound() const{
 
 std::string	Dog::getIdeas(int i) const{
 	return (_brain_dog->get_Ideas(i));
+}
+
+void	Dog::setIdeas(int i, std::string idea){
+	this->_brain_dog->set_Ideas(i, idea);
 }

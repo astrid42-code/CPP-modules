@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 12:20:10 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/28 11:31:19 by asgaulti         ###   ########.fr       */
+/*   Updated: 2022/02/28 14:55:34 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,9 @@ void	Animal::makeSound() const{
 std::string		Animal::getIdeas(int i) const{
 	(void)i;
 	return ("No idea");
+}
+
+void			Animal::setIdeas(int i, std::string idea){
+	(void)i;
+	(void)idea;
 }
