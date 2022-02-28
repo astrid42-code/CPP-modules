@@ -6,7 +6,7 @@
 /*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 21:48:02 by astridgault       #+#    #+#             */
-/*   Updated: 2022/02/28 11:40:48 by asgaulti         ###   ########.fr       */
+/*   Updated: 2022/02/28 13:21:09 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int main()
 {
     int	N = 4;
 	Animal	*animal[N];
+	Animal	*cpy(Animal);
 	
 	int i = 0;
 	while (i < N)
@@ -36,16 +37,21 @@ int main()
 			animal[i] = new Cat();		
 		i++;
 	}
-	
-	// brain = animal[i]->getBrain(); // pour initialiser l'objet brain
-	// comment donner les idées?
-	// comment gérer le fait qu'on veut récupérer les brains en fct du type d'animal
-	// comment checker la deep copy?
+	std::cout << std::endl; 
 	for (int i = 0; i < N; i++){
 		
 		std::cout << animal[i]->getType() << i << " thinks : " << animal[i]->getIdeas(i) << std::endl;
 	}
-	
+	std::cout << std::endl; 
+	std::cout << "Deep copy :" << std::endl;
+	std::cout << std::endl; 
+	std::cout << animal[0]->getType() << " 0 thinks : " << animal[0]->getIdeas(0) << std::endl;
+	std::cout << animal[1]->getType() << " 1 thinks : " << animal[1]->getIdeas(1) << std::endl;
+		
+	*cpy[1] = *cpy[0];
+	std::cout << cpy[0]->getType() << " 0 thinks : " << cpy[0]->getIdeas(0) << std::endl;
+	std::cout << cpy[1]->getType() << " 1 thinks : " << cpy[1]->getIdeas(1) << std::endl;
+	std::cout << std::endl; 
 	for (int i = 0; i < N; i++)
 	{
 		delete animal[i];

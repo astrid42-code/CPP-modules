@@ -6,7 +6,7 @@
 /*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 12:19:42 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/28 11:39:01 by asgaulti         ###   ########.fr       */
+/*   Updated: 2022/02/28 13:18:13 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ Cat::Cat(void) {
 
 Cat::Cat(Cat const & cat_copy) : Animal(cat_copy._type){
 	*this = cat_copy;
+	_brain_cat = new Brain(*cat_copy._brain_cat);
     std::cout << "Cat copy called" << std::endl;
 }
 
@@ -33,8 +34,9 @@ Cat::~Cat(){
 Cat & Cat::operator=(Cat const & cat_op){
     std::cout << "Cat copy assignment operator called" << std::endl;
 	this->_type = cat_op.getType();
-	// *_brain_cat = *cat_op.getIdeas(); // copie l'objet brain_cat dans la copie du chat
-	// nécessité de renvoyer *cat_op car Brain renvoie un pointeur dans cat
+	
+	// delete _brain_cat;
+	_brain_cat = new Brain(*cat_op._brain_cat);
 	return (*this);
 }
 
