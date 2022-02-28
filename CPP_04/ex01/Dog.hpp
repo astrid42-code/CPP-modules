@@ -22,12 +22,12 @@ class Dog : public Animal
 		Dog & operator=(Dog const & dog_op);
 		virtual Animal & operator=(Animal const & animal_op);
 
-
-
 		virtual void	makeSound() const; // virtual : pour la methode qu on veut specifier comme celle a utiliser 
+		Brain			*getIdeas() const;
+
 
 	private:
-//		Brain	*_brain_dog;
+		Brain	*_brain_dog;
 };
 
 #endif

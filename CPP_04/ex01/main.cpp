@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 21:48:02 by astridgault       #+#    #+#             */
-/*   Updated: 2022/02/26 13:01:23 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/27 20:07:34 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,9 @@
 int main()
 {
     int	N = 4;
-	Animal *animal[N];
-//	Brain *brain;
+	Animal	*animal[N];
+	Brain	*brain;
+	
 	int i = 0;
 	while (i < N)
 	{
@@ -35,8 +36,18 @@ int main()
 		else
 			animal[i] = new Cat();
 		std::cout << animal[i]->getType() << " fd " << i << std::endl;
+		
 		i++;
 	}
+	brain = animal[N]->getBrain(); // pour initialiser l'objet brain
+	for (int i = 0; i < N; i++){
+		brain->_ideas[0 + i] = "Let's eat, dude";
+		brain->_ideas[1 + i] = "I could eat a human";
+		brain->_ideas[2 + i] = "What do we have for dinner tonigth ?";
+	}
+	// comment donner les idées?
+	// comment gérer le fait qu'on veut récupérer les brains en fct du type d'animal
+	// comment checker la deep copy?
 	for (int i = 0; i < N; i++)
 	{
 		delete animal[i];

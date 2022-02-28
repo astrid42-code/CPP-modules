@@ -7,17 +7,18 @@
 class Brain{
 	public:
 		Brain();
-		Brain(Brain const & brain_cpy);
+		Brain(const Brain & brain_cpy);
 		~Brain();
 
-		Brain & operator=(Brain const & brain_op);
+		Brain & operator=(const Brain & brain_op);
 
-//		void		set_Ideas(std::string idea);
-//		std::string	get_Ideas(void) const;
+		void		set_Ideas(int i, std::string idea);
+		std::string	get_Ideas(int i) const;
 
+		std::string	_ideas[100];
 
 	private:
-		std::string	_ideas[100];
+		//static int	_nbideas;
 };
 
 #endif

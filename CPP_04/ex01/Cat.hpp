@@ -18,7 +18,7 @@ class Cat : public Animal
 		virtual Animal & operator=(Animal const & animal_op);
 
 		void	makeSound() const;
-//		Brain	*get_Ideas() const; // récupérer les idées instanciées dans la classe Brain
+		Brain	*getIdeas() const; // récupérer les idées instanciées dans la classe Brain
 		// * car tableau d'idées avec pointeur
 
 	private:

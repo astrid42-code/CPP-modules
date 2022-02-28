@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 12:19:42 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/24 18:24:26 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/27 19:34:34 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ Cat::~Cat(){
 Cat & Cat::operator=(Cat const & cat_op){
     std::cout << "Cat copy assignment operator called" << std::endl;
 	this->_type = cat_op.getType();
+	*_brain_cat = *cat_op.getIdeas(); // copie l'objet brain_cat dans la copie du chat
+	// nécessité de renvoyer *cat_op car Brain renvoie un pointeur dans cat
 	return (*this);
 }
 
@@ -44,4 +46,12 @@ Animal & Cat::operator=(Animal const & animal_op){
 
 void	Cat::makeSound() const{
     std::cout << _type << " : meow meow" << std::endl;
+}
+
+// fcts get et set pour récupérer l'idée du brain et la donner au Cat
+// ou récupérer directement le brain créé : Brain *Cat::get_idea()
+// = renvoyer un pointeur sur un objet brain (avec l'idée envoyée par le numéro du main) pour un objet Cat
+
+Brain	*Cat::getIdeas() const{
+	return (_brain_cat);
 }

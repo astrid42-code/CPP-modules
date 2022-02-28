@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 12:20:30 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/24 18:17:48 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/27 19:34:51 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,8 @@ Animal & Dog::operator=(Animal const & dog_op){
 
 void	Dog::makeSound() const{
     std::cout << _type << " : waf waf" << std::endl;
+}
+
+Brain	*Dog::getIdeas() const{
+	return (_brain_dog);
 }
