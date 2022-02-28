@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 21:48:56 by astridgault       #+#    #+#             */
-/*   Updated: 2022/02/28 11:11:13 by asgaulti         ###   ########.fr       */
+/*   Updated: 2022/02/28 15:59:36 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Brain.hpp"
-
-//int Brain::_nbideas = 100;
 
 Brain::Brain(){
 	std::cout << "Brain constructor called" << std::endl;

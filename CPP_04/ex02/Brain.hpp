@@ -18,7 +18,6 @@ class Brain{
 
 	private:
 		std::string	_ideas[100];
-		//static int	_nbideas;
 };
 
 #endif

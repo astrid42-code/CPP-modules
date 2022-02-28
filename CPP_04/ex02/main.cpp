@@ -3,20 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 21:48:02 by astridgault       #+#    #+#             */
-/*   Updated: 2022/02/27 15:37:38 by asgaulti         ###   ########.fr       */
+/*   Updated: 2022/02/28 16:30:13 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 # include "Cat.hpp"
 # include "Dog.hpp"
-
-//#include "WrongAnimal.hpp"
-//#include "WrongCat.hpp"
-
 
 //shallow copy : par réf, avec la même adresse dans la heap
 
@@ -26,9 +22,13 @@ int main()
 {
 	Animal*	a = new Cat();
 	Animal*	b = new Dog();
+//	impossibilité de créer un objet de classe Animal car classe abstraite
+// (voir message de compilation)
+//	Animal*	c = new	Animal();
 	
 	a->makeSound();
 	b->makeSound();
+//	c->makeSound();
 
 	delete a;
 	delete b;

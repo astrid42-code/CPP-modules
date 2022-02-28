@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 12:20:10 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/24 18:23:36 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/28 16:26:52 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,4 @@ Animal & Animal::operator=(Animal const & animal_op){
 
 std::string	Animal::getType() const{
     return (this->_type);
-}
-
-void	Animal::makeSound() const{
-    std::cout << _type << " : bla bla" << std::endl;
 }

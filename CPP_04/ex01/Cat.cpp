@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 12:19:42 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/28 15:52:11 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/28 16:02:50 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +62,6 @@ void	Cat::makeSound() const{
 // fcts get et set pour récupérer l'idée du brain et la donner au Cat
 // ou récupérer directement le brain créé : Brain *Cat::get_idea()
 // = renvoyer un pointeur sur un objet brain (avec l'idée envoyée par le numéro du main) pour un objet Cat
-
-// Brain	*Cat::getIdeas() const{
-// 	return (_brain_cat);
-// }
 
 std::string	Cat::getIdeas(int i) const{
 	return (_brain_cat->get_Ideas(i));

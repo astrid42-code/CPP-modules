@@ -15,14 +15,15 @@ class Cat : public Animal
 		~Cat();
 
 		Cat & operator=(Cat const & cat_op);
-		// Animal & operator=(Animal const & animal_op);
+		virtual Animal & operator=(Animal const & animal_op);
 
-		void	makeSound() const;
-//		Brain	*get_Ideas() const; // récupérer les idées instanciées dans la classe Brain
+		void		makeSound() const;
+		std::string	getIdeas(int i) const; // récupérer les idées instanciées dans la classe Brain
 		// * car tableau d'idées avec pointeur
+		void	setIdeas(int i, std::string idea);
 
 	private:
-		// Brain	*_brain_cat;
+		Brain	*_brain_cat;
 };
 
 #endif

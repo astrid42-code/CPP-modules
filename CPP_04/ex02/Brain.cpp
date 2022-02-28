@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 21:48:56 by astridgault       #+#    #+#             */
-/*   Updated: 2022/02/28 11:11:13 by asgaulti         ###   ########.fr       */
+/*   Updated: 2022/02/28 16:00:12 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Brain.hpp"
-
-//int Brain::_nbideas = 100;
 
 Brain::Brain(){
 	std::cout << "Brain constructor called" << std::endl;
@@ -35,7 +33,7 @@ Brain::~Brain(){
 
 Brain & Brain::operator=(Brain const & brain_op){
 	std::cout << "Brain copy assignment called" << std::endl;
-
+	
 	for (int i = 0; i < 100; i++)
 		this->_ideas[i] = brain_op._ideas[i];
 
