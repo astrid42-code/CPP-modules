@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 21:48:02 by astridgault       #+#    #+#             */
-/*   Updated: 2022/02/28 15:45:03 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/28 15:58:08 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,28 @@ int main()
 	
 	std::cout << animal[2]->getType() << " 2 thinks : " << animal[2]->getIdeas(0) << std::endl;
 	std::cout << animal[3]->getType() << " 3 thinks : " << animal[3]->getIdeas(0) << std::endl;
-	std::cout << std::endl; 
+	std::cout << std::endl;
+
+	std::cout << animal[0]->getType() << " 0 thinks : " << animal[0]->getIdeas(5) << std::endl;
+	std::cout << animal[1]->getType() << " 1 thinks : " << animal[1]->getIdeas(5) << std::endl;
+	
+	animal[0]->setIdeas(5, "lol");
+	*(animal[1]) = *(animal[0]);
+	
+	std::cout << animal[0]->getType() << " 0 thinks : " << animal[0]->getIdeas(5) << std::endl;
+	std::cout << animal[1]->getType() << " 1 thinks : " << animal[1]->getIdeas(5) << std::endl;
+	std::cout << std::endl;
+	
+	std::cout << animal[2]->getType() << " 2 thinks : " << animal[2]->getIdeas(1) << std::endl;
+	std::cout << animal[0]->getType() << " 0 thinks : " << animal[0]->getIdeas(1) << std::endl;
+	
+	animal[2]->setIdeas(1, "banana");
+	*(animal[0]) = *(animal[2]);
+	
+	std::cout << animal[2]->getType() << " 2 thinks : " << animal[2]->getIdeas(1) << std::endl;
+	std::cout << animal[0]->getType() << " 0 thinks : " << animal[0]->getIdeas(1) << std::endl;
+	std::cout << std::endl;
+	
 	for (int i = 0; i < N; i++)
 	{
 		delete animal[i];

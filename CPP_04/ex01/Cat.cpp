@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 12:19:42 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/02/28 15:44:20 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/02/28 15:52:11 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,8 @@ Cat::Cat(Cat const & cat_copy) : Animal(cat_copy._type){
 	*this = cat_copy;
 	delete _brain_cat;
 	_brain_cat = new Brain(*cat_copy._brain_cat);
-	for (int i = 0; i < 100; i += 4){
-		_brain_cat->get_Ideas(0) = "Let's eat, dude";
-		_brain_cat->get_Ideas(1) = "I could eat a human";
-		_brain_cat->get_Ideas(2) = "What do we have for diner tonigth ?";
-		_brain_cat->get_Ideas(3) = "I'm so clever";
+	for (int i = 0; i < 100; i++){
+		setIdeas(i, cat_copy.getIdeas(i));
 	}
     std::cout << "Cat copy called" << std::endl;
 }
