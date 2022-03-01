@@ -6,11 +6,11 @@
 #    By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/01 11:38:58 by astridgault       #+#    #+#              #
-#    Updated: 2022/03/01 11:40:05 by astridgault      ###   ########.fr        #
+#    Updated: 2022/03/01 17:30:55 by astridgault      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	
+NAME		=	Bureaucrat
 
 CXX			=	c++
 

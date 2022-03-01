@@ -6,17 +6,26 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 11:48:59 by astridgault       #+#    #+#             */
-/*   Updated: 2022/03/01 14:40:17 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/03/01 21:04:45 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() {	
+Bureaucrat::Bureaucrat() : _name("Unknown"), _grade(0) {	
 }
 
-Bureaucrat::Bureaucrat(std::string name) : _name(name){
-	std::cout << "Hi, my name is " << _name << std::endl;
+Bureaucrat::Bureaucrat(std::string name, int i) : _name(name){
+	// 1ere vérif d'erreur (le grade est-il correct à la construction)
+	// si < 0 : throw (=renvoi dans le catch) le retour de GradeTooHighException
+	// si > 250 : idem avec le GradeTooLowException
+	// sinon récupérer le grade donné
+	if (i > 150)
+		throw Bureaucrat::GradeTooLowException();
+	else if (i < 1)
+		throw Bureaucrat::GradeTooHighException();
+	_grade = i;
+//	std::cout << "Hi, my name is " << _name << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &copy_b){
@@ -24,17 +33,18 @@ Bureaucrat::Bureaucrat(const Bureaucrat &copy_b){
 }
 
 Bureaucrat::~Bureaucrat(){
+	std:: cout << "Your grade is : " << _grade << std::endl;
 }
 
 Bureaucrat & Bureaucrat::operator=(const Bureaucrat & bur_op){
-	_name = bur_op._name;
+	// ne pas mettre le _name car c'est un const?
 	_grade = bur_op._grade;
 	return (*this);
 }
 
 std::ostream & operator<<(std::ostream & o, Bureaucrat & bur_op){
 	o
-	<< bur_op.getName() << ", bureaucrat grade"
+	<< bur_op.getName() << ", bureaucrat grade "
 	<< bur_op.getGrade() << "." << std::endl;
 	return (o);
 }
@@ -47,25 +57,19 @@ int	Bureaucrat::getGrade() const{
 	return (_grade);
 }
 
-int	Bureaucrat::gradeUp(){
-	try{
-		_grade++;
-		if (_grade > 150)
-			throw std::exception();
-		else
-			return (_grade);
-	}
-	catch (std::exception& e){
-    std::cerr << "exception caught: " << e.what() << '\n';
-  	}
+// 2ème vérif : incrémenter ou décrémenter 
+// puis renvoyer le throw TooHigh ou TooLow si grade - 1 ou + 1 hors limite
+// OU _grade++ / --  si ok
+int	Bureaucrat::gradeDown(){
+	_grade++;
+	if (_grade > 150)
+		throw Bureaucrat::GradeTooLowException();
+	return (_grade);
 }
 
-int	Bureaucrat::gradeDown(){
-	try{
-		_grade--;
-	}
-	catch (std::exception& e){
-    std::cerr << "exception caught: " << e.what() << '\n';
-  	}
+int	Bureaucrat::gradeUp(){
+	_grade--;
+	if (_grade < 1)
+		throw Bureaucrat::GradeTooHighException();
 	return (_grade);
 }
