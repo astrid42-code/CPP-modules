@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 11:40:18 by astridgault       #+#    #+#             */
-/*   Updated: 2022/03/01 22:30:03 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/03/01 21:03:12 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,11 +83,11 @@ int	main(void){
 	std::cout << std::endl;	
 	
 	try{
-		std::cout << "TEST 6" << std::endl;
-		Bureaucrat	bureaucrat4("Sarah", 1);
-		std::cout << bureaucrat4 << std::endl;
-		bureaucrat4.gradeUp();
-	}
+			std::cout << "TEST 6" << std::endl;
+			Bureaucrat	bureaucrat4("Sarah", 1);
+			std::cout << bureaucrat4 << std::endl;
+			bureaucrat4.gradeUp();
+		}
 	catch (std::exception& e){
 		std::cout << "exception caught: " << e.what() << std::endl;
 	}
