@@ -5,7 +5,11 @@
 # include <string>
 # include <ostream>
 # include <typeinfo>       // operator typeid
-# include <exception>      // std::exception
+# include <exception>
+
+# include "Form.hpp"
+
+class Form;
 
 class Bureaucrat{
 	public:
@@ -20,6 +24,8 @@ class Bureaucrat{
 		int			getGrade() const;
 		int			gradeUp();
 		int			gradeDown();
+		void		signForm(Form &form);
+
 
 	//classes imbriquées:
 		class GradeTooHighException : public std::exception{

@@ -4,36 +4,45 @@
 # include <iostream>
 # include <string>
 
+# include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class Form{
 
 	public:
 		Form();
+		Form(std::string name, int grade_sign, int grade_exec);
 		Form(const Form &copy_form);
 		~Form();
 
 		Form & operator=(const Form &form_op);
+
+		std::string	getName() const;
+		bool		getSign() const;
+		int			getGradeSign() const;
+		int			getGradeExec() const;
+		void		beSigned(Bureaucrat &bureaucrat);
 
 		class GradeTooHighException : public std::exception{
 			public:
 			// doit renvoyer un msg d'erreur personnalisé mais comment?
 			// "The grade is too high"
 				virtual const char * what() const throw(){
-					return ("The grade is too high");
+					return ("the grade is too high");
 				}
 		};
 
-	
 		class GradeTooLowException : public std::exception{
 			public:
 				virtual const char * what() const throw(){
-					return ("The grade is too low");
+					return ("the grade is too low");
 				}
 		};
 
 	private:
 		const std::string _name;
-		bool	_sign;
+		bool		_sign;
 		const int	_grade_sign;
 		const int	_grade_exec;
 };

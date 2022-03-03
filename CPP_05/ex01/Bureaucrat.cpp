@@ -6,13 +6,13 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 11:48:59 by astridgault       #+#    #+#             */
-/*   Updated: 2022/03/01 21:04:45 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/03/03 13:44:22 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() : _name("Unknown"), _grade(0) {	
+Bureaucrat::Bureaucrat() : _name("Unknown"), _grade(1) {	
 }
 
 Bureaucrat::Bureaucrat(std::string name, int i) : _name(name){
@@ -33,7 +33,6 @@ Bureaucrat::Bureaucrat(const Bureaucrat &copy_b){
 }
 
 Bureaucrat::~Bureaucrat(){
-	std:: cout << "Your grade is : " << _grade << std::endl;
 }
 
 Bureaucrat & Bureaucrat::operator=(const Bureaucrat & bur_op){
@@ -72,4 +71,16 @@ int	Bureaucrat::gradeUp(){
 	if (_grade < 1)
 		throw Bureaucrat::GradeTooHighException();
 	return (_grade);
+}
+
+void	Bureaucrat::signForm(Form &form){
+	// nécessaire de faire un try catch pour throw l'exception en cas d'échec
+	try {
+		form.beSigned(*this);
+		std::cout << _name << " signed " << form.getName() << std::endl;
+	}
+	catch (const std::exception &e){
+		std::cout << _name << " couldn't sign " << form.getName();
+		std::cout << " because " << e.what() << std::endl;
+	}
 }
