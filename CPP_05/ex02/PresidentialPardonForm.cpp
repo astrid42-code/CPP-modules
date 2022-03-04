@@ -6,7 +6,7 @@
 /*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 13:56:19 by astridgault       #+#    #+#             */
-/*   Updated: 2022/03/04 17:54:42 by asgaulti         ###   ########.fr       */
+/*   Updated: 2022/03/04 18:11:52 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ PresidentialPardonForm & PresidentialPardonForm::operator=(const PresidentialPar
 
 std::ostream & operator<<(std::ostream & o, PresidentialPardonForm & pres_op){
 	o
-	<< pres_op.getTarget() << std::endl;
+	<< pres_op.getTarget();
 	return (o);
 }
 
@@ -51,6 +51,9 @@ void	PresidentialPardonForm::execute(Bureaucrat const & executor) const {
 	if (executor.getGrade() >= 1 && executor.getGrade() <= 5){ // recuperer grade du bureaucrat
 		std::cout << _target << " has been excused by Zaphod Beeblebrox." << std::endl;
 	}
-	else
+	else{
+		std::cout << executor.getName() << " couldn't execute ";
+		std::cout << _target << " because ";
 		throw Bureaucrat::GradeTooLowException();
+	}
 }

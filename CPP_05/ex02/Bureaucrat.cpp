@@ -6,7 +6,7 @@
 /*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 11:48:59 by astridgault       #+#    #+#             */
-/*   Updated: 2022/03/04 17:57:58 by asgaulti         ###   ########.fr       */
+/*   Updated: 2022/03/04 18:13:33 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,7 @@ Bureaucrat & Bureaucrat::operator=(const Bureaucrat & bur_op){
 
 std::ostream & operator<<(std::ostream & o, Bureaucrat & bur_op){
 	o
-	<< bur_op.getName() << ", bureaucrat grade "
-	<< bur_op.getGrade() << "." << std::endl;
+	<< bur_op.getName() << ", bureaucrat grade " << bur_op.getGrade();
 	return (o);
 }
 
@@ -77,7 +76,7 @@ void	Bureaucrat::signForm(Form &form){
 		std::cout << _name << " signed " << form.getName() << std::endl;
 	}
 	catch (const std::exception &e){
-		std::cout << _name << " couldn't sign " << form.getName();
+		std::cout << _name << " couldn't sign " << form.getName(); // pb : le form n'a pas de nom ici (comment le recuperer???)
 		std::cout << " because " << e.what() << std::endl;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 11:40:18 by astridgault       #+#    #+#             */
-/*   Updated: 2022/03/04 18:00:19 by asgaulti         ###   ########.fr       */
+/*   Updated: 2022/03/04 18:12:37 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,12 @@ int	main(void){
 	std::cout << std::endl;
 
 	try {         
-		Bureaucrat    second("Astrid", 8);         
+		Bureaucrat    second("Astrid", 32);         
 		PresidentialPardonForm    secondForm("second form");                  
-		std::cout << second << std::endl;         
-		std::cout << secondForm << std::endl;         
+		std::cout << second << " has " << secondForm << " to sign and execute." << std::endl;                
 		second.signForm(secondForm);         
 		second.executeForm(secondForm);         
-		second.gradeUp();         
+		//second.gradeUp();         
 		second.signForm(secondForm);         
 		second.executeForm(secondForm);     
 		}     
@@ -35,14 +34,15 @@ int	main(void){
 		std::cerr << e.what() << std::endl;     
 	} 
 
+	std::cout << std::endl;
+	
 	try {         
-		Bureaucrat    third("Lucie", 80);         
+		Bureaucrat    third("Lucie", 10);         
 		RobotomyRequestForm    thirdForm("third form");                  
-		std::cout << third << std::endl;         
-		std::cout << thirdForm << std::endl;         
+		std::cout << third << " has " << thirdForm << " to sign and execute."<< std::endl;         
 		third.signForm(thirdForm);         
 		third.executeForm(thirdForm);         
-		third.gradeUp();         
+		// third.gradeUp();         
 		third.signForm(thirdForm);         
 		third.executeForm(thirdForm);     
 		}     

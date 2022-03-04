@@ -6,7 +6,7 @@
 /*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 13:54:57 by astridgault       #+#    #+#             */
-/*   Updated: 2022/03/04 17:56:35 by asgaulti         ###   ########.fr       */
+/*   Updated: 2022/03/04 18:11:27 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ RobotomyRequestForm & RobotomyRequestForm::operator=(const RobotomyRequestForm &
 
 std::ostream & operator<<(std::ostream & o, RobotomyRequestForm & rob_op){
 	o
-	<< rob_op.getTarget() << std::endl;
+	<< rob_op.getTarget();
 	return (o);
 }
 
@@ -55,6 +55,9 @@ void	RobotomyRequestForm::execute(Bureaucrat const & executor) const {
 		else
 			 std::cout << _target << " has not been robotomysed." << std::endl;
 	}
-	else
+	else{
+		std::cout << executor.getName() << " couldn't execute ";
+		std::cout << _target << " because ";
 		throw Bureaucrat::GradeTooLowException();
+	}
 }
