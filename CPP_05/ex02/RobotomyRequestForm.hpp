@@ -3,6 +3,7 @@
 
 # include <iostream>
 # include <string>
+# include <cstdlib>
 # include "Form.hpp"
 
 class RobotomyRequestForm : public Form{
@@ -10,7 +11,7 @@ class RobotomyRequestForm : public Form{
 		RobotomyRequestForm();
 		RobotomyRequestForm(std::string target);
 		RobotomyRequestForm(const RobotomyRequestForm & robot_copy);
-		~RobotomyRequestForm();
+		virtual  ~RobotomyRequestForm();
 
 		RobotomyRequestForm & operator=(const RobotomyRequestForm &form_op);
 
@@ -18,11 +19,14 @@ class RobotomyRequestForm : public Form{
 		bool			getSign() const;
 		int				getGradeSign() const;
 		int				getGradeExec() const;
-		virtual void	beSigned(Bureaucrat &bureaucrat);
-		virtual void	beExec(Bureaucrat &Bureaucrat);
+		std::string		getTarget() const;
+		void			beSigned(Bureaucrat &bureaucrat);
+		void			execute(Bureaucrat const & executor) const;
 
 	private:
 		std::string	_target;
 };
+
+std::ostream & operator<<(std::ostream & o, RobotomyRequestForm & rob_op);
 
 #endif

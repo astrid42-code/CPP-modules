@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
+/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 11:48:59 by astridgault       #+#    #+#             */
-/*   Updated: 2022/03/03 13:44:22 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/03/04 17:57:58 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,6 @@ int	Bureaucrat::getGrade() const{
 	return (_grade);
 }
 
-// 2ème vérif : incrémenter ou décrémenter 
-// puis renvoyer le throw TooHigh ou TooLow si grade - 1 ou + 1 hors limite
-// OU _grade++ / --  si ok
 int	Bureaucrat::gradeDown(){
 	_grade++;
 	if (_grade > 150)
@@ -83,4 +80,17 @@ void	Bureaucrat::signForm(Form &form){
 		std::cout << _name << " couldn't sign " << form.getName();
 		std::cout << " because " << e.what() << std::endl;
 	}
+}
+
+void	Bureaucrat::executeForm(Form const & form){
+	form.execute(*this);
+	std::cout << _name << " executed " << form.getName() << std::endl;
+}
+
+const char	*Bureaucrat::GradeTooHighException::what() const throw(){
+	return ("the grade is too high");
+}
+
+const char	*Bureaucrat::GradeTooLowException::what() const throw(){
+	return ("the grade is too low");
 }

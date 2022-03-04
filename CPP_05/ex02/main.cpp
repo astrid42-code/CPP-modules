@@ -3,30 +3,53 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
+/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 11:40:18 by astridgault       #+#    #+#             */
-/*   Updated: 2022/03/03 13:50:40 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/03/04 18:00:19 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int	main(void){
 
 	std::cout << std::endl;
 
-	try{
-		std::cout << "TEST 6" << std::endl;
-		Form form6("form6", 142, 70);
-		Bureaucrat bur3("intern3", 160);
-		bur3.signForm(form6);
-		std::cout << form6 << std::endl;
-	}
-	catch (std::exception& e){
-		std::cout << e.what() << std::endl;
-	}
+	try {         
+		Bureaucrat    second("Astrid", 8);         
+		PresidentialPardonForm    secondForm("second form");                  
+		std::cout << second << std::endl;         
+		std::cout << secondForm << std::endl;         
+		second.signForm(secondForm);         
+		second.executeForm(secondForm);         
+		second.gradeUp();         
+		second.signForm(secondForm);         
+		second.executeForm(secondForm);     
+		}     
+		
+	catch (std::exception const &e) {         
+		std::cerr << e.what() << std::endl;     
+	} 
+
+	try {         
+		Bureaucrat    third("Lucie", 80);         
+		RobotomyRequestForm    thirdForm("third form");                  
+		std::cout << third << std::endl;         
+		std::cout << thirdForm << std::endl;         
+		third.signForm(thirdForm);         
+		third.executeForm(thirdForm);         
+		third.gradeUp();         
+		third.signForm(thirdForm);         
+		third.executeForm(thirdForm);     
+		}     
+		
+	catch (std::exception const &e) {         
+		std::cerr << e.what() << std::endl;     
+	} 
 
 	std::cout << std::endl;
 	

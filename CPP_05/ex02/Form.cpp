@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
+/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 21:18:56 by astridgault       #+#    #+#             */
-/*   Updated: 2022/03/03 13:30:46 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/03/04 17:11:07 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ Form & Form::operator=(const Form &form_op){
 
 std::ostream & operator<<(std::ostream & o, Form & form_op){
 	o
-	<< form_op.getName() << " signature : "
-	<< (form_op.getSign() ? " validated" : " not validated") << std::endl;
+	<< form_op.getName();
+	// << (form_op.getSign() ? " validated" : " not validated") << std::endl;
 	return (o);
 }
 

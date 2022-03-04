@@ -25,6 +25,7 @@ class Bureaucrat{
 		int			gradeUp();
 		int			gradeDown();
 		void		signForm(Form &form);
+		void		executeForm(Form const & form);
 
 
 	//classes imbriquées:
@@ -32,17 +33,11 @@ class Bureaucrat{
 			public:
 			// doit renvoyer un msg d'erreur personnalisé mais comment?
 			// "The grade is too high"
-				virtual const char * what() const throw(){
-					return ("The grade is too high");
-				}
+				virtual const char * what() const throw();
 		};
-
-	
 		class GradeTooLowException : public std::exception{
 			public:
-				virtual const char * what() const throw(){
-					return ("The grade is too low");
-				}
+				virtual const char * what() const throw();
 		};
 
 	private:
