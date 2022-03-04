@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 11:40:18 by astridgault       #+#    #+#             */
-/*   Updated: 2022/03/03 13:39:21 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/03/03 14:07:01 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	main(void){
 		std::cout << "TEST 4" << std::endl;
 		Form form4("form4", 14, 70);
 
-		Bureaucrat bur1("intern1", 16);
+		Bureaucrat bur1("bur1", 16);
 		bur1.signForm(form4);
 		std::cout << form4 << std::endl;
 	}
@@ -65,7 +65,7 @@ int	main(void){
 		std::cout << "TEST 5" << std::endl;
 		Form form5("form5", 14, 70);
 
-		Bureaucrat bur2("intern2", 10);
+		Bureaucrat bur2("bur2", 10);
 		bur2.signForm(form5);
 		std::cout << form5 << std::endl;
 	}
@@ -78,7 +78,7 @@ int	main(void){
 	try{
 		std::cout << "TEST 6" << std::endl;
 		Form form6("form6", 142, 70);
-		Bureaucrat bur3("intern3", 160);
+		Bureaucrat bur3("bur3", 160);
 		bur3.signForm(form6);
 		std::cout << form6 << std::endl;
 	}
