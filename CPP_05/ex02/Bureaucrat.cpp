@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 11:48:59 by astridgault       #+#    #+#             */
-/*   Updated: 2022/03/04 18:13:33 by asgaulti         ###   ########.fr       */
+/*   Updated: 2022/03/05 11:43:14 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,8 @@ int	Bureaucrat::gradeUp(){
 	return (_grade);
 }
 
+// comment récupérer ici le bon nom du formulaire? 
+// ie : dans le form, comment donner le nom de la target?
 void	Bureaucrat::signForm(Form &form){
 	// nécessaire de faire un try catch pour throw l'exception en cas d'échec
 	try {

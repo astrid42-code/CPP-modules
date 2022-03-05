@@ -41,7 +41,7 @@ class Bureaucrat{
 		};
 
 	private:
-		const std::string	_name; // comment mettre le const?
+		const std::string	_name;
 		int					_grade;
 
 };

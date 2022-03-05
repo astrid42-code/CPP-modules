@@ -13,7 +13,7 @@ class RobotomyRequestForm : public Form{
 		RobotomyRequestForm(const RobotomyRequestForm & robot_copy);
 		virtual  ~RobotomyRequestForm();
 
-		RobotomyRequestForm & operator=(const RobotomyRequestForm &form_op);
+		RobotomyRequestForm & operator=(const RobotomyRequestForm &robot_op);
 
 		std::string		getName() const;
 		bool			getSign() const;
@@ -27,6 +27,6 @@ class RobotomyRequestForm : public Form{
 		std::string	_target;
 };
 
-std::ostream & operator<<(std::ostream & o, RobotomyRequestForm & rob_op);
+std::ostream & operator<<(std::ostream & o, RobotomyRequestForm & robot_op);
 
 #endif

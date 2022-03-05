@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 13:54:57 by astridgault       #+#    #+#             */
-/*   Updated: 2022/03/04 18:11:27 by asgaulti         ###   ########.fr       */
+/*   Updated: 2022/03/05 11:53:43 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,15 @@ std::string		RobotomyRequestForm::getTarget() const{
 
 // faire les autres getters
 
-RobotomyRequestForm & RobotomyRequestForm::operator=(const RobotomyRequestForm &form_op){
-	_target = form_op._target;
+RobotomyRequestForm & RobotomyRequestForm::operator=(const RobotomyRequestForm &robot_op){
+	_target = robot_op._target;
+	Form::operator=(robot_op);
 	return (*this);
 }
 
-std::ostream & operator<<(std::ostream & o, RobotomyRequestForm & rob_op){
+std::ostream & operator<<(std::ostream & o, RobotomyRequestForm & robot_op){
 	o
-	<< rob_op.getTarget();
+	<< robot_op.getTarget();
 	return (o);
 }
 

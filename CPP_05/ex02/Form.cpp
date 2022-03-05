@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 21:18:56 by astridgault       #+#    #+#             */
-/*   Updated: 2022/03/04 17:11:07 by asgaulti         ###   ########.fr       */
+/*   Updated: 2022/03/05 11:58:52 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,11 @@ Form::~Form(){
 }
 
 Form & Form::operator=(const Form &form_op){
+	_name = form_op._name;
 	_sign = form_op._sign;
+	_grade_sign = form_op._grade_sign;
+	_grade_exec = form_op._grade_exec;
+	std::cout << "hey" << _name << std::endl;
 	return (*this);
 }
 
@@ -66,4 +70,12 @@ void	Form::beSigned(Bureaucrat &bureaucrat){
 		throw Form::GradeTooLowException();
 	}
 	_sign = true;
+}
+
+const char	*Form::GradeTooHighException::what() const throw(){
+	return ("the grade is too high");
+}
+
+const char	*Form::GradeTooLowException::what() const throw(){
+	return ("the grade is too low");
 }

@@ -12,7 +12,7 @@ class PresidentialPardonForm : public Form{
 		PresidentialPardonForm(const PresidentialPardonForm & robot_copy);
 		virtual  ~PresidentialPardonForm();
 
-		PresidentialPardonForm & operator=(const PresidentialPardonForm &form_op);
+		PresidentialPardonForm & operator=(const PresidentialPardonForm &pres_op);
 
 		std::string		getName() const;
 		bool			getSign() const;

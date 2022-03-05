@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 11:40:18 by astridgault       #+#    #+#             */
-/*   Updated: 2022/03/04 18:12:37 by asgaulti         ###   ########.fr       */
+/*   Updated: 2022/03/05 11:31:50 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ int	main(void){
 	std::cout << std::endl;
 
 	try {         
-		Bureaucrat    second("Astrid", 32);         
+		Bureaucrat    second("Astrid", 2);         
 		PresidentialPardonForm    secondForm("second form");                  
 		std::cout << second << " has " << secondForm << " to sign and execute." << std::endl;                
 		second.signForm(secondForm);         
-		second.executeForm(secondForm);         
-		//second.gradeUp();         
+		second.executeForm(secondForm);        
+		second = Bureaucrat("Astrid", 42);          
 		second.signForm(secondForm);         
 		second.executeForm(secondForm);     
 		}     

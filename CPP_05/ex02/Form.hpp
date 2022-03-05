@@ -27,25 +27,19 @@ class Form{
 
 		class GradeTooHighException : public std::exception{
 			public:
-			// doit renvoyer un msg d'erreur personnalisé mais comment?
-			// "The grade is too high"
-				virtual const char * what() const throw(){
-					return ("the grade is too high");
-				}
+				virtual const char * what() const throw();
 		};
 
 		class GradeTooLowException : public std::exception{
 			public:
-				virtual const char * what() const throw(){
-					return ("the grade is too low");
-				}
+				virtual const char * what() const throw();
 		};
 
 	private:
-		const std::string _name;
+		std::string _name;
 		bool		_sign;
-		const int	_grade_sign;
-		const int	_grade_exec;
+		int			_grade_sign;
+		int			_grade_exec;
 };
 
 std::ostream & operator<<(std::ostream & o, Form & form_op);
