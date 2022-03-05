@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <ostream>
+# include <fstream>
 
 #include "Form.hpp"
 
@@ -12,9 +13,19 @@ class ShrubberyCreationForm : public Form{
 		ShrubberyCreationForm();
 		ShrubberyCreationForm(std::string target);
 		ShrubberyCreationForm(const ShrubberyCreationForm &copy_shrub);
-		~ShrubberyCreationForm();
+		virtual ~ShrubberyCreationForm();
 
 		ShrubberyCreationForm & operator=(const ShrubberyCreationForm &shrub_op);
+
+		std::string		getName() const;
+		bool			getSign() const;
+		int				getGradeSign() const;
+		int				getGradeExec() const;
+		std::string		getTarget() const;
+		void			beSigned(Bureaucrat &bureaucrat);
+		void			execute(Bureaucrat const & executor) const;
+		const char 		*openException() const throw();
+		const char 		*writeException() const throw();
 
 	private:
 		std::string	_target;

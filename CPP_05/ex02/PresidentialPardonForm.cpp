@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 13:56:19 by astridgault       #+#    #+#             */
-/*   Updated: 2022/03/05 11:57:21 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/03/05 13:58:10 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,13 @@ PresidentialPardonForm::PresidentialPardonForm(){
 }
 
 PresidentialPardonForm::PresidentialPardonForm(std::string target) : _target(target){
-	
 }
 
-PresidentialPardonForm::~PresidentialPardonForm()
-{
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &pres_cp){
+	*this = pres_cp;
+}
+
+PresidentialPardonForm::~PresidentialPardonForm(){
 }
 
 PresidentialPardonForm & PresidentialPardonForm::operator=(const PresidentialPardonForm &pres_op){

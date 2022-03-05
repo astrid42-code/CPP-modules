@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 21:18:56 by astridgault       #+#    #+#             */
-/*   Updated: 2022/03/05 11:58:52 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/03/05 13:48:31 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,17 @@ void	Form::beSigned(Bureaucrat &bureaucrat){
 		throw Form::GradeTooLowException();
 	}
 	_sign = true;
+}
+
+void	Form::execute(Bureaucrat const & executor) const{
+	if (executor.getGrade() >= 1 && executor.getGrade() <= 5){ // recuperer grade du bureaucrat
+		std::cout << executor.getName() << ", grade " << executor.getGrade() << ", has been excused by Zaphod Beeblebrox." << std::endl;
+	}
+	else{
+		std::cout << executor.getName() << ", grade " << executor.getGrade() << " couldn't execute ";
+		std::cout << _name << " because ";
+		throw Bureaucrat::GradeTooLowException();
+	}
 }
 
 const char	*Form::GradeTooHighException::what() const throw(){

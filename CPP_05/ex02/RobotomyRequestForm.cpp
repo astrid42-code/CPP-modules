@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 13:54:57 by astridgault       #+#    #+#             */
-/*   Updated: 2022/03/05 11:53:43 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/03/05 13:57:45 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@ RobotomyRequestForm::RobotomyRequestForm(){
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target) : _target(target){
 	
+}
+
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &robot_cp){
+	*this = robot_cp;
 }
 
 RobotomyRequestForm::~RobotomyRequestForm()

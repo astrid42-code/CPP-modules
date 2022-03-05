@@ -16,7 +16,7 @@ class Form{
 		Form(const Form &copy_form);
 		virtual ~Form();
 
-		Form & operator=(const Form &form_op);
+		virtual Form & operator=(const Form &form_op);
 
 		std::string	getName() const;
 		bool		getSign() const;

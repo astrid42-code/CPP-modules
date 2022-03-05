@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+         #
+#    By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/03 13:47:36 by astridgault       #+#    #+#              #
-#    Updated: 2022/03/04 17:36:06 by asgaulti         ###   ########.fr        #
+#    Updated: 2022/03/05 16:07:50 by astridgault      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,14 +19,12 @@ CXXFLAGS	=	-Wall -Wextra -Werror --std=c++98
 RM			=	rm -f
 
 SRCS		=	main.cpp Bureaucrat.cpp Form.cpp PresidentialPardonForm.cpp \
-				RobotomyRequestForm.cpp 
-				# ShrubberyCreationForm.cpp 
+				RobotomyRequestForm.cpp ShrubberyCreationForm.cpp 
 
 OBJS_FILE	=	$(SRCS:.cpp=.o)
 
 INCL		=	Bureaucrat.hpp Form.hpp PresidentialPardonForm.hpp \
-				RobotomyRequestForm.hpp 
-			#	ShrubberyCreationForm.hpp 
+				RobotomyRequestForm.hpp	ShrubberyCreationForm.hpp 
 
 .c.o:
 			$(CXX) $(CXXFLAGS) -g -c $< -o $(<:.cpp=.o)

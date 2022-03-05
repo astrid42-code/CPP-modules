@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 11:40:18 by astridgault       #+#    #+#             */
-/*   Updated: 2022/03/05 11:31:50 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/03/05 17:56:53 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,35 @@
 #include "Form.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int	main(void){
 
-	std::cout << std::endl;
+	Bureaucrat    first("Neo", 12);         
+	ShrubberyCreationForm    firstForm("first form");                  
 
+	try {         
+		std::cout << first << " has first form to sign and execute." << std::endl;                
+		first.signForm(firstForm);         
+		first.executeForm(firstForm);          
+	}
+	catch (std::exception const &e) {         
+		std::cerr << e.what() << std::endl;     
+	} 
+	
+	first = Bureaucrat("Julien", 150); 
+	std::cout << first << " has first form to sign and execute." << std::endl;        
+	try{
+		first.signForm(firstForm);         
+		first.executeForm(firstForm);
+	}
+	catch (std::exception const &e) {         
+		std::cerr << e.what() << std::endl;
+	} 
+	// pk ca ne sort pas à la première erreur dans le 2eme test??
+	
+	std::cout << std::endl;
+	
 	try {         
 		Bureaucrat    second("Astrid", 2);         
 		PresidentialPardonForm    secondForm("second form");                  
