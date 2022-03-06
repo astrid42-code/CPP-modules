@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Sed.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 11:52:03 by astridgault       #+#    #+#             */
-/*   Updated: 2022/02/14 18:06:33 by asgaulti         ###   ########.fr       */
+/*   Updated: 2022/03/05 16:18:56 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
