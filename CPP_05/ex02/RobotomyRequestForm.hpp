@@ -15,10 +15,6 @@ class RobotomyRequestForm : public Form{
 
 		RobotomyRequestForm & operator=(const RobotomyRequestForm &robot_op);
 
-		std::string		getName() const;
-		bool			getSign() const;
-		int				getGradeSign() const;
-		int				getGradeExec() const;
 		std::string		getTarget() const;
 		void			beSigned(Bureaucrat &bureaucrat);
 		void			execute(Bureaucrat const & executor) const;

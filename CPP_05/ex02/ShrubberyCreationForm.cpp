@@ -6,7 +6,7 @@
 /*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 13:53:07 by astridgault       #+#    #+#             */
-/*   Updated: 2022/03/07 15:16:50 by asgaulti         ###   ########.fr       */
+/*   Updated: 2022/03/07 16:32:14 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ ShrubberyCreationForm & ShrubberyCreationForm::operator=(const ShrubberyCreation
 	return (*this);
 }
 
-
 std::ostream & operator<<(std::ostream & o, ShrubberyCreationForm & shrub_op){
 	o
 	<< shrub_op.getTarget();
@@ -45,10 +44,6 @@ const std::string	& ShrubberyCreationForm::getTarget() const{
 
 const char *ShrubberyCreationForm::openException() const throw(){
 	return ("File can't be opened\n");
-}
-
-const char *ShrubberyCreationForm::writeException() const throw(){
-	return ("File can't be written\n");
 }
 
 void	ShrubberyCreationForm::beSigned(Bureaucrat &bureaucrat){
@@ -81,8 +76,6 @@ void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
 			output_file.close();
 				
 			}
-			// imprimer l'arbre
-			// si pb à l'impression : fermer le fichier et throw writeException();
 	}
 	else{
 		std::cout << executor.getName() << ", grade " << executor.getGrade() << " couldn't execute ";

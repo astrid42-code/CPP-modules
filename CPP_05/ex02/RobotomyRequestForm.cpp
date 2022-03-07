@@ -6,7 +6,7 @@
 /*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 13:54:57 by astridgault       #+#    #+#             */
-/*   Updated: 2022/03/07 14:55:40 by asgaulti         ###   ########.fr       */
+/*   Updated: 2022/03/07 16:31:52 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,6 @@ RobotomyRequestForm::~RobotomyRequestForm()
 {
 }
 
-std::string		RobotomyRequestForm::getTarget() const{
-	return (_target);
-}
-
 RobotomyRequestForm & RobotomyRequestForm::operator=(const RobotomyRequestForm &robot_op){
 	_target = robot_op._target;
 	Form::operator=(robot_op);
@@ -41,6 +37,10 @@ std::ostream & operator<<(std::ostream & o, RobotomyRequestForm & robot_op){
 	o
 	<< robot_op.getTarget();
 	return (o);
+}
+
+std::string		RobotomyRequestForm::getTarget() const{
+	return (_target);
 }
 
 void	RobotomyRequestForm::beSigned(Bureaucrat &bureaucrat){

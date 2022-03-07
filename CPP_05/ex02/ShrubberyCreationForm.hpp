@@ -17,15 +17,10 @@ class ShrubberyCreationForm : public Form{
 
 		ShrubberyCreationForm 	& operator=(const ShrubberyCreationForm &shrub_op);
 
-		std::string		getName() const;
-		bool			getSign() const;
-		int				getGradeSign() const;
-		int				getGradeExec() const;
 		const std::string	&	getTarget() const;
 		void			beSigned(Bureaucrat &bureaucrat);
 		void			execute(Bureaucrat const & executor) const;
 		const char 		*openException() const throw();
-		const char 		*writeException() const throw();
 
 	private:
 		std::string	_target;
