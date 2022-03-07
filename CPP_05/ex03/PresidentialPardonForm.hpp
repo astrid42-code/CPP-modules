@@ -5,7 +5,6 @@
 # include <string>
 # include <cstdlib>
 # include "Form.hpp"
-
 class PresidentialPardonForm : public Form{
 	public:
 		PresidentialPardonForm();
