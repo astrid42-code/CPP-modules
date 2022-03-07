@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
+/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 13:53:07 by astridgault       #+#    #+#             */
-/*   Updated: 2022/03/05 17:46:53 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/03/07 15:16:50 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 ShrubberyCreationForm::ShrubberyCreationForm(){
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : _target(target){
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Form("ShrubberyCreationForm", 145, 137), _target(target){
 			
 }
 
@@ -31,17 +31,16 @@ ShrubberyCreationForm & ShrubberyCreationForm::operator=(const ShrubberyCreation
 	Form::operator=(shrub_op);
 	return (*this);
 }
-/*
+
+
 std::ostream & operator<<(std::ostream & o, ShrubberyCreationForm & shrub_op){
 	o
 	<< shrub_op.getTarget();
 	return (o);
 }
-*/
-void	ShrubberyCreationForm::beSigned(Bureaucrat &bureaucrat){
-	if (bureaucrat.getGrade() > 145){
-		throw Bureaucrat::GradeTooLowException();
-	}
+
+const std::string	& ShrubberyCreationForm::getTarget() const{
+	return (_target);
 }
 
 const char *ShrubberyCreationForm::openException() const throw(){
@@ -52,21 +51,38 @@ const char *ShrubberyCreationForm::writeException() const throw(){
 	return ("File can't be written\n");
 }
 
+void	ShrubberyCreationForm::beSigned(Bureaucrat &bureaucrat){
+	if (bureaucrat.getGrade() > 145){
+		throw Bureaucrat::GradeTooLowException();
+	}
+}
+
 void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
-	if (executor.getGrade() >= 1 && executor.getGrade() <= 137){ // recuperer grade du bureaucrat
-		std::ofstream	output_file; // la sortie
+	std::ofstream	output_file;
 	
-		output_file.open("tree.txt";
-		// verifier que l'ouverture est réussie:
+	if (executor.getGrade() >= 1 && executor.getGrade() <= 137){ // recuperer grade du bureaucrat
+	
+		output_file.open((_target + ".ShrubberyCreationForm").c_str());
 		if (!output_file.is_open()){
 			throw openException();
 		}
+		
 		else{
-			// imprimer l'arbre
-			output_file << std::endl;
-			// si pb à l'impression : fermer le fichier et throw writeException();
+			output_file << "      _-_	"<< std::endl;
+			output_file << "    /~~   ~~\\ " << std::endl;
+			output_file << " /~~         ~~\\ " << std::endl;
+			output_file << "{               } " << std::endl;
+			output_file << " \\  _-     -_  / " << std::endl;
+			output_file << "   ~   \\ /  ~ " << std::endl;
+			output_file << "_- -   | | _- _ " << std::endl;
+			output_file << "  _ -  | |   -_ " << std::endl;
+			output_file << "       / \\ " << std::endl;
+
 			output_file.close();
-		}
+				
+			}
+			// imprimer l'arbre
+			// si pb à l'impression : fermer le fichier et throw writeException();
 	}
 	else{
 		std::cout << executor.getName() << ", grade " << executor.getGrade() << " couldn't execute ";

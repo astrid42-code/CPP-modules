@@ -15,13 +15,13 @@ class ShrubberyCreationForm : public Form{
 		ShrubberyCreationForm(const ShrubberyCreationForm &copy_shrub);
 		virtual ~ShrubberyCreationForm();
 
-		ShrubberyCreationForm & operator=(const ShrubberyCreationForm &shrub_op);
+		ShrubberyCreationForm 	& operator=(const ShrubberyCreationForm &shrub_op);
 
 		std::string		getName() const;
 		bool			getSign() const;
 		int				getGradeSign() const;
 		int				getGradeExec() const;
-		std::string		getTarget() const;
+		const std::string	&	getTarget() const;
 		void			beSigned(Bureaucrat &bureaucrat);
 		void			execute(Bureaucrat const & executor) const;
 		const char 		*openException() const throw();

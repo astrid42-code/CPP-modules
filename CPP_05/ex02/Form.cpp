@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
+/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 21:18:56 by astridgault       #+#    #+#             */
-/*   Updated: 2022/03/05 13:48:31 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/03/07 14:40:23 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ Form::Form() : _grade_sign(0), _grade_exec(0) {
 
 Form::Form(std::string name, int grade_sign, int grade_exec) :
 	_name(name), _sign(false), _grade_sign(grade_sign), _grade_exec(grade_exec){
-	// vérifier que les grade_sign et _exec sont compris entre 1 et 150 (sinon throw exception toohigh/low)
 	if (_grade_sign < 1 || _grade_exec < 1)
 		throw Bureaucrat::GradeTooHighException();
 	else if (_grade_sign > 150 || _grade_exec > 150)
@@ -38,7 +37,6 @@ Form & Form::operator=(const Form &form_op){
 	_sign = form_op._sign;
 	_grade_sign = form_op._grade_sign;
 	_grade_exec = form_op._grade_exec;
-	std::cout << "hey" << _name << std::endl;
 	return (*this);
 }
 
@@ -49,7 +47,7 @@ std::ostream & operator<<(std::ostream & o, Form & form_op){
 	return (o);
 }
 
-std::string	Form::getName() const{
+const std::string	& Form::getName() const{
 	return (_name);
 }
 bool	Form::getSign() const{
@@ -62,25 +60,6 @@ int	Form::getGradeSign() const{
 
 int	Form::getGradeExec() const{
 	return (_grade_exec);
-}
-
-void	Form::beSigned(Bureaucrat &bureaucrat){
-	if (bureaucrat.getGrade() > _grade_sign){
-		_sign = false;
-		throw Form::GradeTooLowException();
-	}
-	_sign = true;
-}
-
-void	Form::execute(Bureaucrat const & executor) const{
-	if (executor.getGrade() >= 1 && executor.getGrade() <= 5){ // recuperer grade du bureaucrat
-		std::cout << executor.getName() << ", grade " << executor.getGrade() << ", has been excused by Zaphod Beeblebrox." << std::endl;
-	}
-	else{
-		std::cout << executor.getName() << ", grade " << executor.getGrade() << " couldn't execute ";
-		std::cout << _name << " because ";
-		throw Bureaucrat::GradeTooLowException();
-	}
 }
 
 const char	*Form::GradeTooHighException::what() const throw(){

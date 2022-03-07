@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
+/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 13:56:19 by astridgault       #+#    #+#             */
-/*   Updated: 2022/03/05 13:58:10 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/03/07 14:40:05 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 PresidentialPardonForm::PresidentialPardonForm(){
 }
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target) : _target(target){
+PresidentialPardonForm::PresidentialPardonForm(std::string target) : Form("PresidentialPardonForm", 25, 5), _target(target){
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &pres_cp){

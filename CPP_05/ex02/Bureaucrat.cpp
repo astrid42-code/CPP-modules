@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
+/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 11:48:59 by astridgault       #+#    #+#             */
-/*   Updated: 2022/03/05 11:43:14 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/03/07 14:40:59 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ Bureaucrat::~Bureaucrat(){
 }
 
 Bureaucrat & Bureaucrat::operator=(const Bureaucrat & bur_op){
-	// ne pas mettre le _name car c'est un const?
+	// ne pas mettre le _name car c'est un const
 	_grade = bur_op._grade;
 	return (*this);
 }
@@ -69,8 +69,6 @@ int	Bureaucrat::gradeUp(){
 	return (_grade);
 }
 
-// comment récupérer ici le bon nom du formulaire? 
-// ie : dans le form, comment donner le nom de la target?
 void	Bureaucrat::signForm(Form &form){
 	// nécessaire de faire un try catch pour throw l'exception en cas d'échec
 	try {
@@ -78,8 +76,8 @@ void	Bureaucrat::signForm(Form &form){
 		std::cout << _name << " signed " << form.getName() << std::endl;
 	}
 	catch (const std::exception &e){
-		std::cout << _name << " couldn't sign " << form.getName(); // pb : le form n'a pas de nom ici (comment le recuperer???)
-		std::cout << " because " << e.what() << std::endl;
+		std::cout << _name << " couldn't sign " << form.getName();
+		std::cout << ", because " << e.what() << std::endl;
 	}
 }
 

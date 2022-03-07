@@ -18,7 +18,7 @@ class Form{
 
 		virtual Form & operator=(const Form &form_op);
 
-		std::string	getName() const;
+		const std::string	& getName() const;
 		bool		getSign() const;
 		int			getGradeSign() const;
 		int			getGradeExec() const;

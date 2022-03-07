@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
+/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 13:54:57 by astridgault       #+#    #+#             */
-/*   Updated: 2022/03/05 13:57:45 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/03/07 14:55:40 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 RobotomyRequestForm::RobotomyRequestForm(){
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target) : _target(target){
+RobotomyRequestForm::RobotomyRequestForm(std::string target) : Form("RobotomyRequestForm", 72, 45), _target(target){
 	
 }
 
@@ -27,18 +27,9 @@ RobotomyRequestForm::~RobotomyRequestForm()
 {
 }
 
-void	RobotomyRequestForm::beSigned(Bureaucrat &bureaucrat){
-	if (bureaucrat.getGrade() > 72){
-		throw Bureaucrat::GradeTooLowException();
-	}
-}
-
-
 std::string		RobotomyRequestForm::getTarget() const{
 	return (_target);
 }
-
-// faire les autres getters
 
 RobotomyRequestForm & RobotomyRequestForm::operator=(const RobotomyRequestForm &robot_op){
 	_target = robot_op._target;
@@ -50,6 +41,12 @@ std::ostream & operator<<(std::ostream & o, RobotomyRequestForm & robot_op){
 	o
 	<< robot_op.getTarget();
 	return (o);
+}
+
+void	RobotomyRequestForm::beSigned(Bureaucrat &bureaucrat){
+	if (bureaucrat.getGrade() > 72){
+		throw Bureaucrat::GradeTooLowException();
+	}
 }
 
 void	RobotomyRequestForm::execute(Bureaucrat const & executor) const {
