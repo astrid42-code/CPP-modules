@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 16:43:19 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/03/08 12:19:07 by asgaulti         ###   ########.fr       */
+/*   Updated: 2022/03/08 19:22:05 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Intern.hpp"
-// #include "Form.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "ShrubberyCreationForm.hpp"
@@ -39,7 +38,7 @@ Intern & Intern::operator=(const Intern &intern_op){
 Form	*Intern::makeForm(std::string name, std::string target){
 	
 	// initialiser les types de forms
-	std::string	form_type[] = {"RobotomyRequestForm", "PresidentialPardonFrom", "ShrubberyCreationForm", "error"};
+	std::string	form_type[] = {"robotomy request", "presidential pardon", "shrubbery creation"};
 	// boucle qui va checker le type de level en fct de la string envoyée par le main
 	for (int i = 0; i < 3; i++)
 	{
