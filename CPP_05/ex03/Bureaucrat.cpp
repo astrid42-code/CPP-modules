@@ -6,11 +6,12 @@
 /*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 11:48:59 by astridgault       #+#    #+#             */
-/*   Updated: 2022/03/07 16:29:05 by asgaulti         ###   ########.fr       */
+/*   Updated: 2022/03/08 12:00:23 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat() : _name("Unknown"), _grade(1) {	
 }

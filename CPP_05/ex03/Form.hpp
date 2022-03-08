@@ -5,7 +5,9 @@
 # include <string>
 
 # include "Bureaucrat.hpp"
+# include "Intern.hpp"
 
+class Intern;
 class Bureaucrat;
 
 class Form{

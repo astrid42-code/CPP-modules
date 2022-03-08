@@ -3,8 +3,6 @@
 
 # include <iostream>
 # include <string>
-# include <ostream>
-# include <typeinfo>
 # include <exception>
 
 # include "Form.hpp"

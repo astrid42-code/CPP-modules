@@ -6,9 +6,11 @@
 #include "Form.hpp"
 
 class Form;
+class Intern;
 
-
-class Intern : public Form{
+// creation d'une fct en static dans laquelle sera mis en place le ptr sur fct
+typedef	Form *(Intern::*createForm)(const std::string &);
+class Intern{
 
 	public:
 		Intern();
@@ -17,20 +19,18 @@ class Intern : public Form{
 
 		Intern & operator=(const Intern &intern_op);
 
-		std::string	getName();
 		Form	*makeForm(std::string _name, std::string _target);
-		Form	*robotomy(void);
-		Form	*presidential(void);
-		Form	*shrubbery(void);
 
-		class FailureException : public std::exception{
-			public:
-				virtual const char * what() const throw();
-		};
+		// class FailureException : public std::exception{
+		// 	public:
+		// 		virtual const char * what() const throw();
+		// };
 
 	private:
-		std::string	_target;
-		std::string	_name;
+		Form	*robotomy(std::string const &target);
+		Form	*presidential(std::string const &target);
+		Form	*shrubbery(std::string const &target);
+		static createForm ptrForm[3];
 };
 
 #endif

@@ -6,11 +6,13 @@
 /*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 21:18:56 by astridgault       #+#    #+#             */
-/*   Updated: 2022/03/07 14:40:23 by asgaulti         ###   ########.fr       */
+/*   Updated: 2022/03/08 12:21:02 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
+#include "Bureaucrat.hpp"
+// #include "Intern.hpp"
 
 Form::Form() : _grade_sign(0), _grade_exec(0) {
 	_sign = false;

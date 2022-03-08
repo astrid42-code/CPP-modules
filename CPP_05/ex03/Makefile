@@ -6,7 +6,7 @@
 #    By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/03 13:47:36 by astridgault       #+#    #+#              #
-#    Updated: 2022/03/07 16:35:13 by asgaulti         ###   ########.fr        #
+#    Updated: 2022/03/08 12:20:02 by asgaulti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,12 +19,14 @@ CXXFLAGS	=	-Wall -Wextra -Werror --std=c++98
 RM			=	rm -f
 
 SRCS		=	main.cpp Bureaucrat.cpp Form.cpp PresidentialPardonForm.cpp \
-				RobotomyRequestForm.cpp ShrubberyCreationForm.cpp Intern.cpp
+				RobotomyRequestForm.cpp ShrubberyCreationForm.cpp \
+				Intern.cpp
 
 OBJS_FILE	=	$(SRCS:.cpp=.o)
 
-INCL		=	Bureaucrat.hpp Form.hpp PresidentialPardonForm.hpp \
-				RobotomyRequestForm.hpp	ShrubberyCreationForm.hpp Intern.hpp
+#INCL		=	Bureaucrat.hpp Form.hpp PresidentialPardonForm.hpp \
+				RobotomyRequestForm.hpp	ShrubberyCreationForm.hpp \
+				Intern.hpp
 
 .c.o:
 			$(CXX) $(CXXFLAGS) -g -c $< -o $(<:.cpp=.o)
