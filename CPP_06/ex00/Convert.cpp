@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Convert.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
+/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 20:48:51 by astridgault       #+#    #+#             */
-/*   Updated: 2022/03/08 21:01:22 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/03/09 13:41:49 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Convert::Convert(){
 	
 }
 
-Convert::Convert(std::string arg){
+Convert::Convert(std::string str){
 	
 }
 
@@ -40,7 +40,11 @@ Convert::~Convert(){
 }
 
 Convert	& Convert::operator=(const Convert &conv_op){
-	
+	_char = conv_op._char;
+	_int = conv_op._int;
+	_double = conv_op._double;
+	_float = conv_op._float;
+	return (*this);
 }
 
 void	Convert::print(){
