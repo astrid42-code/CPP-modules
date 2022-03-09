@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Convert.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 20:48:51 by astridgault       #+#    #+#             */
-/*   Updated: 2022/03/09 13:41:49 by asgaulti         ###   ########.fr       */
+/*   Updated: 2022/03/09 17:27:56 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,11 @@ Convert	& Convert::operator=(const Convert &conv_op){
 }
 
 void	Convert::print(){
-	
+	// pour chacun, vérifier si c'est imprimable / impossible ... 
+	// si c'est ok, imprimer la valeur
+	// sinon imprimer Non displayable / impossible / ...
+	std::cout << "char : " << _char << std::endl;
+	std::cout << "int : " << _int << std::endl;
+	std::cout << "float : " << _float << std::endl;
+	std::cout << "double : " << _double << std::endl;
 }
