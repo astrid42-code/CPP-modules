@@ -6,13 +6,15 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 20:47:48 by astridgault       #+#    #+#             */
-/*   Updated: 2022/03/10 10:25:16 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/03/10 13:34:47 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Convert.hpp"
+#include <locale>
 
 int	parse(std::string const &str){
+	std::locale loc;
 	// si chaine vide return 0
 	if (str == "")
 		return (1);
@@ -26,11 +28,27 @@ int	parse(std::string const &str){
 		if (str == ok_str[i])
 			return (0);
 	}
-	// for (int i = 0, i < str.length(), i++) si str[i] >= 0 et str[i] <= 9 ok
-	// + pareil si ca commence par -
-	// + pareil s'il y a un . et un f à la fin
-	
-	 return (1);
+	// s'il y a uniquement des chiffres OU des chiffres et : un - au départ ou/et un . et un f à la fin : ok
+	// = si str[i] n'est pas un chiffre (!isdigit(str[i], loc)) ni un - (en pos str[0]), ni un ., ni un f (en pos finale)
+	if (isdigit(str[0], loc) || str[0] == '-'){
+		int size = (int)str.size();
+		int dot = 0;
+		for (int i = 0; i < size - 1; i++){
+			if (str[i] == '.'){
+				dot++;
+				if (dot > 1)
+					return (1);
+			}
+			if (!isdigit(str[i], loc) && str[i] != '.')
+				return (1);
+		}
+		if (!isdigit(str[size - 1], loc) && str[size - 1] != 'f'){
+			return (1);
+		}
+		else
+			return (0);
+	}
+	return (1);
 }
 
 int	main(int ac, char *av[]){
@@ -44,7 +62,6 @@ int	main(int ac, char *av[]){
 		std::cout << "Wrong input" << std::endl;
 		return (1);
 	}
-	std::cout << "av ok" << std::endl;
 	// créer un objet Convert convert(av[1]);
 	// imprimer le résultat
 	
