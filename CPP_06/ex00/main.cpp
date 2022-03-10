@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 20:47:48 by astridgault       #+#    #+#             */
-/*   Updated: 2022/03/10 13:34:47 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/03/10 14:48:03 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,9 @@ int	main(int ac, char *av[]){
 		std::cout << "Wrong input" << std::endl;
 		return (1);
 	}
-	// créer un objet Convert convert(av[1]);
+	Convert	convert(av[1]);
+	convert.checkType();
+
 	// imprimer le résultat
 	
 	return (0);
