@@ -14,16 +14,17 @@ class Convert{
 		Convert	& operator=(const Convert &conv_op);
 
 		void	checkType();
+		bool	checkInt();
 		void	printChar(char _char, int _flag);
 		void	printInt(int _int, int _flag);
 		void	printFloat(float _float, int _flag);
 		void	printDouble(double _double, int _flag);
-		void	print(int i);
+		void	print();
 
 	private:
 		std::string	_str;
 		char	_char;
-		int		_type;
+//		int		_type;
 		int		_int;
 		double	_double;
 		float	_float;

@@ -6,12 +6,16 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 20:47:48 by astridgault       #+#    #+#             */
-/*   Updated: 2022/03/10 14:48:03 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/03/10 19:10:31 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Convert.hpp"
 #include <locale>
+
+
+// pb de gestion du - dans le parsing!!!
+
 
 int	parse(std::string const &str){
 	std::locale loc;
