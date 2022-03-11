@@ -6,7 +6,7 @@
 /*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 20:48:51 by astridgault       #+#    #+#             */
-/*   Updated: 2022/03/11 11:29:36 by asgaulti         ###   ########.fr       */
+/*   Updated: 2022/03/11 13:57:36 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,7 @@ void	Convert::checkType(){
 		_float = static_cast<float>(_char);
 		_double = static_cast<double>(_char);
 	}
-	else if (!checkInt()){ // si c un int
-	// à gérer: les int max et min
+	else if (!checkInt()){
 		const char *int_cpy = _str.c_str();
 		_int = atof(int_cpy);
 		if (_int < 32 || _int > 126)
@@ -77,7 +76,54 @@ void	Convert::checkType(){
 		if (_double <= std::numeric_limits<double>::min() || _double >= std::numeric_limits<double>::max())
 			_double = static_cast<double>(_double);
 	}
+	else if (checkFloat()){
+		const char *float_cpy = _str.c_str();
+		_float = atof(float_cpy);
+		if (_float <= std::numeric_limits<float>::min() || _float >= std::numeric_limits<float>::max())
+			_float = static_cast<float>(_float);
+		_int = atof(float_cpy);
+		_int = static_cast<int>(_int);
+		if (_int < 32 || _int > 126)
+			_flag = 2;
+		if (_int <= std::numeric_limits<int>::min() || _int >= std::numeric_limits<int>::max())
+			_flag = 4;
+		if (_flag == 0){
+			_char = atof(float_cpy);
+			_char = static_cast<char>(_char);
+		}
+		_double = atof(float_cpy);
+		_double = static_cast<double>(_double);
+		if (_double <= std::numeric_limits<double>::min() || _double >= std::numeric_limits<double>::max())
+			_double = static_cast<double>(_double);
+	}
+	else{
+		const char *double_cpy = _str.c_str();
+		_double = atof(double_cpy);
+		if (_double <= std::numeric_limits<double>::min() || _double >= std::numeric_limits<double>::max())
+			_double = static_cast<double>(_double);
+		_int = atof(double_cpy);
+		_int = static_cast<int>(_int);
+		if (_int < 32 || _int > 126)
+			_flag = 2;
+		if (_int <= std::numeric_limits<int>::min() || _int >= std::numeric_limits<int>::max())
+			_flag = 4;
+		if (_flag == 0){
+			_char = atof(double_cpy);
+			_char = static_cast<char>(_char);
+		_float = atof(double_cpy);
+		_float = static_cast<float>(_float);
+		if (_float <= std::numeric_limits<float>::min() || _float >= std::numeric_limits<float>::max())
+			_float = static_cast<float>(_float);
+		}
+	}
 	print();
+}
+
+bool	Convert::checkFloat(){
+	int	size = (int)_str.size() - 1;
+	if (_str[size] == 'f')
+			return (true);
+	return (false);
 }
 
 bool	Convert::checkInt(){
@@ -102,7 +148,7 @@ void	Convert::print(){
 	// sinon imprimer Non displayable / impossible / ...
 void	Convert::printChar(char _char, int _flag){
 	if (_flag == 0){
-		std::cout << "char : " << _char << std::endl;
+		std::cout << "char : '" << _char << "'" << std::endl;
 	} // flag 1 : char impossible; 4 : char et int impossibles
 	else if (_flag == 1 || _flag == 4){
 		std::cout << "char : impossible" << std::endl;

@@ -19,6 +19,7 @@ class Convert{
 
 		void	checkType();
 		bool	checkInt();
+		bool	checkFloat();
 		void	printChar(char _char, int _flag);
 		void	printInt(int _int, int _flag);
 		void	printFloat(float _float);
