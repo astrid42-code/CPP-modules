@@ -3,19 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
+/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 20:47:48 by astridgault       #+#    #+#             */
-/*   Updated: 2022/03/10 19:10:31 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/03/11 10:43:52 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Convert.hpp"
 #include <locale>
-
-
-// pb de gestion du - dans le parsing!!!
-
 
 int	parse(std::string const &str){
 	std::locale loc;
@@ -37,7 +33,7 @@ int	parse(std::string const &str){
 	if (isdigit(str[0], loc) || str[0] == '-'){
 		int size = (int)str.size();
 		int dot = 0;
-		for (int i = 0; i < size - 1; i++){
+		for (int i = 1; i < size - 1; i++){
 			if (str[i] == '.'){
 				dot++;
 				if (dot > 1)

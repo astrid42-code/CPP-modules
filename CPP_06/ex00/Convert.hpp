@@ -3,6 +3,10 @@
 
 #include <iostream>
 #include <string>
+#include <cstdlib>
+#include <locale>
+#include <iomanip>
+#include <bits/stdc++.h>
 
 class Convert{
 	public:
@@ -17,8 +21,8 @@ class Convert{
 		bool	checkInt();
 		void	printChar(char _char, int _flag);
 		void	printInt(int _int, int _flag);
-		void	printFloat(float _float, int _flag);
-		void	printDouble(double _double, int _flag);
+		void	printFloat(float _float);
+		void	printDouble(double _double);
 		void	print();
 
 	private:

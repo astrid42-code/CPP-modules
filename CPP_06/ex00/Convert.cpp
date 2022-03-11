@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Convert.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
+/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 20:48:51 by astridgault       #+#    #+#             */
-/*   Updated: 2022/03/11 09:38:48 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/03/11 11:29:36 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,28 +51,33 @@ Convert	& Convert::operator=(const Convert &conv_op){
 
 void	Convert::checkType(){
 
-//	for (int i = 0; i < (int)_str.size(); i++){
-		if ((int)_str.size() == 1 && isprint(_str[0]) && !isdigit(_str[0])){
-			_char = _str[0];
-			_int = static_cast<int>(_char);
-			_float = static_cast<float>(_char);
-			_double = static_cast<double>(_char);
-		}
-		else if (!checkInt()){ // si c un int
-		// à gérer: les int max et min
-		// résultats floats et doubles à vérifier
-			const char *int_cpy = _str.c_str();
-			_int = atof(int_cpy);
-			if (_int <= 0 || _int > 127) // ou plutôt fct c++ printable?
-				_flag = 2;
+	if ((int)_str.size() == 1 && isprint(_str[0]) && !isdigit(_str[0])){
+		_char = _str[0];
+		_int = static_cast<int>(_char);
+		_float = static_cast<float>(_char);
+		_double = static_cast<double>(_char);
+	}
+	else if (!checkInt()){ // si c un int
+	// à gérer: les int max et min
+		const char *int_cpy = _str.c_str();
+		_int = atof(int_cpy);
+		if (_int < 32 || _int > 126)
+			_flag = 2;
+		// faire de meme pour float et double :
+		if (_int <= std::numeric_limits<int>::min() || _int >= std::numeric_limits<int>::max())
+			_flag = 4;
+		if (_flag == 0)
 			_char = static_cast<int>(_int);
-			_float = static_cast<float>(_int);
-			_double = static_cast<double>(_int);
-		}
-//	}
+		_float = atof(int_cpy);
+		_float = static_cast<float>(_float);
+		if (_float <= std::numeric_limits<float>::min() || _float >= std::numeric_limits<float>::max())
+			_float = static_cast<float>(_float);
+		_double = atof(int_cpy);
+		_double = static_cast<double>(_double);
+		if (_double <= std::numeric_limits<double>::min() || _double >= std::numeric_limits<double>::max())
+			_double = static_cast<double>(_double);
+	}
 	print();
-			//std::cout << "coucou" << std::endl;
-	// _type = 1 (char) 2 (int) 3 (float) 4 (double)
 }
 
 bool	Convert::checkInt(){
@@ -83,14 +88,12 @@ bool	Convert::checkInt(){
 	return (false);
 }
 
-
-
 void	Convert::print(){
 	// prévoir pour chaque print les flags pour dire si ce sera impossible ou non displayable
 	printChar(_char, _flag);
 	printInt(_int, _flag);
-	printFloat(_float, _flag);
-	printDouble(_double, _flag);
+	printFloat(_float);
+	printDouble(_double);
 	
 }
 
@@ -119,14 +122,13 @@ void	Convert::printInt(int _int, int _flag){
 	
 }
 	
-void	Convert::printFloat(float _float, int _flag){
-	(void)_flag;
-	std::cout << "float : " << _float << "f" << std::endl;
+void	Convert::printFloat(float _float){
+	// std::fixed pour ecrire en point fixe et non en ecriture scientifique (affichage setprecision par defaut)
+	std::cout << "float : " << std::fixed << std::setprecision(1) << _float << "f" << std::endl;
 	
 }
 	
-void	Convert::printDouble(double _double, int _flag){
-	(void)_flag;
+void	Convert::printDouble(double _double){
 	std::cout << "double : " << _double << std::endl;
 	
 }
