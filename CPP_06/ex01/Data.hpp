@@ -15,11 +15,9 @@ class Data{
 		Data & operator=(const Data &data_op);
 
 		int			getData() const;
-		uintptr_t 	serialize(Data* ptr);
-		Data* 		deserialize(uintptr_t raw);
 	
 	private:
-	int	_data_int;
+		int	_data_int;
 };
 
 #endif

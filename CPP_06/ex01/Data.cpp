@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Data.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 14:02:07 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/03/11 16:16:59 by asgaulti         ###   ########.fr       */
+/*   Updated: 2022/03/11 17:49:53 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,10 @@ Data::~Data(){
 }
 
 Data & Data::operator=(const Data &data_op){
-	
+	_data_int = data_op._data_int;
+	return (*this);
 }
 
 int			Data::getData() const{
 	return (_data_int);
-}
-		
-uintptr_t 	Data::serialize(Data* ptr){
-	return (_data_int);
-}
-
-Data* 		Data::deserialize(uintptr_t raw){
-	return (this);
 }
