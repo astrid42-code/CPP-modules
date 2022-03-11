@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 20:48:51 by astridgault       #+#    #+#             */
-/*   Updated: 2022/03/10 19:10:08 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/03/11 09:38:48 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,20 +54,20 @@ void	Convert::checkType(){
 //	for (int i = 0; i < (int)_str.size(); i++){
 		if ((int)_str.size() == 1 && isprint(_str[0]) && !isdigit(_str[0])){
 			_char = _str[0];
-			_int = static_cast<char>(_char);
-			_float = static_cast<char>(_char);
-			_double = static_cast<char>(_char);
+			_int = static_cast<int>(_char);
+			_float = static_cast<float>(_char);
+			_double = static_cast<double>(_char);
 		}
 		else if (!checkInt()){ // si c un int
 		// à gérer: les int max et min
-		// résultats floats et doubles à vérfifier
+		// résultats floats et doubles à vérifier
 			const char *int_cpy = _str.c_str();
-			_int = atoi(int_cpy);
-			if (_int > 127)
+			_int = atof(int_cpy);
+			if (_int <= 0 || _int > 127) // ou plutôt fct c++ printable?
 				_flag = 2;
 			_char = static_cast<int>(_int);
-			_float = static_cast<int>(_int);
-			_double = static_cast<int>(_int);
+			_float = static_cast<float>(_int);
+			_double = static_cast<double>(_int);
 		}
 //	}
 	print();
@@ -82,6 +82,8 @@ bool	Convert::checkInt(){
 	}
 	return (false);
 }
+
+
 
 void	Convert::print(){
 	// prévoir pour chaque print les flags pour dire si ce sera impossible ou non displayable
@@ -119,7 +121,7 @@ void	Convert::printInt(int _int, int _flag){
 	
 void	Convert::printFloat(float _float, int _flag){
 	(void)_flag;
-	std::cout << "float : " << _float << std::endl;
+	std::cout << "float : " << _float << "f" << std::endl;
 	
 }
 	
