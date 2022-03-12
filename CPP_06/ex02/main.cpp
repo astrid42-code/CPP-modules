@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 18:22:10 by astridgault       #+#    #+#             */
-/*   Updated: 2022/03/12 11:53:42 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/03/12 12:37:31 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,18 +52,50 @@ Base	*generate(void){
 // if else
 void	identify(Base* p){
 	// reçoit le ptr sur la base créée dans generate
-	if (dynamic_cast<A *>(p) != NULL)
+	// créer des ptrs sur A, B, C puis vérifier en les castant par ptr lequel est correct
+	A *a; 
+	B *b;
+	C *c;
+	
+	if ((a = dynamic_cast<A *>(p)) != NULL)
 		std::cout << "Conversion to A ptr is successfull" << std::endl;
-	else if (dynamic_cast<B *>(p) != NULL)
+	else if ((b = dynamic_cast<B *>(p)) != NULL)
 		std::cout << "Conversion to B ptr is successfull" << std::endl;
-	else if (dynamic_cast<C *>(p) != NULL)
+	else if ((c = dynamic_cast<C *>(p)) != NULL)
 		std::cout << "Conversion to C ptr is successfull" << std::endl;
-	else
-		std::cout << "No instance has been defined" << std::endl;
+	else // si c'est NULL ie si la conversion n'a pas été possible
+		std::cout << "Conversion failed" << std::endl;
 }
 
 // try catch
-//void	identify(Base& p);
+void	identify(Base& p){
+	// créer des objets de class A B C
+	// puis caster ces nouveaux objets pour voir si le cast par réf fctionne ou pas (si le type est bon ou non)
+	A a;
+	B b;
+	C c;
+	try{
+		a = dynamic_cast<A &>(p); 
+		std::cout << "Conversion to A ref is successfull" << std::endl;
+	}
+	catch (std::bad_cast &bc){
+		std::cout << "Conversion to A ref failed" << std::endl;
+	}
+	try{
+		b = dynamic_cast<B &>(p);
+		std::cout << "Conversion to B ref is successfull" << std::endl;
+	}
+	catch (std::bad_cast &bc){
+		std::cout << "Conversion to B ref failed" << std::endl;
+	}
+	try{
+		c = dynamic_cast<C &>(p);
+		std::cout << "Conversion to C ref is successfull" << std::endl;
+	}
+	catch (std::bad_cast &bc){
+		std::cout << "Conversion to C ref failed" << std::endl;
+	}
+}
 
 int main (void){
 	Base	*base;
@@ -76,7 +108,14 @@ int main (void){
 		identify(base);
 		std::cout << std::endl;
 	}
-//	identify(&base);
+	std::cout << std::endl;
+	std::cout << "<<<<<<<<<< References tests >>>>>>>>>>" << std::endl;
+	for (int i = 1; i < 5; i++){
+		std::cout << "test " << i << std::endl;
+		base = generate();
+		identify(*base); // * pour récupérer la référence sur base
+		std::cout << std::endl;
+	}
 	delete base;
 	return (0);
 }
