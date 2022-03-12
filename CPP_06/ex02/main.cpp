@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
+/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 18:22:10 by astridgault       #+#    #+#             */
-/*   Updated: 2022/03/12 13:05:28 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/03/12 16:35:29 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,8 @@ void	identify(Base* p){
 }
 
 // try catch (car une réf ne peut être nulle (enfin si mais non...) et donc en cas de nul, ça sort avec l'exception)
+// ATTENTION : interdit d'utiliser le catch (std::badcast) car dans la lib typeinfo
+// donc uniquement catch (...) et faire le msg d'exception
 void	identify(Base& p){
 	// créer des objets de class A B C
 	// puis caster ces nouveaux objets pour voir si le cast par réf fctionne ou pas (si le type est bon ou non)
@@ -80,22 +82,24 @@ void	identify(Base& p){
 		a = dynamic_cast<A &>(p); 
 		std::cout << "Conversion to A ref is successfull" << std::endl;
 	}
-	catch (std::bad_cast &bc){
-		std::cout << "Conversion to A ref failed" << std::endl;
-	}
-	try{
-		b = dynamic_cast<B &>(p);
-		std::cout << "Conversion to B ref is successfull" << std::endl;
-	}
-	catch (std::bad_cast &bc){
-		std::cout << "Conversion to B ref failed" << std::endl;
-	}
-	try{
-		c = dynamic_cast<C &>(p);
-		std::cout << "Conversion to C ref is successfull" << std::endl;
-	}
-	catch (std::bad_cast &bc){
-		std::cout << "Conversion to C ref failed" << std::endl;
+	catch (...)
+	{
+		try{
+			b = dynamic_cast<B &>(p);
+			std::cout << "Conversion to A ref failed" << std::endl;
+			std::cout << "Conversion to B ref is successfull" << std::endl;
+		}
+		catch (...)
+		{
+			try{
+				c = dynamic_cast<C &>(p);
+				std::cout << "Conversion to A and B ref failed" << std::endl;
+				std::cout << "Conversion to C ref is successfull" << std::endl;
+			}
+			catch (...){
+				std::cout << "Conversion failed" << std::endl;
+			}
+		}
 	}
 }
 
