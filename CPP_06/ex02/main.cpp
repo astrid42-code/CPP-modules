@@ -6,7 +6,7 @@
 /*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 18:22:10 by astridgault       #+#    #+#             */
-/*   Updated: 2022/03/12 16:35:29 by asgaulti         ###   ########.fr       */
+/*   Updated: 2022/03/12 17:20:29 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 
 // forme canonique de Coplien à ne pas faire dans cet ex (voir sujet)
 // le dynamic cast se fait uniquement à l'exécution (et non à la compilation)
+
+// uint_ptr = an unsigned integer type with the property that any valid pointer to void can be converted to this type, then converted back to pointer to void, and the result will compare equal to the original pointer"
 
 
 class Base{
