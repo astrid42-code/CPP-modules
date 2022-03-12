@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 18:22:10 by astridgault       #+#    #+#             */
-/*   Updated: 2022/03/12 12:37:31 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/03/12 13:05:28 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 # include <time.h>
 
 // forme canonique de Coplien à ne pas faire dans cet ex (voir sujet)
+// le dynamic cast se fait uniquement à l'exécution (et non à la compilation)
+
 
 class Base{
 	public:
@@ -52,7 +54,7 @@ Base	*generate(void){
 // if else
 void	identify(Base* p){
 	// reçoit le ptr sur la base créée dans generate
-	// créer des ptrs sur A, B, C puis vérifier en les castant par ptr lequel est correct
+	// créer des ptrs sur A, B, C puis vérifier en les castant par ptr (vers une adresse de mon objet) lequel est correct
 	A *a; 
 	B *b;
 	C *c;
@@ -67,7 +69,7 @@ void	identify(Base* p){
 		std::cout << "Conversion failed" << std::endl;
 }
 
-// try catch
+// try catch (car une réf ne peut être nulle (enfin si mais non...) et donc en cas de nul, ça sort avec l'exception)
 void	identify(Base& p){
 	// créer des objets de class A B C
 	// puis caster ces nouveaux objets pour voir si le cast par réf fctionne ou pas (si le type est bon ou non)

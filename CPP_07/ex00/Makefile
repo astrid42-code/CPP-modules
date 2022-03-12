@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/03/03 13:47:36 by astridgault       #+#    #+#              #
-#    Updated: 2022/03/08 20:45:41 by astridgault      ###   ########.fr        #
+#    Created: 2022/03/12 12:39:14 by astridgault       #+#    #+#              #
+#    Updated: 2022/03/12 12:39:28 by astridgault      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	Intern
+NAME		=	
 
 CXX			=	c++
 
@@ -18,15 +18,11 @@ CXXFLAGS	=	-Wall -Wextra -Werror --std=c++98
 
 RM			=	rm -f
 
-SRCS		=	main.cpp Bureaucrat.cpp Form.cpp PresidentialPardonForm.cpp \
-				RobotomyRequestForm.cpp ShrubberyCreationForm.cpp \
-				Intern.cpp
+SRCS		=	main.cpp
 
 OBJS_FILE	=	$(SRCS:.cpp=.o)
 
-INCL		=	Bureaucrat.hpp Form.hpp PresidentialPardonForm.hpp \
-				RobotomyRequestForm.hpp	ShrubberyCreationForm.hpp \
-				Intern.hpp
+INCL		=	
 
 .c.o:
 			$(CXX) $(CXXFLAGS) -g -c $< -o $(<:.cpp=.o)

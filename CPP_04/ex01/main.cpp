@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 21:48:02 by astridgault       #+#    #+#             */
-/*   Updated: 2022/02/28 15:58:08 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/03/11 18:08:34 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ int main()
 	
 	std::cout << animal[2]->getType() << " 2 thinks : " << animal[2]->getIdeas(0) << std::endl;
 	std::cout << animal[3]->getType() << " 3 thinks : " << animal[3]->getIdeas(0) << std::endl;
+	std::cout << animal[0]->getType() << " 0 thinks : " << animal[0]->getIdeas(0) << std::endl;
 	std::cout << std::endl;
 
 	std::cout << animal[0]->getType() << " 0 thinks : " << animal[0]->getIdeas(5) << std::endl;
