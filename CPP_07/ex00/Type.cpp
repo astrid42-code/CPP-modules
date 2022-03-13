@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Whatever.cpp                                       :+:      :+:    :+:   */
+/*   Type.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 17:25:23 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/03/12 18:58:00 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/03/13 12:41:31 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Whatever.hpp"
+#include "Type.hpp"
 
-
+// exemple de fcts en template (à faire directement ici dans le .hpp)
 
 int max(int x, int y){
 	return (x >= y ? x : y);
@@ -29,4 +29,3 @@ T const & max(T const &x, T const &y){ // T représente un type quelconque (qu'o
 // mais ce doit tjrs être le même (ex int x et int y)
 	return (x >= y ? x : y);
 }
-

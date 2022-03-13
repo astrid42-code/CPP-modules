@@ -3,18 +3,29 @@
 
 # include <iostream>
 
-// 3 fcts templates à implémenter dans la classe
+// 3 fcts templates à implémenter
+// pas de classe
 
 template< typename T >
+void	swap(T & a, T & b){ // a et b non const car modifiés
+	T	tmp;
 
-class Type{
-	public:
+	tmp = a;
+	a = b;
+	b = tmp;
+}
 
-	private:
-};
 template< typename T >
-std::ostream & operator<<(std::ostream & o, Type<T> const & type_op);
-// operateur ostream recevant ma classe de type T
+T const & min(T const &x, T const &y){ // T représente un type quelconque (qu'on donnera dans le main par ex)
+// mais ce doit tjrs être le même (ex int x et int y)
+	return (x <= y ? x : y);
+}
+
+template< typename T >
+T const & max(T const &x, T const &y){ // T représente un type quelconque (qu'on donnera dans le main par ex)
+// mais ce doit tjrs être le même (ex int x et int y)
+	return (x >= y ? x : y);
+}
 
 #endif
 
@@ -38,6 +49,9 @@ class Whatever{
 
 		Whatever( void ); // si mis en private = je ne pourrai pas instancier par défaut
 }
+template< typename T >
+std::ostream & operator<<(std::ostream & o, Type<T> const & type_op);
+// operateur ostream recevant ma classe de type T
 
 // dans le main pour savoir le type dans lequel instancier le template :
 //Whatever<int> a(42); // ou tout type de mon choix pour créer mon instance

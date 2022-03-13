@@ -6,11 +6,11 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 12:59:39 by astridgault       #+#    #+#             */
-/*   Updated: 2022/03/12 20:17:15 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/03/13 12:53:37 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Whatever.hpp"
+#include "Type.hpp"
 
 // templates : syntaxe permettant d'écrire des patrons de morceaux de code
 // des "codes à trou" et c'est le compilateur qui va compléter les trous
@@ -37,15 +37,50 @@ int main(){
 int main( void ) {
 	int a = 2;
 	int b = 3;
+
+	std::cout << "Test 1 : int" << std::endl;
+	std::cout << "before swap : a = " << a << ", b = " << b << std::endl;
 	::swap( a, b );
-	std::cout << "a = " << a << ", b = " << b << std::endl;
+	std::cout << "after swap : a = " << a << ", b = " << b << std::endl;
 	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
 	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
+
+	std::cout << std::endl;
+	
 	std::string c = "chaine1";
 	std::string d = "chaine2";
+	std::cout << "Test 2 : string" << std::endl;
+	std::cout << "before swap : c = " << c << ", d = " << d << std::endl;
 	::swap(c, d);
-	std::cout << "c = " << c << ", d = " << d << std::endl;
+	std::cout << "after swap : c = " << c << ", d = " << d << std::endl;
 	std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
 	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
+
+	std::cout << std::endl;
+	
+	float s = 42.6f;
+	float t = 42.2f;
+
+	std::cout << "Test 3 : float" << std::endl;
+	std::cout << "before swap : s = " << s << ", t = " << t << std::endl;
+	::swap( s, t );
+	std::cout << "after swap : s = " << s << ", t = " << t << std::endl;
+	std::cout << "min( s, t ) = " << ::min( s, t ) << std::endl;
+	std::cout << "max( s, t ) = " << ::max( s, t ) << std::endl;
+
+	std::cout << std::endl;
+/*	
+	float x = 42.6f;
+	int y = 42;
+
+	std::cout << "Test 4 : failure test" << std::endl; // cf msg erreur à la compil
+	std::cout << "before swap : x = " << x << ", y = " << y << std::endl;
+	::swap( x, y );
+	std::cout << "after swap : x = " << x << ", y = " << y << std::endl;
+	std::cout << "min( x, y ) = " << ::min( x, y ) << std::endl;
+	std::cout << "max( x, y ) = " << ::max( x, y ) << std::endl;
+
+	std::cout << std::endl;
+*/	
 	return 0;
 }
