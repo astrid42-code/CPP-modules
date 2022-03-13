@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 18:22:10 by astridgault       #+#    #+#             */
-/*   Updated: 2022/03/12 17:20:29 by asgaulti         ###   ########.fr       */
+/*   Updated: 2022/03/12 23:21:32 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,3 +127,5 @@ int main (void){
 	delete base;
 	return (0);
 }
+
+// vérifier les leaks!!

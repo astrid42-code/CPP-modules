@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Convert.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 20:48:51 by astridgault       #+#    #+#             */
-/*   Updated: 2022/03/11 13:57:36 by asgaulti         ###   ########.fr       */
+/*   Updated: 2022/03/12 23:23:00 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -178,3 +178,5 @@ void	Convert::printDouble(double _double){
 	std::cout << "double : " << _double << std::endl;
 	
 }
+
+vérifier leaks?

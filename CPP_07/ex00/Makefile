@@ -6,7 +6,7 @@
 #    By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/12 12:39:14 by astridgault       #+#    #+#              #
-#    Updated: 2022/03/12 12:39:28 by astridgault      ###   ########.fr        #
+#    Updated: 2022/03/12 23:25:08 by astridgault      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,11 +18,11 @@ CXXFLAGS	=	-Wall -Wextra -Werror --std=c++98
 
 RM			=	rm -f
 
-SRCS		=	main.cpp
+SRCS		=	main.cpp Type.cpp
 
 OBJS_FILE	=	$(SRCS:.cpp=.o)
 
-INCL		=	
+INCL		=	Type.hpp
 
 .c.o:
 			$(CXX) $(CXXFLAGS) -g -c $< -o $(<:.cpp=.o)

@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 14:02:16 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/03/11 18:02:58 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/03/12 23:22:26 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,3 +44,5 @@ int main(){
 	
 	return (0);
 }
+
+retirer la classe data?
