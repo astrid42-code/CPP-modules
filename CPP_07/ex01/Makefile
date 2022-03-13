@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/03/12 12:39:14 by astridgault       #+#    #+#              #
-#    Updated: 2022/03/13 12:56:04 by astridgault      ###   ########.fr        #
+#    Created: 2022/03/13 12:55:00 by astridgault       #+#    #+#              #
+#    Updated: 2022/03/13 13:59:31 by astridgault      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	Type
+NAME		=	Iter
 
 CXX			=	c++
 
@@ -22,7 +22,7 @@ SRCS		=	main.cpp
 
 OBJS_FILE	=	$(SRCS:.cpp=.o)
 
-INCL		=	Type.hpp
+INCL		=	Iter.hpp
 
 .c.o:
 			$(CXX) $(CXXFLAGS) -g -c $< -o $(<:.cpp=.o)

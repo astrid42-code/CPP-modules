@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 12:59:39 by astridgault       #+#    #+#             */
-/*   Updated: 2022/03/13 12:53:37 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/03/13 12:59:07 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,11 +69,23 @@ int main( void ) {
 	std::cout << "max( s, t ) = " << ::max( s, t ) << std::endl;
 
 	std::cout << std::endl;
+
+	char i = 'i';
+	char j = 'j';
+
+	std::cout << "Test 4 : char" << std::endl;
+	std::cout << "before swap : i = " << i << ", j = " << j << std::endl;
+	::swap( i, j );
+	std::cout << "after swap : i = " << i << ", j = " << j << std::endl;
+	std::cout << "min( i, j ) = " << ::min( i, j ) << std::endl;
+	std::cout << "max( i, j ) = " << ::max( i, j ) << std::endl;
+
+	std::cout << std::endl;
 /*	
 	float x = 42.6f;
 	int y = 42;
 
-	std::cout << "Test 4 : failure test" << std::endl; // cf msg erreur à la compil
+	std::cout << "Test 5 : failure test" << std::endl; // cf msg erreur à la compil
 	std::cout << "before swap : x = " << x << ", y = " << y << std::endl;
 	::swap( x, y );
 	std::cout << "after swap : x = " << x << ", y = " << y << std::endl;
