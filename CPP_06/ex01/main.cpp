@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
+/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 14:02:16 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/03/12 23:22:26 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/03/13 15:26:14 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,3 @@ int main(){
 	
 	return (0);
 }
-
-retirer la classe data?

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
+/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 18:22:10 by astridgault       #+#    #+#             */
-/*   Updated: 2022/03/12 23:21:32 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/03/13 15:24:46 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,6 +115,7 @@ int main (void){
 		base = generate();
 		identify(base);
 		std::cout << std::endl;
+		delete base;
 	}
 	std::cout << std::endl;
 	std::cout << "<<<<<<<<<< References tests >>>>>>>>>>" << std::endl;
@@ -123,9 +124,7 @@ int main (void){
 		base = generate();
 		identify(*base); // * pour récupérer la référence sur base
 		std::cout << std::endl;
+		delete base;
 	}
-	delete base;
 	return (0);
 }
-
-// vérifier les leaks!!
