@@ -4,6 +4,7 @@
 # include <iostream>
 # include <cstdlib>
 # include <time.h>
+# include <iomanip>
 
 template< typename T >
 
@@ -18,7 +19,7 @@ class Array{
 			_array = new T[_size];
 		}
 		~Array(){
-			delete _array;
+			delete [] _array;
 		};
 
 		Array & operator=(const Array & array_op){
