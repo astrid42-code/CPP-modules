@@ -6,7 +6,7 @@
 #    By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/13 15:19:18 by asgaulti          #+#    #+#              #
-#    Updated: 2022/03/13 15:19:43 by asgaulti         ###   ########.fr        #
+#    Updated: 2022/03/14 13:37:15 by asgaulti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME		=	Array
 
 CXX			=	c++
 
-CXXFLAGS	=	-Wall -Wextra -Werror --std=c++98
+CXXFLAGS	=	-Wall -Wextra -Werror --std=c++98 -g3
 
 RM			=	rm -f
 
