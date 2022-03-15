@@ -10,12 +10,17 @@ template< typename T >
 
 class Array{
 	public:
-		Array();
+		Array() : _size(0){
+			_array = new T[_size];
+		}
 		Array(unsigned int n) : _size(n){
+			if (_size < 0)
+				throw IndexNull();
 			_array = new T[n]; // _array est alloue a la taille n de type T
 		}
 		Array(const Array & array_cp) : _size(array_cp._size){ // deep copy
-			// delete _array;
+			if (_size < 0)
+				throw IndexNull();
 			_array = new T[_size];
 		}
 		~Array(){
@@ -24,22 +29,31 @@ class Array{
 
 		Array & operator=(const Array & array_op){
 			_size = array_op._size;
-			delete _array;
+			delete [] _array;
 			_array = new T[_size];
 			return (*this);
 		}
 
-		T & operator[](unsigned int i){
-			if (i > _size - 1){
+		T & operator[](unsigned int index){
+			if (_size <= 0)
+				throw IndexNull();
+			if (index > _size - 1){
 				throw IndexTooHigh();
 			}
-			return (_array[i]);
+			return (_array[index]);
 		}
 
 		class IndexTooHigh : public std::exception{
 			public:
 				virtual const char * what() const throw(){
 					return ("Index too high");
+				}
+		};
+
+		class IndexNull : public std::exception{
+			public:
+				virtual const char * what() const throw(){
+					return ("Index null");
 				}
 		};
 
