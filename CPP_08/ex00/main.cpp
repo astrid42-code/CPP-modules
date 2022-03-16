@@ -6,7 +6,7 @@
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 13:33:51 by astridgault       #+#    #+#             */
-/*   Updated: 2022/03/15 21:30:19 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/03/16 08:11:02 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int main(){
 	std::vector<int>	v1;
 	
 	srand(time(NULL));
+	std::cout << "<<<<< TEST vector >>>>>" << std::endl;
 	std::cout << "v1 = ";
 	for (int i = 0; i < 10; i++){
 		v1.push_back(rand() % 20);
@@ -55,32 +56,35 @@ int main(){
 	std::cout << std::endl;
 	try{
 		easyFind(v1, value);
+		std::cout << "Value is in v1" << std::endl;
 	} 
 	catch(const std::exception& e){
 		std::cerr << e.what() << std::endl;
 	}
 
-/*	std::list<int>	l1;
+	std::cout << "<<<<< TEST list >>>>>" << std::endl;
+	std::list<int>	l1;
 	srand(time(NULL));
-	std::cout << "l1 = " << std::endl;
+	std::cout << "l1 = ";
 	for (int i = 0; i < 10; i++){
-		l1.push_back(rand() % 50);
+		l1.push_back(rand() % 20);
 		// comment imprime t on chaque valeur d'une liste?
-		std::cout << l1[i] << ", ";
+//		std::cout << l1[i] << ", ";
 	}
 	std::cout << std::endl;
 	// initialiser une valeur au hasard
-	int value = rand() % 50;
+//	int value = rand() % 15;
 	std::cout << "value = " << value << std::endl;
 	
 	std::cout << std::endl;
 	try{
 		easyFind(l1, value);
+		std::cout << "Value is in l1" << std::endl;
 	} 
 	catch(const std::exception& e){
 		std::cerr << e.what() << std::endl;
 	}	
 
-*/	
+
 	return (0);
 }
