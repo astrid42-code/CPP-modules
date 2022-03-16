@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
+/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 13:33:51 by astridgault       #+#    #+#             */
-/*   Updated: 2022/03/16 08:11:02 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/03/16 10:22:24 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,22 +64,26 @@ int main(){
 
 	std::cout << "<<<<< TEST list >>>>>" << std::endl;
 	std::list<int>	l1;
+	std::list<int>::iterator	it;
 	srand(time(NULL));
 	std::cout << "l1 = ";
 	for (int i = 0; i < 10; i++){
-		l1.push_back(rand() % 20);
-		// comment imprime t on chaque valeur d'une liste?
-//		std::cout << l1[i] << ", ";
+		l1.push_back(rand() % 15);
 	}
+	for (it = l1.begin(); it != l1.end(); ++it){
+		std::cout << *it << ", ";
+		
+	}
+	
 	std::cout << std::endl;
 	// initialiser une valeur au hasard
-//	int value = rand() % 15;
-	std::cout << "value = " << value << std::endl;
+	int value2 = rand() % 20;
+	std::cout << "value2 = " << value2 << std::endl;
 	
 	std::cout << std::endl;
 	try{
-		easyFind(l1, value);
-		std::cout << "Value is in l1" << std::endl;
+		easyFind(l1, value2);
+		std::cout << "Value2 is in l1" << std::endl;
 	} 
 	catch(const std::exception& e){
 		std::cerr << e.what() << std::endl;
