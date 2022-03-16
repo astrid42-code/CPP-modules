@@ -5,7 +5,7 @@
 # include <vector>
 # include <list>
 # include <cstdlib>
-# include <time.h>
+# include <ctime>
 
 class Span{
 	public:
@@ -34,6 +34,7 @@ class Span{
 		};
 
 	private:
+		unsigned int	_n;
 		Span();
 
 };
