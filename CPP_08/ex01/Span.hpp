@@ -6,6 +6,8 @@
 # include <list>
 # include <cstdlib>
 # include <ctime>
+# include <algorithm>
+# include <iomanip>
 
 class Span{
 	public:
