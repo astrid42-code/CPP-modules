@@ -9,6 +9,7 @@
 
 class Span{
 	public:
+		Span();
 		Span(unsigned int N);
 		Span(const Span & span_cp);
 		~Span();
@@ -34,8 +35,8 @@ class Span{
 		};
 
 	private:
-		unsigned int	_n;
-		Span();
+		unsigned int		_n;
+		std::vector<int>	_v;
 
 };
 
