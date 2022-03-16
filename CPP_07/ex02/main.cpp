@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 15:19:57 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/03/15 12:16:42 by asgaulti         ###   ########.fr       */
+/*   Updated: 2022/03/15 16:05:55 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int main(int, char**)
 		catch(const std::exception& e)
 		{
 			std::cout << "Test 1 index = -2 (failure)" << std::endl;
-			std::cerr << e.what() << '\n';
+			std::cerr << e.what() << std::endl;
 		}
 		std::cout << std::endl;
 		try
@@ -61,7 +61,7 @@ int main(int, char**)
 		catch(const std::exception& e)
 		{
 			std::cout << "Test 2 index = maxval (failure)" << std::endl;
-			std::cerr << e.what() << '\n';
+			std::cerr << e.what() << std::endl;
 		}
 
 		for (int i = 0; i < MAX_VAL; i++)
@@ -110,7 +110,7 @@ int main(int, char**)
 		catch(const std::exception& e)
 		{
 			std::cout << "Test 1 index = 42 (failure)" << std::endl;
-			std::cerr << e.what() << '\n';
+			std::cerr << e.what() << std::endl;
 		}
 		std::cout << std::endl;
 		try
@@ -122,7 +122,7 @@ int main(int, char**)
 		catch(const std::exception& e)
 		{
 			std::cout << "Test 2 index = maxval-1 failure" << std::endl;
-			std::cerr << e.what() << '\n';
+			std::cerr << e.what() << std::endl;
 		}
 
 		for (int i = 0; i < MAX_VAL; i++)
