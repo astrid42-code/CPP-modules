@@ -5,34 +5,36 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/16 11:03:13 by asgaulti          #+#    #+#             */
-/*   Updated: 2022/03/16 21:06:04 by astridgault      ###   ########.fr       */
+/*   Created: 2022/03/16 21:03:26 by astridgault       #+#    #+#             */
+/*   Updated: 2022/03/16 21:07:39 by astridgault      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Span.hpp"
-/*
-//mon main
-int main(){
-	Span	span(42);
+#include "MutantStack.hpp"
 
-	srand(time(NULL));
-	span.addNumber(rand() % 50);
-	return (0);
-}
-*/
-// main sujet
+// exemple de main (à augmenter en changeant stack par list et autre trucs)
 int main()
 {
-	Span sp = Span(5);
-	sp.addNumber(6);
-	sp.addNumber(3);
-	sp.addNumber(17);
-	sp.addNumber(9);
-	sp.addNumber(11);
-	std::cout << sp.shortestSpan() << std::endl;
-	std::cout << sp.longestSpan() << std::endl;
-	return(0);
+	MutantStack<int> mstack;
+	mstack.push(5);
+	mstack.push(17);
+	std::cout << mstack.top() << std::endl;
+	mstack.pop();
+	std::cout << mstack.size() << std::endl;
+	mstack.push(3);
+	mstack.push(5);
+	mstack.push(737);
+	//[...]
+	mstack.push(0);
+	MutantStack<int>::iterator it = mstack.begin();
+	MutantStack<int>::iterator ite = mstack.end();
+	++it;
+	--it;
+	while (it != ite)
+	{
+	std::cout << *it << std::endl;
+	++it;
+	}
+	std::stack<int> s(mstack);
+	return 0;
 }
-
-//main à modifier en mettant un appel à la fct qui pushback en 1 fois cf fct insert
