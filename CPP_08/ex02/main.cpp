@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: astridgaultier <astridgaultier@student.    +#+  +:+       +#+        */
+/*   By: asgaulti <asgaulti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 21:03:26 by astridgault       #+#    #+#             */
-/*   Updated: 2022/03/17 14:58:42 by astridgault      ###   ########.fr       */
+/*   Updated: 2022/03/17 17:32:09 by asgaulti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 // exemple de main (à augmenter en changeant stack par list et autre trucs)
 int main()
 {
-
 	MutantStack<int> mstack;
 	mstack.push(5);
 	mstack.push(17);
@@ -54,5 +53,9 @@ int main()
 		++rit;
 	}
 	std::stack<int> s(mstack);
+
+	std::cout << "<<<<< Test 2 >>>>>" << std::endl;
+	// test a faire avec une liste
+	
 	return 0;
 }
