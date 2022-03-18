@@ -4,7 +4,10 @@
 #include <iostream>
 #include <iomanip>
 #include <stack>
+#include <list>
 #include <iterator>
+# include <ctime>
+# include <cstdlib>
 
 template<typename T>
 class MutantStack : public std::stack<T>{ // fait hériter ma class de la classe std::stack de type T
